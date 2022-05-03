@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="D">
+  <design>
+    <source>D:\cam_offload_cache\kicad\projects\tymkrs_Cyphercon_2020_IRbutton\tymkrs_Cyphercon_2020_IRbutton.sch</source>
+    <date>12/28/2019 7:24:56 PM</date>
+    <tool>Eeschema (5.1.5)-3</tool>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title>Cyphercon 2020 IR button</title>
+        <company>For Tymkrs</company>
+        <rev>V0</rev>
+        <date>2019-12-28</date>
+        <source>tymkrs_Cyphercon_2020_IRbutton.sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="icon1">
+      <value>Metroid</value>
+      <footprint>PJS-icons:metroid</footprint>
+      <libsource lib="metroid" part="Metroid" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5E09EB00</tstamp>
+    </comp>
+    <comp ref="J1">
+      <value>PicKit</value>
+      <footprint>Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Vertical</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Connector_Generic" part="Conn_01x05" description="Generic connector, single row, 01x05, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5E0A2978</tstamp>
+    </comp>
+    <comp ref="D1">
+      <value>Red</value>
+      <footprint>LED_SMD:LED_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="LED_Small_ALT" description="Light emitting diode, small symbol, filled shape"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5E0A5EC5</tstamp>
+    </comp>
+    <comp ref="R2">
+      <value>2k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="R_Small" description="Resistor, small symbol"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5E0A9061</tstamp>
+    </comp>
+    <comp ref="D2">
+      <value>IR204</value>
+      <footprint>LED_THT:LED_D3.0mm_Horizontal_O1.27mm_Z2.0mm_Clear</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="LED_Small_ALT" description="Light emitting diode, small symbol, filled shape"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5E0CD43A</tstamp>
+    </comp>
+    <comp ref="R3">
+      <value>27 0805</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="R_Small" description="Resistor, small symbol"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5E0CF40D</tstamp>
+    </comp>
+    <comp ref="C1">
+      <value>10uF 1206</value>
+      <footprint>Capacitor_SMD:C_1206_3216Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5E0F40C6</tstamp>
+    </comp>
+    <comp ref="C2">
+      <value>0.1uF 0603</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5E0F7A2E</tstamp>
+    </comp>
+    <comp ref="U1">
+      <value>PIC16F15313</value>
+      <footprint>Package_SO:SOIC-8_3.9x4.9mm_P1.27mm</footprint>
+      <libsource lib="Microchip_pjs" part="PIC16F15313" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5E15022A</tstamp>
+    </comp>
+    <comp ref="R1">
+      <value>100k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="R_Small" description="Resistor, small symbol"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5E130095</tstamp>
+    </comp>
+    <comp ref="SW1">
+      <value>TACT_6MM</value>
+      <footprint>PJS_smt_parts:PTS645_6mm_tact_sw</footprint>
+      <libsource lib="MF_Switches" part="TACT_6MM" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5E16D32A</tstamp>
+    </comp>
+    <comp ref="BT1">
+      <value>BAT-HLD-001</value>
+      <footprint>PJS_smt_parts:BAT-HLD-001</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="Battery_Cell" description="Single-cell battery"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5E17903F</tstamp>
+    </comp>
+    <comp ref="H1">
+      <value>MountingHole</value>
+      <footprint>MountingHole:MountingHole_2.7mm_M2.5</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5E18B8D6</tstamp>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="Connector_Generic" part="Conn_01x05">
+      <description>Generic connector, single row, 01x05, script generated (kicad-library-utils/schlib/autogen/connector/)</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Connector*:*_1x??_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Conn_01x05</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Pin_1" type="passive"/>
+        <pin num="2" name="Pin_2" type="passive"/>
+        <pin num="3" name="Pin_3" type="passive"/>
+        <pin num="4" name="Pin_4" type="passive"/>
+        <pin num="5" name="Pin_5" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="Battery_Cell">
+      <description>Single-cell battery</description>
+      <docs>~</docs>
+      <fields>
+        <field name="Reference">BT</field>
+        <field name="Value">Battery_Cell</field>
+      </fields>
+      <pins>
+        <pin num="1" name="+" type="passive"/>
+        <pin num="2" name="-" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="C_Small">
+      <description>Unpolarized capacitor, small symbol</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>C_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">C_Small</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~" type="passive"/>
+        <pin num="2" name="~" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="LED_Small_ALT">
+      <description>Light emitting diode, small symbol, filled shape</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>LED*</fp>
+        <fp>LED_SMD:*</fp>
+        <fp>LED_THT:*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">LED_Small_ALT</field>
+      </fields>
+      <pins>
+        <pin num="1" name="K" type="passive"/>
+        <pin num="2" name="A" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="R_Small">
+      <description>Resistor, small symbol</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>R_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">R_Small</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~" type="passive"/>
+        <pin num="2" name="~" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="MF_Switches" part="TACT_6MM">
+      <footprints>
+        <fp>*TACT6MM*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">SW</field>
+        <field name="Value">TACT_6MM</field>
+        <field name="Footprint">MF_Switches_TACT6MM</field>
+      </fields>
+      <pins>
+        <pin num="1" name="P$1" type="BiDi"/>
+        <pin num="2" name="P$2" type="BiDi"/>
+        <pin num="3" name="P$3" type="BiDi"/>
+        <pin num="4" name="P$4" type="BiDi"/>
+      </pins>
+    </libpart>
+    <libpart lib="Mechanical" part="MountingHole">
+      <description>Mounting Hole without connection</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>MountingHole*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">H</field>
+        <field name="Value">MountingHole</field>
+      </fields>
+    </libpart>
+    <libpart lib="Microchip_pjs" part="PIC16F15313">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">PIC16F15313</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Vdd" type="power_in"/>
+        <pin num="2" name="RA5" type="BiDi"/>
+        <pin num="3" name="RA4" type="BiDi"/>
+        <pin num="4" name="RA3/MCLR" type="input"/>
+        <pin num="5" name="RA2" type="BiDi"/>
+        <pin num="6" name="RA1/ICSPCLK" type="BiDi"/>
+        <pin num="7" name="RA0/ICSPDAT" type="BiDi"/>
+        <pin num="8" name="Vss" type="power_in"/>
+      </pins>
+    </libpart>
+    <libpart lib="metroid" part="Metroid">
+      <fields>
+        <field name="Reference">icon</field>
+        <field name="Value">Metroid</field>
+      </fields>
+    </libpart>
+  </libparts>
+  <libraries>
+    <library logical="Connector_Generic">
+      <uri>C:\Program Files\KiCad\share\kicad\library/Connector_Generic.lib</uri>
+    </library>
+    <library logical="Device">
+      <uri>C:\Program Files\KiCad\share\kicad\library/Device.lib</uri>
+    </library>
+    <library logical="MF_Switches">
+      <uri>D:/cam_offload_cache/kicad/library/MF_Switches.lib</uri>
+    </library>
+    <library logical="Mechanical">
+      <uri>C:\Program Files\KiCad\share\kicad\library/Mechanical.lib</uri>
+    </library>
+    <library logical="Microchip_pjs">
+      <uri>D:/cam_offload_cache/kicad/library/Microchip_pjs.lib</uri>
+    </library>
+    <library logical="metroid">
+      <uri>D:/cam_offload_cache/kicad/library/metroid.lib</uri>
+    </library>
+  </libraries>
+  <nets>
+    <net code="1" name="Net-(SW1-Pad1)">
+      <node ref="SW1" pin="1"/>
+    </net>
+    <net code="2" name="Net-(D2-Pad1)">
+      <node ref="U1" pin="2"/>
+      <node ref="D2" pin="1"/>
+    </net>
+    <net code="3" name="Net-(J1-Pad4)">
+      <node ref="J1" pin="4"/>
+      <node ref="U1" pin="7"/>
+    </net>
+    <net code="4" name="Net-(J1-Pad5)">
+      <node ref="U1" pin="6"/>
+      <node ref="J1" pin="5"/>
+    </net>
+    <net code="5" name="Net-(U1-Pad5)">
+      <node ref="U1" pin="5"/>
+    </net>
+    <net code="6" name="Net-(J1-Pad1)">
+      <node ref="U1" pin="4"/>
+      <node ref="R1" pin="1"/>
+      <node ref="SW1" pin="2"/>
+      <node ref="J1" pin="1"/>
+    </net>
+    <net code="7" name="GND">
+      <node ref="SW1" pin="4"/>
+      <node ref="J1" pin="3"/>
+      <node ref="C1" pin="2"/>
+      <node ref="C2" pin="2"/>
+      <node ref="U1" pin="8"/>
+      <node ref="BT1" pin="2"/>
+    </net>
+    <net code="8" name="+3V3">
+      <node ref="R1" pin="2"/>
+      <node ref="J1" pin="2"/>
+      <node ref="U1" pin="1"/>
+      <node ref="R3" pin="1"/>
+      <node ref="C1" pin="1"/>
+      <node ref="BT1" pin="1"/>
+      <node ref="C2" pin="1"/>
+      <node ref="R2" pin="1"/>
+    </net>
+    <net code="9" name="Net-(SW1-Pad3)">
+      <node ref="SW1" pin="3"/>
+    </net>
+    <net code="10" name="Net-(D1-Pad2)">
+      <node ref="D1" pin="2"/>
+      <node ref="R2" pin="2"/>
+    </net>
+    <net code="11" name="Net-(D1-Pad1)">
+      <node ref="D1" pin="1"/>
+      <node ref="U1" pin="3"/>
+    </net>
+    <net code="12" name="Net-(D2-Pad2)">
+      <node ref="D2" pin="2"/>
+      <node ref="R3" pin="2"/>
+    </net>
+  </nets>
+</export>

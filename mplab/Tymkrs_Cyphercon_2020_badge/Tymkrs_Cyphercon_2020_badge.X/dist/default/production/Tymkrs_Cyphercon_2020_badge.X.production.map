@@ -1,0 +1,685 @@
+MPLINK 5.09, LINKER
+Linker Map File - Created Sun Apr 17 01:49:01 2022
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_2       code   0x000000    program   0x000002
+                   .cinit    romdata   0x000001    program   0x000004
+                   .org_3       code   0x000004    program   0x000e18
+                   .org_4       code   0x000800    program   0x000b76
+                   .org_5       code   0x001000    program   0x000696
+                   .org_6       code   0x001800    program   0x000552
+                   .org_0       code   0x001f70    program   0x000020
+                   .org_1       code   0x001f80    program   0x000100
+                   UserID       code   0x008000    program   0x000002
+.config_8007_BUILD/DEFAULT/PRODUCTION/TYMKRS_       code   0x008007    program   0x000002
+.config_8008_BUILD/DEFAULT/PRODUCTION/TYMKRS_       code   0x008008    program   0x000002
+.config_8009_BUILD/DEFAULT/PRODUCTION/TYMKRS_       code   0x008009    program   0x000002
+.config_800A_BUILD/DEFAULT/PRODUCTION/TYMKRS_       code   0x00800a    program   0x000002
+.config_800B_BUILD/DEFAULT/PRODUCTION/TYMKRS_       code   0x00800b    program   0x000002
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x000002      
+                            0x000004    0x00070f      
+                            0x000800    0x000dba      
+                            0x001000    0x00134a      
+                            0x001800    0x001aa8      
+                            0x001f70    0x001fff      
+                            0x008000    0x008000      
+                            0x008007    0x00800b      
+            4948 out of 8202 program addresses used, program memory utilization is 60%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+               BODY_bank1   0x000c66    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+           BODY_bank1_off   0x000c3f    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+           BODY_bank_done   0x000c6e    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+       BODY_bank_done_off   0x000c48    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+           BODY_bank_skip   0x000c70    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+           BODY_lfsr_loop   0x000c50    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+           CHECK_SPI_FAIL   0x00063b    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+    CHECK_SPI_FAIL_DELAY1   0x000643    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+    CHECK_SPI_FAIL_DELAY2   0x00064e    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+      CHECK_SPI_FAIL_INIT   0x000631    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+           DECRYPT_PACKET   0x001004    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+DECRYPT_PACKET_cycle_key_i   0x001024    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+DECRYPT_PACKET_cycle_key_j   0x00102d    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+DECRYPT_PACKET_cycle_key_j2   0x00105b    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+DECRYPT_PACKET_cycle_key_shift   0x00106a    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+DECRYPT_PACKET_cycle_key_shift2   0x001084    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+ DECRYPT_PACKET_decrypt_i   0x001099    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+ DECRYPT_PACKET_decrypt_j   0x00109e    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+DECRYPT_PACKET_decrypt_j2   0x0010c2    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+DECRYPT_PACKET_decrypt_j3   0x00111e    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+DECRYPT_PACKET_decrypt_j4   0x001137    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+DECRYPT_PACKET_decrypt_j5   0x0011a8    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+DECRYPT_PACKET_decrypt_no_carry   0x00114a    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+DECRYPT_PACKET_decrypt_no_carry2   0x00115a    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+DECRYPT_PACKET_decrypt_no_carry3   0x001177    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+DECRYPT_PACKET_decrypt_no_carry4   0x001187    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+DECRYPT_PACKET_decrypt_shift   0x0010d1    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+DECRYPT_PACKET_decrypt_shift2   0x0010e6    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+DECRYPT_PACKET_decrypt_shift3   0x0010fe    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+DECRYPT_PACKET_decrypt_shift4   0x001111    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+DECRYPT_PACKET_gen_chksum   0x001250    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+DECRYPT_PACKET_key_move_loop   0x00101f    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+DECRYPT_PACKET_swap_packet   0x001011    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+DECRYPT_PACKET_validate_chksum   0x0011e6    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+           ENCRYPT_PACKET   0x001257    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+         ENCRYPT_PACKET_i   0x001260    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+         ENCRYPT_PACKET_j   0x001271    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+        ENCRYPT_PACKET_j2   0x0012d0    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+     ENCRYPT_PACKET_shift   0x0012de    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+    ENCRYPT_PACKET_shift2   0x0012fb    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+    ENCRYPT_PACKET_shift3   0x001316    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+    ENCRYPT_PACKET_shift4   0x00132e    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+        INIT_update_loop1   0x000614    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+        INIT_update_loop2   0x000620    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+   IRQ_RX1_BADGE_CHK_DONE   0x0003e4    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+          IRQ_RX1_FOUNDER   0x0003b2    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+      IRQ_RX1_FOUNDER_CHK   0x000336    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+   IRQ_RX1_FOUNDER_QUEST1   0x000250    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+   IRQ_RX1_FOUNDER_QUEST2   0x00025a    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+   IRQ_RX1_ID_UPDATE_DONE   0x000319    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+    IRQ_RX1_NECROLLAMACON   0x000281    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+IRQ_RX1_NECROLLAMACON_CHK   0x00035e    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+        IRQ_RX1_NECRO_CHK   0x000277    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+     IRQ_RX1_NOT_PINK_EYE   0x0002f7    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+         IRQ_RX1_NOT_SICK   0x00032c    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+           IRQ_RX1_OLD_ID   0x00031a    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+         IRQ_RX1_OUTHOUSE   0x0003cb    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+     IRQ_RX1_OUTHOUSE_CHK   0x00034a    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+       IRQ_RX1_SHIFT_TEMP   0x0002d8    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+            IRQ_RX1_SNAKE   0x0003d6    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+        IRQ_RX1_SNAKE_CHK   0x000354    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+          IRQ_RX1_SPEAKER   0x00039a    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+            IRQ_RX1_VENDO   0x000370    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+           IRQ_RX1_VENDOR   0x0003b3    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+       IRQ_RX1_VENDOR_CHK   0x000340    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+        IRQ_RX1_VENDO_CHK   0x000368    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+    IRQ_RX1_VENDO_tx_busy   0x000398    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+              IRQ_RX1_bad   0x0003e4    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+       IRQ_RX1_clear_loop   0x000139    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+     IRQ_RX1_ignore_alive   0x00029e    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+   IRQ_RX1_ignore_founder   0x00026d    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+     IRQ_RX1_ignore_necro   0x00029e    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+IRQ_RX1_ignore_ns_dead_asleep   0x0003e4    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+     IRQ_RX1_ignore_quest   0x00026c    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+          IRQ_RX1_no_FERR   0x00003e    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+          IRQ_RX1_no_OERR   0x000043    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+         IRQ_RX1_no_clear   0x000144    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+     IRQ_RX1_no_con_start   0x0001a0    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+         IRQ_RX1_not_HBDH   0x000157    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+        IRQ_RX1_not_Hyr0n   0x00018b    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+   IRQ_RX1_not_Hyr0n_norm   0x000168    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+  IRQ_RX1_not_feedme_norm   0x0003be    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+         IRQ_RX1_not_mine   0x0002bc    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+    IRQ_RX1_not_mine_norm   0x0002b5    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+        IRQ_RX1_not_type1   0x0001b7    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+        IRQ_RX1_not_type3   0x0001be    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+        IRQ_RX1_not_type6   0x0001d6    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+        IRQ_RX1_not_type9   0x000205    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+        IRQ_RX1_not_typeA   0x00021d    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+        IRQ_RX1_not_typeB   0x000240    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+        IRQ_RX1_not_vendo   0x000240    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+              IRQ_RX1_sq1   0x00004c    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+             IRQ_RX1_sq10   0x0000f5    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+        IRQ_RX1_sq10_skip   0x000109    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+             IRQ_RX1_sq11   0x00010a    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+              IRQ_RX1_sq2   0x000056    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+              IRQ_RX1_sq3   0x000060    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+              IRQ_RX1_sq4   0x00006a    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+              IRQ_RX1_sq5   0x000074    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+              IRQ_RX1_sq6   0x000080    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+              IRQ_RX1_sq7   0x000089    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+              IRQ_RX1_sq8   0x0000db    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+              IRQ_RX1_sq9   0x0000e4    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+        IRQ_RX1_type0_len   0x000096    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+        IRQ_RX1_type1_len   0x00009c    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+        IRQ_RX1_type3_len   0x0000a3    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+        IRQ_RX1_type5_len   0x0000aa    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+        IRQ_RX1_type6_len   0x0000b1    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+        IRQ_RX1_type7_len   0x0000b8    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+        IRQ_RX1_type9_len   0x0000bf    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+        IRQ_RX1_typeA_len   0x0000c6    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+        IRQ_RX1_typeB_len   0x0000cd    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+        IRQ_RX1_typeC_len   0x0000d3    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+       IRQ_RX1_typeDE_len   0x0000da    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+  IRQ_TMR0_skip_game_tick   0x000019    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+        IRQ_TMR0_sub_down   0x00001f    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+            IRQ_TX1_delay   0x0003f6    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+             IRQ_TX1_done   0x0004de    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+         IRQ_TX1_no_delay   0x0003fa    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+              IRQ_TX1_sq1   0x0003ff    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+             IRQ_TX1_sq10   0x000459    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+  IRQ_TX1_sq10_type1_nctl   0x0004b1    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+ IRQ_TX1_sq10_type1_nfood   0x000476    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+IRQ_TX1_sq10_type1_nonceh   0x0004a4    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+  IRQ_TX1_sq10_type1_npoo   0x000481    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+IRQ_TX1_sq10_type1_nstate   0x00048c    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+IRQ_TX1_sq10_type1_nstate1   0x000497    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+       IRQ_TX1_sq10_type2   0x00046b    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+       IRQ_TX1_sq10_type4   0x0004be    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+       IRQ_TX1_sq10_type8   0x0004cd    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+             IRQ_TX1_sq11   0x0004d7    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+              IRQ_TX1_sq2   0x000407    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+              IRQ_TX1_sq3   0x00040f    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+              IRQ_TX1_sq4   0x000417    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+              IRQ_TX1_sq5   0x00041f    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+              IRQ_TX1_sq6   0x000429    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+              IRQ_TX1_sq7   0x00043d    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+              IRQ_TX1_sq8   0x000447    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+              IRQ_TX1_sq9   0x000450    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+              IRQ_not_RX1   0x0003e6    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+             IRQ_not_TMR0   0x000023    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+             IRQ_not_TMR1   0x000036    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+         IRQ_not_TMR1_egg   0x000036    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+        IRQ_not_TMR1_oLED   0x000032    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+              IRQ_not_TX1   0x0004e0    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+             LED_SELFTEST   0x000a60    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+      LED_SELFTEST_DELAY1   0x000a6a    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+      LED_SELFTEST_DELAY2   0x000a84    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+        LED_SELFTEST_DONE   0x00062d    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+       LED_SELFTEST_LOOP1   0x000a61    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+       LED_SELFTEST_LOOP2   0x000a7b    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+          LOGO_down_white   0x000b67    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+      LOGO_green_blink_on   0x000b57    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+           LOGO_load_leds   0x000bf7    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+           LOGO_not_quest   0x000b6f    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+    LOGO_not_quest_con_on   0x000b7b    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+    LOGO_not_quest_update   0x000b8b    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+            LOGO_not_seq0   0x000b93    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+            LOGO_not_seq1   0x000b9c    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+            LOGO_not_seq2   0x000ba5    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+            LOGO_not_seq3   0x000bae    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+            LOGO_not_seq4   0x000bb7    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+            LOGO_not_seq5   0x000bc0    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+            LOGO_not_seq6   0x000bc9    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+            LOGO_not_seq7   0x000bd2    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+            LOGO_not_seq8   0x000bdb    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+            LOGO_not_seq9   0x000be4    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+            LOGO_not_seqA   0x000bed    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+            LOGO_not_seqB   0x000bf6    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+               LOGO_quest   0x000b5b    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+          LOGO_quest_done   0x000b4c    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+          LOGO_skip_white   0x000b6e    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+         LOGO_update_done   0x000c0d    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+        LOGO_update_loop1   0x000bfe    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+                 MAINLOOP   0x000655    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+                MAINLOOP2   0x000ade    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+     MAINLOOP2_DEEP_SLEEP   0x000da7    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+         MAINLOOP2_active   0x000d45    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+    MAINLOOP2_active_sick   0x000d32    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+  MAINLOOP2_dead_led_skip   0x000cc0    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+            MAINLOOP2_die   0x000d4c    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+       MAINLOOP2_egg_down   0x000b22    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+      MAINLOOP2_egg_ready   0x000b29    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+         MAINLOOP2_egg_up   0x000b1b    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+      MAINLOOP2_heart_off   0x000afe    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+       MAINLOOP2_heart_on   0x000b05    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+     MAINLOOP2_mode_shift   0x000cfd    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+MAINLOOP2_no_counter_active   0x000ce0    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+ MAINLOOP2_no_counter_egg   0x000cca    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+MAINLOOP2_no_counter_hyper   0x000ceb    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+MAINLOOP2_no_counter_sleep   0x000cd5    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+MAINLOOP2_no_counter_update   0x000ceb    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+         MAINLOOP2_no_egg   0x000b30    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+  MAINLOOP2_no_egg_update   0x000b39    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+   MAINLOOP2_no_food_warn   0x000cab    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+   MAINLOOP2_no_force_poo   0x000c82    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+MAINLOOP2_no_force_stomach   0x000c79    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+       MAINLOOP2_no_heart   0x000b0b    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+  MAINLOOP2_no_mode_shift   0x000d14    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+    MAINLOOP2_no_poo_warn   0x000cc0    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+        MAINLOOP2_no_tick   0x000d7c    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+       MAINLOOP2_not_sick   0x000d39    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+        MAINLOOP2_poo_off   0x000cb9    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+       MAINLOOP2_poop_chk   0x000d6f    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+        MAINLOOP2_postcon   0x000a97    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+MAINLOOP2_postcon_cycle_oLED   0x000a9a    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+MAINLOOP2_postcon_no_quest   0x000ad6    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+MAINLOOP2_postcon_skip_chks   0x000c96    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+MAINLOOP2_return_2_MAINLOOP   0x000da5    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+    MAINLOOP2_shift_sleep   0x000d0a    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+    MAINLOOP2_stomach_off   0x000ca4    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+                MAINLOOP3   0x0019c8    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+MAINLOOP3_not_oneshot_start   0x0019d5    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+      MAINLOOP3_oLED_done   0x001a55    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+  MAINLOOP3_oLED_get_next   0x001a06    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+  MAINLOOP3_oLED_read_row   0x001a16    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+  MAINLOOP3_oLED_row_loop   0x001a07    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+  MAINLOOP3_oLED_set_loop   0x0019e6    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+MAINLOOP3_oLED_set_loop_skip   0x0019ed    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+ MAINLOOP3_oLED_write_row   0x001a2c    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+   MAINLOOP3_oneshot_done   0x0019da    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+         MAINLOOP3_return   0x000ae0    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+ MAINLOOP_no_flash_update   0x00065c    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+         PROGRAM_LED_STOP   0x000654    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+RETURN_TO_IRQ_RX1_not_type3   0x001348    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+                    START   0x0004e1    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+     START_ID_UPDATE_DONE   0x00054e    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+        START_skip_status   0x00056b    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+    START_undead_chk_done   0x000577    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+     START_undead_founder   0x000576    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+              UPDATE_BODY   0x000c0d    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+    UPDATE_BODY_not_quest   0x000c2d    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+     UPDATE_BODY_not_uber   0x000c32    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+   UPDATE_BODY_quest_done   0x000c2a    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+         UPDATE_BODY_uber   0x000c30    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+              UPDATE_LOGO   0x000b39    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+        _2BYTE_DEC_N_STOP   0x00065e    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+_2BYTE_SUB_N_STOP_not_zero   0x000664    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+      _2_2BYTE_DEC_N_STOP   0x0009cc    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+      _2_3BYTE_SUB_N_STOP   0x0009d0    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+            _2_CYCLE_LFSR   0x0009f2    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+          _2_CYCLE_LFSR16   0x0009ef    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+             _2_I2C_START   0x0009b0    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+              _2_I2C_STOP   0x0009b8    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+             _2_LED_SET_1   0x0009bc    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+             _2_LED_SET_2   0x0009c0    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+           _2_LED_ST_LUT1   0x0008d8    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+         _2_LED_ST_LUT1_0   0x0008f2    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+         _2_LED_ST_LUT1_1   0x000918    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+         _2_LED_ST_LUT1_2   0x00093e    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+         _2_LED_ST_LUT1_3   0x000964    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+         _2_LED_ST_LUT1_4   0x00098a    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+           _2_LED_ST_LUT2   0x000800    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+         _2_LED_ST_LUT2_0   0x00081a    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+         _2_LED_ST_LUT2_1   0x000840    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+         _2_LED_ST_LUT2_2   0x000866    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+         _2_LED_ST_LUT2_3   0x00088c    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+         _2_LED_ST_LUT2_4   0x0008b2    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+           _2_LED_WRITE_1   0x0009c8    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+           _2_LED_WRITE_2   0x0009c4    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+          _2_SELECT_HEART   0x000a38    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+           _2_SELECT_PINK   0x000a08    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+            _2_SEND_W_I2C   0x0009b4    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+         _2_set_oLED_mode   0x000a3f    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+_2_set_oLED_mode_one_shot   0x000a4f    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+_3BYTE_SUB_N_STOP_not_zero1   0x0009db    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+_3BYTE_SUB_N_STOP_not_zero2   0x0009dc    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+            _3_CYCLE_LFSR   0x001000    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+          _4_ADDRESS_oLED   0x001836    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+               _4_CFG_I2C   0x001804    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+               _4_CFG_SPI   0x001808    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+            _4_CYCLE_LFSR   0x001800    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+        _4_SEND_RCV_W_SPI   0x001822    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+                 _CFG_I2C   0x0006ac    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+            _CYCLE_LFSR16   0x00070c    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+               _I2C_START   0x0006ef    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+                _I2C_STOP   0x0006e4    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+               _LED_SET_1   0x0006cd    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+               _LED_SET_2   0x0006c8    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+             _LED_WRITE_1   0x0006db    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+             _LED_WRITE_2   0x0006d2    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+              _SEND_W_I2C   0x0006fc    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+              _UNLOCK_NVM   0x0006a4    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+            _UPDATE_FLASH   0x000671    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+  _UPDATE_FLASH_load_loop   0x00068c    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+       _UPDATE_FLASH_loop   0x000675    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+      _UPDATE_FLASH_write   0x000698    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+         __WAIT_BYTE_DONE   0x000706    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+               __WAIT_PEN   0x0006ea    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+               __WAIT_SEN   0x0006f7    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+     __WAIT_SPI_BYTE_DONE   0x00182c    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+          count_bits_loop   0x000554    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+    count_bits_shift_loop   0x000558    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+          count_bits_skip   0x00055e    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+          cycle_lfsr_loop   0x0009f4    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+     deepsleep_button_chk   0x000db0    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+deepsleep_button_chk_done   0x000db9    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+          init_bank0_loop   0x0004f4    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+          init_bank2_loop   0x0004fe    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+                load_loop   0x00050c    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+      mainloop_button_chk   0x000d85    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+ mainloop_button_chk_done   0x000da4    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+         oLED_EEPROM_INIT   0x001983    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+  oLED_EEPROM_INIT_return   0x00062f    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+                oLED_INIT   0x001850    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+          oLED_INIT_DELAY   0x001854    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+         oLED_INIT_return   0x000627    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+   oLED_SELFTEST_chk_fail   0x0019c6    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+     oLED_SKIP_EEPROM_CHK   0x0019c4    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+                test_loop   0x0018c5    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+               test_loop1   0x0018d6    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+               test_loop2   0x0018e7    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+              test_loop2a   0x0018ff    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+               test_loop3   0x001910    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+              test_loop3a   0x001938    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+               test_loop4   0x001949    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+              test_loop4a   0x001969    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+               test_loop5   0x00197a    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+  IRQ_TMR0_skip_game_tick   0x000019    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+        IRQ_TMR0_sub_down   0x00001f    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+             IRQ_not_TMR0   0x000023    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+        IRQ_not_TMR1_oLED   0x000032    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+         IRQ_not_TMR1_egg   0x000036    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+             IRQ_not_TMR1   0x000036    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+          IRQ_RX1_no_FERR   0x00003e    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+          IRQ_RX1_no_OERR   0x000043    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+              IRQ_RX1_sq1   0x00004c    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+              IRQ_RX1_sq2   0x000056    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+              IRQ_RX1_sq3   0x000060    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+              IRQ_RX1_sq4   0x00006a    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+              IRQ_RX1_sq5   0x000074    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+              IRQ_RX1_sq6   0x000080    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+              IRQ_RX1_sq7   0x000089    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+        IRQ_RX1_type0_len   0x000096    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+        IRQ_RX1_type1_len   0x00009c    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+        IRQ_RX1_type3_len   0x0000a3    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+        IRQ_RX1_type5_len   0x0000aa    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+        IRQ_RX1_type6_len   0x0000b1    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+        IRQ_RX1_type7_len   0x0000b8    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+        IRQ_RX1_type9_len   0x0000bf    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+        IRQ_RX1_typeA_len   0x0000c6    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+        IRQ_RX1_typeB_len   0x0000cd    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+        IRQ_RX1_typeC_len   0x0000d3    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+       IRQ_RX1_typeDE_len   0x0000da    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+              IRQ_RX1_sq8   0x0000db    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+              IRQ_RX1_sq9   0x0000e4    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+             IRQ_RX1_sq10   0x0000f5    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+        IRQ_RX1_sq10_skip   0x000109    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+             IRQ_RX1_sq11   0x00010a    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+       IRQ_RX1_clear_loop   0x000139    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+         IRQ_RX1_no_clear   0x000144    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+         IRQ_RX1_not_HBDH   0x000157    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+   IRQ_RX1_not_Hyr0n_norm   0x000168    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+        IRQ_RX1_not_Hyr0n   0x00018b    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+     IRQ_RX1_no_con_start   0x0001a0    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+        IRQ_RX1_not_type1   0x0001b7    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+        IRQ_RX1_not_type3   0x0001be    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+        IRQ_RX1_not_type6   0x0001d6    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+        IRQ_RX1_not_type9   0x000205    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+        IRQ_RX1_not_typeA   0x00021d    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+        IRQ_RX1_not_vendo   0x000240    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+        IRQ_RX1_not_typeB   0x000240    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+   IRQ_RX1_FOUNDER_QUEST1   0x000250    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+   IRQ_RX1_FOUNDER_QUEST2   0x00025a    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+     IRQ_RX1_ignore_quest   0x00026c    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+   IRQ_RX1_ignore_founder   0x00026d    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+        IRQ_RX1_NECRO_CHK   0x000277    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+    IRQ_RX1_NECROLLAMACON   0x000281    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+     IRQ_RX1_ignore_alive   0x00029e    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+     IRQ_RX1_ignore_necro   0x00029e    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+    IRQ_RX1_not_mine_norm   0x0002b5    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+         IRQ_RX1_not_mine   0x0002bc    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+       IRQ_RX1_SHIFT_TEMP   0x0002d8    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+     IRQ_RX1_NOT_PINK_EYE   0x0002f7    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+   IRQ_RX1_ID_UPDATE_DONE   0x000319    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+           IRQ_RX1_OLD_ID   0x00031a    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+         IRQ_RX1_NOT_SICK   0x00032c    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+      IRQ_RX1_FOUNDER_CHK   0x000336    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+       IRQ_RX1_VENDOR_CHK   0x000340    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+     IRQ_RX1_OUTHOUSE_CHK   0x00034a    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+        IRQ_RX1_SNAKE_CHK   0x000354    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+IRQ_RX1_NECROLLAMACON_CHK   0x00035e    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+        IRQ_RX1_VENDO_CHK   0x000368    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+            IRQ_RX1_VENDO   0x000370    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+    IRQ_RX1_VENDO_tx_busy   0x000398    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+          IRQ_RX1_SPEAKER   0x00039a    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+          IRQ_RX1_FOUNDER   0x0003b2    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+           IRQ_RX1_VENDOR   0x0003b3    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+  IRQ_RX1_not_feedme_norm   0x0003be    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+         IRQ_RX1_OUTHOUSE   0x0003cb    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+            IRQ_RX1_SNAKE   0x0003d6    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+              IRQ_RX1_bad   0x0003e4    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+IRQ_RX1_ignore_ns_dead_asleep   0x0003e4    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+   IRQ_RX1_BADGE_CHK_DONE   0x0003e4    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+              IRQ_not_RX1   0x0003e6    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+            IRQ_TX1_delay   0x0003f6    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+         IRQ_TX1_no_delay   0x0003fa    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+              IRQ_TX1_sq1   0x0003ff    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+              IRQ_TX1_sq2   0x000407    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+              IRQ_TX1_sq3   0x00040f    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+              IRQ_TX1_sq4   0x000417    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+              IRQ_TX1_sq5   0x00041f    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+              IRQ_TX1_sq6   0x000429    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+              IRQ_TX1_sq7   0x00043d    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+              IRQ_TX1_sq8   0x000447    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+              IRQ_TX1_sq9   0x000450    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+             IRQ_TX1_sq10   0x000459    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+       IRQ_TX1_sq10_type2   0x00046b    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+ IRQ_TX1_sq10_type1_nfood   0x000476    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+  IRQ_TX1_sq10_type1_npoo   0x000481    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+IRQ_TX1_sq10_type1_nstate   0x00048c    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+IRQ_TX1_sq10_type1_nstate1   0x000497    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+IRQ_TX1_sq10_type1_nonceh   0x0004a4    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+  IRQ_TX1_sq10_type1_nctl   0x0004b1    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+       IRQ_TX1_sq10_type4   0x0004be    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+       IRQ_TX1_sq10_type8   0x0004cd    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+             IRQ_TX1_sq11   0x0004d7    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+             IRQ_TX1_done   0x0004de    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+              IRQ_not_TX1   0x0004e0    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+                    START   0x0004e1    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+          init_bank0_loop   0x0004f4    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+          init_bank2_loop   0x0004fe    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+                load_loop   0x00050c    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+     START_ID_UPDATE_DONE   0x00054e    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+          count_bits_loop   0x000554    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+    count_bits_shift_loop   0x000558    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+          count_bits_skip   0x00055e    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+        START_skip_status   0x00056b    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+     START_undead_founder   0x000576    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+    START_undead_chk_done   0x000577    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+        INIT_update_loop1   0x000614    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+        INIT_update_loop2   0x000620    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+         oLED_INIT_return   0x000627    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+        LED_SELFTEST_DONE   0x00062d    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+  oLED_EEPROM_INIT_return   0x00062f    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+      CHECK_SPI_FAIL_INIT   0x000631    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+           CHECK_SPI_FAIL   0x00063b    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+    CHECK_SPI_FAIL_DELAY1   0x000643    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+    CHECK_SPI_FAIL_DELAY2   0x00064e    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+         PROGRAM_LED_STOP   0x000654    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+                 MAINLOOP   0x000655    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+ MAINLOOP_no_flash_update   0x00065c    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+        _2BYTE_DEC_N_STOP   0x00065e    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+_2BYTE_SUB_N_STOP_not_zero   0x000664    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+            _UPDATE_FLASH   0x000671    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+       _UPDATE_FLASH_loop   0x000675    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+  _UPDATE_FLASH_load_loop   0x00068c    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+      _UPDATE_FLASH_write   0x000698    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+              _UNLOCK_NVM   0x0006a4    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+                 _CFG_I2C   0x0006ac    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+               _LED_SET_2   0x0006c8    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+               _LED_SET_1   0x0006cd    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+             _LED_WRITE_2   0x0006d2    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+             _LED_WRITE_1   0x0006db    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+                _I2C_STOP   0x0006e4    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+               __WAIT_PEN   0x0006ea    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+               _I2C_START   0x0006ef    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+               __WAIT_SEN   0x0006f7    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+              _SEND_W_I2C   0x0006fc    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+         __WAIT_BYTE_DONE   0x000706    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+            _CYCLE_LFSR16   0x00070c    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+           _2_LED_ST_LUT2   0x000800    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+         _2_LED_ST_LUT2_0   0x00081a    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+         _2_LED_ST_LUT2_1   0x000840    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+         _2_LED_ST_LUT2_2   0x000866    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+         _2_LED_ST_LUT2_3   0x00088c    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+         _2_LED_ST_LUT2_4   0x0008b2    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+           _2_LED_ST_LUT1   0x0008d8    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+         _2_LED_ST_LUT1_0   0x0008f2    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+         _2_LED_ST_LUT1_1   0x000918    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+         _2_LED_ST_LUT1_2   0x00093e    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+         _2_LED_ST_LUT1_3   0x000964    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+         _2_LED_ST_LUT1_4   0x00098a    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+             _2_I2C_START   0x0009b0    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+            _2_SEND_W_I2C   0x0009b4    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+              _2_I2C_STOP   0x0009b8    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+             _2_LED_SET_1   0x0009bc    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+             _2_LED_SET_2   0x0009c0    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+           _2_LED_WRITE_2   0x0009c4    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+           _2_LED_WRITE_1   0x0009c8    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+      _2_2BYTE_DEC_N_STOP   0x0009cc    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+      _2_3BYTE_SUB_N_STOP   0x0009d0    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+_3BYTE_SUB_N_STOP_not_zero1   0x0009db    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+_3BYTE_SUB_N_STOP_not_zero2   0x0009dc    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+          _2_CYCLE_LFSR16   0x0009ef    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+            _2_CYCLE_LFSR   0x0009f2    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+          cycle_lfsr_loop   0x0009f4    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+           _2_SELECT_PINK   0x000a08    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+          _2_SELECT_HEART   0x000a38    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+         _2_set_oLED_mode   0x000a3f    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+_2_set_oLED_mode_one_shot   0x000a4f    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+             LED_SELFTEST   0x000a60    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+       LED_SELFTEST_LOOP1   0x000a61    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+      LED_SELFTEST_DELAY1   0x000a6a    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+       LED_SELFTEST_LOOP2   0x000a7b    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+      LED_SELFTEST_DELAY2   0x000a84    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+        MAINLOOP2_postcon   0x000a97    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+MAINLOOP2_postcon_cycle_oLED   0x000a9a    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+MAINLOOP2_postcon_no_quest   0x000ad6    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+                MAINLOOP2   0x000ade    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+         MAINLOOP3_return   0x000ae0    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+      MAINLOOP2_heart_off   0x000afe    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+       MAINLOOP2_heart_on   0x000b05    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+       MAINLOOP2_no_heart   0x000b0b    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+         MAINLOOP2_egg_up   0x000b1b    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+       MAINLOOP2_egg_down   0x000b22    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+      MAINLOOP2_egg_ready   0x000b29    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+         MAINLOOP2_no_egg   0x000b30    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+  MAINLOOP2_no_egg_update   0x000b39    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+              UPDATE_LOGO   0x000b39    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+          LOGO_quest_done   0x000b4c    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+      LOGO_green_blink_on   0x000b57    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+               LOGO_quest   0x000b5b    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+          LOGO_down_white   0x000b67    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+          LOGO_skip_white   0x000b6e    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+           LOGO_not_quest   0x000b6f    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+    LOGO_not_quest_con_on   0x000b7b    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+    LOGO_not_quest_update   0x000b8b    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+            LOGO_not_seq0   0x000b93    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+            LOGO_not_seq1   0x000b9c    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+            LOGO_not_seq2   0x000ba5    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+            LOGO_not_seq3   0x000bae    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+            LOGO_not_seq4   0x000bb7    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+            LOGO_not_seq5   0x000bc0    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+            LOGO_not_seq6   0x000bc9    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+            LOGO_not_seq7   0x000bd2    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+            LOGO_not_seq8   0x000bdb    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+            LOGO_not_seq9   0x000be4    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+            LOGO_not_seqA   0x000bed    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+            LOGO_not_seqB   0x000bf6    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+           LOGO_load_leds   0x000bf7    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+        LOGO_update_loop1   0x000bfe    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+              UPDATE_BODY   0x000c0d    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+         LOGO_update_done   0x000c0d    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+   UPDATE_BODY_quest_done   0x000c2a    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+    UPDATE_BODY_not_quest   0x000c2d    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+         UPDATE_BODY_uber   0x000c30    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+     UPDATE_BODY_not_uber   0x000c32    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+           BODY_bank1_off   0x000c3f    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+       BODY_bank_done_off   0x000c48    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+           BODY_lfsr_loop   0x000c50    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+               BODY_bank1   0x000c66    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+           BODY_bank_done   0x000c6e    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+           BODY_bank_skip   0x000c70    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+MAINLOOP2_no_force_stomach   0x000c79    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+   MAINLOOP2_no_force_poo   0x000c82    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+MAINLOOP2_postcon_skip_chks   0x000c96    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+    MAINLOOP2_stomach_off   0x000ca4    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+   MAINLOOP2_no_food_warn   0x000cab    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+        MAINLOOP2_poo_off   0x000cb9    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+  MAINLOOP2_dead_led_skip   0x000cc0    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+    MAINLOOP2_no_poo_warn   0x000cc0    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+ MAINLOOP2_no_counter_egg   0x000cca    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+MAINLOOP2_no_counter_sleep   0x000cd5    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+MAINLOOP2_no_counter_active   0x000ce0    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+MAINLOOP2_no_counter_hyper   0x000ceb    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+MAINLOOP2_no_counter_update   0x000ceb    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+     MAINLOOP2_mode_shift   0x000cfd    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+    MAINLOOP2_shift_sleep   0x000d0a    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+  MAINLOOP2_no_mode_shift   0x000d14    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+    MAINLOOP2_active_sick   0x000d32    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+       MAINLOOP2_not_sick   0x000d39    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+         MAINLOOP2_active   0x000d45    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+            MAINLOOP2_die   0x000d4c    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+       MAINLOOP2_poop_chk   0x000d6f    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+        MAINLOOP2_no_tick   0x000d7c    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+      mainloop_button_chk   0x000d85    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+ mainloop_button_chk_done   0x000da4    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+MAINLOOP2_return_2_MAINLOOP   0x000da5    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+     MAINLOOP2_DEEP_SLEEP   0x000da7    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+     deepsleep_button_chk   0x000db0    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+deepsleep_button_chk_done   0x000db9    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+            _3_CYCLE_LFSR   0x001000    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+           DECRYPT_PACKET   0x001004    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+DECRYPT_PACKET_swap_packet   0x001011    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+DECRYPT_PACKET_key_move_loop   0x00101f    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+DECRYPT_PACKET_cycle_key_i   0x001024    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+DECRYPT_PACKET_cycle_key_j   0x00102d    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+DECRYPT_PACKET_cycle_key_j2   0x00105b    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+DECRYPT_PACKET_cycle_key_shift   0x00106a    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+DECRYPT_PACKET_cycle_key_shift2   0x001084    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+ DECRYPT_PACKET_decrypt_i   0x001099    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+ DECRYPT_PACKET_decrypt_j   0x00109e    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+DECRYPT_PACKET_decrypt_j2   0x0010c2    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+DECRYPT_PACKET_decrypt_shift   0x0010d1    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+DECRYPT_PACKET_decrypt_shift2   0x0010e6    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+DECRYPT_PACKET_decrypt_shift3   0x0010fe    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+DECRYPT_PACKET_decrypt_shift4   0x001111    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+DECRYPT_PACKET_decrypt_j3   0x00111e    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+DECRYPT_PACKET_decrypt_j4   0x001137    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+DECRYPT_PACKET_decrypt_no_carry   0x00114a    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+DECRYPT_PACKET_decrypt_no_carry2   0x00115a    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+DECRYPT_PACKET_decrypt_no_carry3   0x001177    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+DECRYPT_PACKET_decrypt_no_carry4   0x001187    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+DECRYPT_PACKET_decrypt_j5   0x0011a8    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+DECRYPT_PACKET_validate_chksum   0x0011e6    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+DECRYPT_PACKET_gen_chksum   0x001250    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+           ENCRYPT_PACKET   0x001257    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+         ENCRYPT_PACKET_i   0x001260    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+         ENCRYPT_PACKET_j   0x001271    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+        ENCRYPT_PACKET_j2   0x0012d0    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+     ENCRYPT_PACKET_shift   0x0012de    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+    ENCRYPT_PACKET_shift2   0x0012fb    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+    ENCRYPT_PACKET_shift3   0x001316    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+    ENCRYPT_PACKET_shift4   0x00132e    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+RETURN_TO_IRQ_RX1_not_type3   0x001348    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+            _4_CYCLE_LFSR   0x001800    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+               _4_CFG_I2C   0x001804    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+               _4_CFG_SPI   0x001808    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+        _4_SEND_RCV_W_SPI   0x001822    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+     __WAIT_SPI_BYTE_DONE   0x00182c    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+          _4_ADDRESS_oLED   0x001836    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+                oLED_INIT   0x001850    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+          oLED_INIT_DELAY   0x001854    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+                test_loop   0x0018c5    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+               test_loop1   0x0018d6    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+               test_loop2   0x0018e7    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+              test_loop2a   0x0018ff    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+               test_loop3   0x001910    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+              test_loop3a   0x001938    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+               test_loop4   0x001949    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+              test_loop4a   0x001969    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+               test_loop5   0x00197a    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+         oLED_EEPROM_INIT   0x001983    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+     oLED_SKIP_EEPROM_CHK   0x0019c4    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+   oLED_SELFTEST_chk_fail   0x0019c6    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+                MAINLOOP3   0x0019c8    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+MAINLOOP3_not_oneshot_start   0x0019d5    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+   MAINLOOP3_oneshot_done   0x0019da    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+  MAINLOOP3_oLED_set_loop   0x0019e6    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+MAINLOOP3_oLED_set_loop_skip   0x0019ed    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+  MAINLOOP3_oLED_get_next   0x001a06    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+  MAINLOOP3_oLED_row_loop   0x001a07    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+  MAINLOOP3_oLED_read_row   0x001a16    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+ MAINLOOP3_oLED_write_row   0x001a2c    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+      MAINLOOP3_oLED_done   0x001a55    program     static C:\Users\wireb\Desktop\cam_offload_cache\mplab\Tymkrs_Cyphercon_2020_badge\Tymkrs_Cyphercon_2020_badge.X\Tymkrs_Cyphercon_2020_badge.asm
+
+

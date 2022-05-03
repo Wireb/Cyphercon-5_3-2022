@@ -1,0 +1,216 @@
+start set 1
+hyper1
+hyper1
+sick1h
+crazyeyes1
+hyper2
+hyper2
+sick2h
+crazyeyes2 
+hyper1
+sick3h
+crazyeyes3
+hyper2
+sick4h
+sick1h
+crazyeyes2
+sick2h
+
+start seq hyper1
+./F_eyes/hyper1.png 0.25s
+./F_eyes/hyper2.png 0.25s
+./F_eyes/hyper3.png 0.25s
+./F_eyes/hyper4.png 0.25s
+./F_eyes/hyper5.png 0.25s
+./F_eyes/hyper6.png 0.25s
+./F_eyes/hyper7.png 0.25s
+./F_eyes/hyper8.png 0.25s
+./F_eyes/hyper9.png 0.25s
+./F_eyes/hyper10.png 0.25s
+./F_eyes/hyper11.png 0.25s
+end seq 
+
+start seq hyper2
+./F_eyes/hyper11.png 0.25s
+./F_eyes/hyper10.png 0.25s
+./F_eyes/hyper9.png 0.25s
+./F_eyes/hyper8.png 0.25s
+./F_eyes/hyper7.png 0.25s
+./F_eyes/hyper6.png 0.25s
+./F_eyes/hyper5.png 0.25s
+./F_eyes/hyper6.png 0.25s
+./F_eyes/hyper5.png 0.25s
+./F_eyes/hyper4.png 0.25s
+./F_eyes/hyper3.png 0.25s
+./F_eyes/hyper2.png 0.25s
+./F_eyes/hyper1.png 0.25s
+end seq
+
+start seq crazyeyes1
+./F_eyes/hyper1.png 0.25s
+./F_eyes/normal17.png 0.25s
+./F_eyes/normal7.png 0.25s
+./F_eyes/hyper2.png 0.25s
+./F_eyes/normal18.png 0.25s
+./F_eyes/normal5.png 0.25s
+./F_eyes/hyper3.png 0.25s
+./F_eyes/normal16.png 0.25s
+./F_eyes/normal5.png 0.25s
+./F_eyes/hyper4.png 0.25s
+./F_eyes/normal15.png 0.25s
+./F_eyes/normal4.png 0.25s
+./F_eyes/hyper5.png 0.25s
+./F_eyes/normal14.png 0.25s
+./F_eyes/normal11.png 0.25s
+end seq
+
+start seq crazyeyes2
+./F_eyes/normal11.png 0.25s
+./F_eyes/normal14.png 0.25s
+./F_eyes/hyper5.png 0.25s
+./F_eyes/normal4.png 0.25s
+./F_eyes/normal15.png 0.25s
+./F_eyes/hyper4.png 0.25s
+./F_eyes/normal5.png 0.25s
+./F_eyes/normal16.png 0.25s
+./F_eyes/hyper3.png 0.25s
+./F_eyes/normal5.png 0.25s
+./F_eyes/normal18.png 0.25s
+./F_eyes/hyper2.png 0.25s
+./F_eyes/normal7.png 0.25s
+./F_eyes/normal17.png 0.25s
+./F_eyes/hyper1.png 0.25s
+end seq
+
+start seq crazyeyes3
+./F_eyes/hyper1.png 0.25s
+./F_eyes/normal7.png 0.25s
+./F_eyes/hyper2.png 0.25s
+./F_eyes/normal5.png 0.25s
+./F_eyes/hyper3.png 0.25s
+./F_eyes/normal5.png 0.25s
+./F_eyes/hyper4.png 0.25s
+./F_eyes/normal4.png 0.25s
+./F_eyes/hyper5.png 0.25s
+./F_eyes/normal11.png 0.25s
+end seq
+
+start seq crazyeyes4
+./F_eyes/normal11.png 0.25s
+./F_eyes/hyper5.png 0.25s
+./F_eyes/normal4.png 0.25s
+./F_eyes/hyper4.png 0.25s
+./F_eyes/normal5.png 0.25s
+./F_eyes/hyper3.png 0.25s
+./F_eyes/normal5.png 0.25s
+./F_eyes/hyper2.png 0.25s
+./F_eyes/normal7.png 0.25s
+./F_eyes/hyper1.png 0.25s
+end seq
+
+start seq sick1
+./F_eyes/sick1.png 0.25s
+./F_eyes/sick19.png 0.25s
+./F_eyes/sick13.png 0.25s
+./F_eyes/sick7.png 0.25s
+./F_eyes/sick2.png 0.25s
+./F_eyes/sick20.png 0.25s
+./F_eyes/sick14.png 0.25s
+./F_eyes/sick8.png 0.25s
+./F_eyes/sick3.png 0.25s
+./F_eyes/sick21.png 0.25s
+./F_eyes/sick15.png 0.25s
+./F_eyes/sick9.png 0.25s
+./F_eyes/sick4.png 0.25s
+./F_eyes/sick22.png 0.25s
+./F_eyes/sick16.png 0.25s
+./F_eyes/sick10.png 0.25s
+./F_eyes/sick5.png 0.25s
+./F_eyes/sick23.png 0.25s
+./F_eyes/sick17.png 0.25s
+./F_eyes/sick11.png 0.25s
+./F_eyes/sick6.png 0.25s
+./F_eyes/sick24.png 0.25s
+./F_eyes/sick18.png 0.25s
+./F_eyes/sick12.png 0.25s
+./F_eyes/sick7.png 0.25s
+./F_eyes/sick20.png 0.25s
+./F_eyes/sick19.png 0.25s
+./F_eyes/sick7.png 0.25s
+end seq
+
+start seq sick2h
+./F_eyes/sick7.png 0.25s
+./F_eyes/sick19.png 0.25s
+./F_eyes/sick20.png 0.25s
+./F_eyes/sick7.png 0.25s
+./F_eyes/sick12.png 0.25s
+./F_eyes/sick18.png 0.25s
+./F_eyes/sick24.png 0.25s
+./F_eyes/sick6.png 0.25s
+./F_eyes/sick11.png 0.25s
+./F_eyes/sick17.png 0.25s
+./F_eyes/sick23.png 0.25s
+./F_eyes/sick5.png 0.25s
+./F_eyes/sick10.png 0.25s
+./F_eyes/sick16.png 0.25s
+./F_eyes/sick22.png 0.25s
+./F_eyes/sick4.png 0.25s
+./F_eyes/sick9.png 0.25s
+./F_eyes/sick15.png 0.25s
+./F_eyes/sick21.png 0.25s
+./F_eyes/sick3.png 0.25s
+./F_eyes/sick8.png 0.25s
+./F_eyes/sick14.png 0.25s
+./F_eyes/sick20.png 0.25s
+./F_eyes/sick2.png 0.25s
+./F_eyes/sick7.png 0.25s
+./F_eyes/sick13.png 0.25s
+./F_eyes/sick19.png 0.25s
+./F_eyes/sick1.png 0.25s
+end seq
+
+start seq sick3h
+./F_eyes/sick25.png 0.25s
+./F_eyes/sick7.png 0.25s
+./F_eyes/sick13.png 0.25s
+./F_eyes/sick19.png 0.25s
+./F_eyes/sick1.png 0.25s
+./F_eyes/sick26.png 0.25s
+./F_eyes/sick6.png 0.25s
+./F_eyes/sick24.png 0.25s
+./F_eyes/sick18.png 0.25s
+./F_eyes/sick12.png 0.25s
+./F_eyes/sick27.png 0.25s
+./F_eyes/sick8.png 0.25s
+./F_eyes/sick14.png 0.25s
+./F_eyes/sick20.png 0.25s
+./F_eyes/sick2.png 0.25s
+./F_eyes/sick31.png 0.25s
+./F_eyes/sick12.png 0.25s
+./F_eyes/sick18.png 0.25s
+./F_eyes/sick24.png 0.25s
+./F_eyes/sick6.png 0.25s
+./F_eyes/sick32.png 0.25s
+./F_eyes/sick2.png 0.25s
+./F_eyes/sick20.png 0.25s
+./F_eyes/sick14.png 0.25s
+./F_eyes/sick8.png 0.25s
+end seq
+
+start seq sick4h
+./F_eyes/sick28.png 0.25s
+./F_eyes/sick25.png 0.25s
+./F_eyes/sick29.png 0.25s
+./F_eyes/sick26.png 0.25s
+./F_eyes/sick8.png 0.25s
+./F_eyes/sick14.png 0.25s
+./F_eyes/sick20.png 0.25s
+./F_eyes/sick2.png 0.25s
+./F_eyes/sick30.png 0.25s
+./F_eyes/sick32.png 0.25s
+./F_eyes/sick31.png 0.25s
+./F_eyes/sick11 0.25s
+./F_eyes/sick17 0.25s
+./F_eyes/sick23 0.25s
+./F_eyes/sick5 0.25s

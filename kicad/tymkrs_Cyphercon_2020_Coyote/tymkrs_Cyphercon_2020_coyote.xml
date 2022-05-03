@@ -1,0 +1,1915 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="D">
+  <design>
+    <source>D:\cam_offload_cache\kicad\projects\tymkrs_Cyphercon_2020_Coyote\tymkrs_Cyphercon_2020_coyote.sch</source>
+    <date>2/5/2020 9:59:54 PM</date>
+    <tool>Eeschema (5.1.5)-3</tool>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title>tymkrs Cyphercon 2020 Coyote</title>
+        <company>www.wire2wire.org</company>
+        <rev>V0</rev>
+        <date>2020-02-05</date>
+        <source>tymkrs_Cyphercon_2020_coyote.sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+      </title_block>
+    </sheet>
+    <sheet number="2" name="/tymkrs_Cyphercon_2020_coyote_pg2/" tstamps="/5DA9DF84/">
+      <title_block>
+        <title>tymkrs Cyphercon 2020 coyote</title>
+        <company>www.wire2wire.org</company>
+        <rev>V0</rev>
+        <date>2020-02-05</date>
+        <source>tymkrs_Cyphercon_2020_coyote_pg2.sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="J1">
+      <value>PicKit</value>
+      <footprint>Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Vertical</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Connector_Generic" part="Conn_01x05" description="Generic connector, single row, 01x05, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5DA6B6A1</tstamp>
+    </comp>
+    <comp ref="U4">
+      <value>TSOP58438</value>
+      <footprint>Vishay:TSOP48</footprint>
+      <datasheet>http://www.vishay.com/docs/82461/tsop582.pdf</datasheet>
+      <libsource lib="Interface_Optical" part="TSOP584xx" description="Photo Modules for PCM Remote Control Systems"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5DA7FC02</tstamp>
+    </comp>
+    <comp ref="R7">
+      <value>27 (0805)</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="R_Small" description="Resistor, small symbol"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5DA8482C</tstamp>
+    </comp>
+    <comp ref="D2">
+      <value>IR26-21C (1206)</value>
+      <footprint>LED_SMD:LED_1206_3216Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="LED_Small_ALT" description="Light emitting diode, small symbol, filled shape"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5DA85F82</tstamp>
+    </comp>
+    <comp ref="C12">
+      <value>10uF</value>
+      <footprint>Capacitor_SMD:C_1206_3216Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5E114CD3</tstamp>
+    </comp>
+    <comp ref="C13">
+      <value>0.1uF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5E116F80</tstamp>
+    </comp>
+    <comp ref="C14">
+      <value>0.1uF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5E117C24</tstamp>
+    </comp>
+    <comp ref="R2">
+      <value>100k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="R_Small" description="Resistor, small symbol"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>62106D9E</tstamp>
+    </comp>
+    <comp ref="oLED1">
+      <value>0.42_oLED_display</value>
+      <footprint>PJS_smt_parts:oLED_0.42_rev</footprint>
+      <libsource lib="oLED_pjs" part="0.42_oLED_display" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5DFE423D</tstamp>
+    </comp>
+    <comp ref="C11">
+      <value>1uF 16V</value>
+      <footprint>Capacitor_SMD:C_0805_2012Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5DFE5FE5</tstamp>
+    </comp>
+    <comp ref="C8">
+      <value>0.1uF 6.3V X5R</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5DFF9B4A</tstamp>
+    </comp>
+    <comp ref="C6">
+      <value>4.7uF 16V 0805</value>
+      <footprint>Capacitor_SMD:C_0805_2012Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5DFFA599</tstamp>
+    </comp>
+    <comp ref="C9">
+      <value>0.1uF 16V X7R</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5E03F16E</tstamp>
+    </comp>
+    <comp ref="C7">
+      <value>4.7uF 16V 0805</value>
+      <footprint>Capacitor_SMD:C_0805_2012Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5E03F85E</tstamp>
+    </comp>
+    <comp ref="C5">
+      <value>2.2uF 16V 0805</value>
+      <footprint>Capacitor_SMD:C_0805_2012Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5E03FA6E</tstamp>
+    </comp>
+    <comp ref="U3">
+      <value>25LCxxx</value>
+      <footprint>Package_SO:SOIC-8_5.275x5.275mm_P1.27mm</footprint>
+      <datasheet>http://ww1.microchip.com/downloads/en/DeviceDoc/21832H.pdf</datasheet>
+      <libsource lib="Memory_EEPROM" part="25LCxxx" description="SPI Serial EEPROM, DIP-8/SOIC-8/TSSOP-8"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5E14721A</tstamp>
+    </comp>
+    <comp ref="C4">
+      <value>4.7uF 16V 0805</value>
+      <footprint>Capacitor_SMD:C_0805_2012Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5E01D0D4</tstamp>
+    </comp>
+    <comp ref="L1">
+      <value>2.2uH 1.6A 0805</value>
+      <footprint>Inductor_SMD:L_0805_2012Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="L_Small" description="Inductor, small symbol"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5E01DDC8</tstamp>
+    </comp>
+    <comp ref="BT1">
+      <value>Keystone 2462</value>
+      <footprint>PJS-pth-parts:Keystone_2462_2x_AA_no_holes</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="Battery" description="Multiple-cell battery"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5E01C221</tstamp>
+    </comp>
+    <comp ref="U2">
+      <value>TPS61322x</value>
+      <footprint>Package_TO_SOT_SMD:SOT-23-5</footprint>
+      <libsource lib="TI" part="TPS61322x" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5E0354BD</tstamp>
+    </comp>
+    <comp ref="D1">
+      <value>no-pop</value>
+      <footprint>Diode_SMD:D_SMA</footprint>
+      <datasheet>http://www.vishay.com/docs/88946/b120.pdf</datasheet>
+      <libsource lib="Diode" part="B120-E3" description="20V 1A Schottky Barrier Rectifier Diode, SMA(DO-214AC)"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5E03709C</tstamp>
+    </comp>
+    <comp ref="C1">
+      <value>no_pop</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5E039217</tstamp>
+    </comp>
+    <comp ref="R1">
+      <value>no_pop</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="R_Small" description="Resistor, small symbol"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5E039DFE</tstamp>
+    </comp>
+    <comp ref="C3">
+      <value>22uF 10V</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5E0A4DF0</tstamp>
+    </comp>
+    <comp ref="C2">
+      <value>22uF 10V</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5E0A471D</tstamp>
+    </comp>
+    <comp ref="J2">
+      <value>SPI</value>
+      <footprint>Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Connector_Generic" part="Conn_01x06" description="Generic connector, single row, 01x06, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5E0F494D</tstamp>
+    </comp>
+    <comp ref="R6">
+      <value>100k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="R_Small" description="Resistor, small symbol"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>6349CB22</tstamp>
+    </comp>
+    <comp ref="R3">
+      <value>100k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="R_Small" description="Resistor, small symbol"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>634AEE69</tstamp>
+    </comp>
+    <comp ref="R4">
+      <value>1k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="R_Small" description="Resistor, small symbol"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>634AF12D</tstamp>
+    </comp>
+    <comp ref="R5">
+      <value>no_pop</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="R_Small" description="Resistor, small symbol"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>634AF536</tstamp>
+    </comp>
+    <comp ref="icon1">
+      <value>Metroid</value>
+      <footprint>PJS-icons:metroid</footprint>
+      <libsource lib="metroid" part="Metroid" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5E83A074</tstamp>
+    </comp>
+    <comp ref="U1">
+      <value>PIC16F15345</value>
+      <footprint>Package_SO:SOIC-20W_7.5x12.8mm_P1.27mm</footprint>
+      <libsource lib="Microchip_pjs" part="PIC16F15344" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5F034EE3</tstamp>
+    </comp>
+    <comp ref="SW1">
+      <value>TACT_6MM</value>
+      <footprint>PJS_smt_parts:PTS645_6mm_tact_sw</footprint>
+      <libsource lib="MF_Switches" part="TACT_6MM" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5F093F30</tstamp>
+    </comp>
+    <comp ref="icon5">
+      <value>Common Logo copper</value>
+      <footprint>tymkrs:cypheron2020_common_logo_copper_add</footprint>
+      <libsource lib="metroid" part="Metroid" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5F21F842</tstamp>
+    </comp>
+    <comp ref="C10">
+      <value>1uF 16V</value>
+      <footprint>Capacitor_SMD:C_0805_2012Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5DFE4B51</tstamp>
+    </comp>
+    <comp ref="icon4">
+      <value>Common Logo keepout</value>
+      <footprint>tymkrs:cypheron2020_common_logo_copper_flood_keepout</footprint>
+      <libsource lib="metroid" part="Metroid" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5EC5C51A</tstamp>
+    </comp>
+    <comp ref="icon3">
+      <value>Common LED guide</value>
+      <footprint>tymkrs:cypheron2020_common_logo_led_guide</footprint>
+      <libsource lib="metroid" part="Metroid" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5E36B984</tstamp>
+    </comp>
+    <comp ref="icon2">
+      <value>Common Logo soldermask</value>
+      <footprint>tymkrs:cypheron2020_common_logo_soldermask</footprint>
+      <libsource lib="metroid" part="Metroid" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5E37547C</tstamp>
+    </comp>
+    <comp ref="icon11">
+      <value>Eye location</value>
+      <footprint>tymkrs:cypheron2020_coyote_eye</footprint>
+      <libsource lib="metroid" part="Metroid" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5E3B3896</tstamp>
+    </comp>
+    <comp ref="icon10">
+      <value>Silk</value>
+      <footprint>tymkrs:cypheron2020_coyote_silk</footprint>
+      <libsource lib="metroid" part="Metroid" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5E3B38A0</tstamp>
+    </comp>
+    <comp ref="icon9">
+      <value>LED guide</value>
+      <footprint>tymkrs:cypheron2020_coyote_led_guide</footprint>
+      <libsource lib="metroid" part="Metroid" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5E3B38AA</tstamp>
+    </comp>
+    <comp ref="icon8">
+      <value>Icon soldermask</value>
+      <footprint>tymkrs:cypheron2020_coyote_icons_soldermask</footprint>
+      <libsource lib="metroid" part="Metroid" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5E3B38B4</tstamp>
+    </comp>
+    <comp ref="icon7">
+      <value>Icon keepout</value>
+      <footprint>tymkrs:cypheron2020_coyote_icons_copperkeepout</footprint>
+      <libsource lib="metroid" part="Metroid" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5E3BD713</tstamp>
+    </comp>
+    <comp ref="icon6">
+      <value>Cut lines</value>
+      <footprint>tymkrs:cypheron2020_coyote_cuts</footprint>
+      <libsource lib="metroid" part="Metroid" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5E3BD71D</tstamp>
+    </comp>
+    <comp ref="R10">
+      <value>24.9K</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="R_Small" description="Resistor, small symbol"/>
+      <sheetpath names="/tymkrs_Cyphercon_2020_coyote_pg2/" tstamps="/5DA9DF84/"/>
+      <tstamp>5ED8F511</tstamp>
+    </comp>
+    <comp ref="R9">
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="R_Small" description="Resistor, small symbol"/>
+      <sheetpath names="/tymkrs_Cyphercon_2020_coyote_pg2/" tstamps="/5DA9DF84/"/>
+      <tstamp>5EDCA26F</tstamp>
+    </comp>
+    <comp ref="R8">
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="R_Small" description="Resistor, small symbol"/>
+      <sheetpath names="/tymkrs_Cyphercon_2020_coyote_pg2/" tstamps="/5DA9DF84/"/>
+      <tstamp>5EDCA5AB</tstamp>
+    </comp>
+    <comp ref="C15">
+      <value>10uF</value>
+      <footprint>Capacitor_SMD:C_1206_3216Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
+      <sheetpath names="/tymkrs_Cyphercon_2020_coyote_pg2/" tstamps="/5DA9DF84/"/>
+      <tstamp>62134C74</tstamp>
+    </comp>
+    <comp ref="C16">
+      <value>0.1uF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
+      <sheetpath names="/tymkrs_Cyphercon_2020_coyote_pg2/" tstamps="/5DA9DF84/"/>
+      <tstamp>62134C84</tstamp>
+    </comp>
+    <comp ref="D4">
+      <value>Pink_0603</value>
+      <footprint>LED_SMD:LED_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="LED_Small_ALT" description="Light emitting diode, small symbol, filled shape"/>
+      <sheetpath names="/tymkrs_Cyphercon_2020_coyote_pg2/" tstamps="/5DA9DF84/"/>
+      <tstamp>5EF4C694</tstamp>
+    </comp>
+    <comp ref="U5">
+      <value>IS31FL3236_TQFP</value>
+      <footprint>Package_QFP:TQFP-48-1EP_7x7mm_P0.5mm_EP3.5x3.5mm</footprint>
+      <libsource lib="ISSI" part="IS31FL3236_TQFP" description=""/>
+      <sheetpath names="/tymkrs_Cyphercon_2020_coyote_pg2/" tstamps="/5DA9DF84/"/>
+      <tstamp>5E4F39DF</tstamp>
+    </comp>
+    <comp ref="D7">
+      <value>LED_RABG</value>
+      <footprint>SunLED:XZMDKCBDDG45S-9</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="LED_RABG" description="RGB LED, red/anode/blue/green"/>
+      <sheetpath names="/tymkrs_Cyphercon_2020_coyote_pg2/" tstamps="/5DA9DF84/"/>
+      <tstamp>5E5063F7</tstamp>
+    </comp>
+    <comp ref="D12">
+      <value>LED_RABG</value>
+      <footprint>SunLED:XZMDKCBDDG45S-9</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="LED_RABG" description="RGB LED, red/anode/blue/green"/>
+      <sheetpath names="/tymkrs_Cyphercon_2020_coyote_pg2/" tstamps="/5DA9DF84/"/>
+      <tstamp>5E507880</tstamp>
+    </comp>
+    <comp ref="D17">
+      <value>LED_RABG</value>
+      <footprint>SunLED:XZMDKCBDDG45S-9</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="LED_RABG" description="RGB LED, red/anode/blue/green"/>
+      <sheetpath names="/tymkrs_Cyphercon_2020_coyote_pg2/" tstamps="/5DA9DF84/"/>
+      <tstamp>5E508A88</tstamp>
+    </comp>
+    <comp ref="D28">
+      <value>LED_RABG</value>
+      <footprint>SunLED:XZMDKCBDDG45S-9</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="LED_RABG" description="RGB LED, red/anode/blue/green"/>
+      <sheetpath names="/tymkrs_Cyphercon_2020_coyote_pg2/" tstamps="/5DA9DF84/"/>
+      <tstamp>5E50A5B6</tstamp>
+    </comp>
+    <comp ref="D33">
+      <value>LED_RABG</value>
+      <footprint>SunLED:XZMDKCBDDG45S-9</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="LED_RABG" description="RGB LED, red/anode/blue/green"/>
+      <sheetpath names="/tymkrs_Cyphercon_2020_coyote_pg2/" tstamps="/5DA9DF84/"/>
+      <tstamp>5E50AE6E</tstamp>
+    </comp>
+    <comp ref="D48">
+      <value>Pink_0603</value>
+      <footprint>LED_SMD:LED_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="LED_Small_ALT" description="Light emitting diode, small symbol, filled shape"/>
+      <sheetpath names="/tymkrs_Cyphercon_2020_coyote_pg2/" tstamps="/5DA9DF84/"/>
+      <tstamp>5E50DB4C</tstamp>
+    </comp>
+    <comp ref="D50">
+      <value>Pink_0603</value>
+      <footprint>LED_SMD:LED_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="LED_Small_ALT" description="Light emitting diode, small symbol, filled shape"/>
+      <sheetpath names="/tymkrs_Cyphercon_2020_coyote_pg2/" tstamps="/5DA9DF84/"/>
+      <tstamp>5E50F523</tstamp>
+    </comp>
+    <comp ref="D52">
+      <value>Pink_0603</value>
+      <footprint>LED_SMD:LED_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="LED_Small_ALT" description="Light emitting diode, small symbol, filled shape"/>
+      <sheetpath names="/tymkrs_Cyphercon_2020_coyote_pg2/" tstamps="/5DA9DF84/"/>
+      <tstamp>5E50FD32</tstamp>
+    </comp>
+    <comp ref="D53">
+      <value>Pink_0603</value>
+      <footprint>LED_SMD:LED_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="LED_Small_ALT" description="Light emitting diode, small symbol, filled shape"/>
+      <sheetpath names="/tymkrs_Cyphercon_2020_coyote_pg2/" tstamps="/5DA9DF84/"/>
+      <tstamp>5E5102B0</tstamp>
+    </comp>
+    <comp ref="D54">
+      <value>Pink_0603</value>
+      <footprint>LED_SMD:LED_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="LED_Small_ALT" description="Light emitting diode, small symbol, filled shape"/>
+      <sheetpath names="/tymkrs_Cyphercon_2020_coyote_pg2/" tstamps="/5DA9DF84/"/>
+      <tstamp>5E5107BD</tstamp>
+    </comp>
+    <comp ref="D55">
+      <value>Pink_0603</value>
+      <footprint>LED_SMD:LED_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="LED_Small_ALT" description="Light emitting diode, small symbol, filled shape"/>
+      <sheetpath names="/tymkrs_Cyphercon_2020_coyote_pg2/" tstamps="/5DA9DF84/"/>
+      <tstamp>5E510E5B</tstamp>
+    </comp>
+    <comp ref="D56">
+      <value>Pink_0603</value>
+      <footprint>LED_SMD:LED_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="LED_Small_ALT" description="Light emitting diode, small symbol, filled shape"/>
+      <sheetpath names="/tymkrs_Cyphercon_2020_coyote_pg2/" tstamps="/5DA9DF84/"/>
+      <tstamp>5E51167B</tstamp>
+    </comp>
+    <comp ref="R11">
+      <value>24.9K</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="R_Small" description="Resistor, small symbol"/>
+      <sheetpath names="/tymkrs_Cyphercon_2020_coyote_pg2/" tstamps="/5DA9DF84/"/>
+      <tstamp>5E7246AD</tstamp>
+    </comp>
+    <comp ref="C17">
+      <value>10uF</value>
+      <footprint>Capacitor_SMD:C_1206_3216Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
+      <sheetpath names="/tymkrs_Cyphercon_2020_coyote_pg2/" tstamps="/5DA9DF84/"/>
+      <tstamp>5E7246CB</tstamp>
+    </comp>
+    <comp ref="C18">
+      <value>0.1uF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
+      <sheetpath names="/tymkrs_Cyphercon_2020_coyote_pg2/" tstamps="/5DA9DF84/"/>
+      <tstamp>5E7246E0</tstamp>
+    </comp>
+    <comp ref="U6">
+      <value>IS31FL3236_TQFP</value>
+      <footprint>Package_QFP:TQFP-48-1EP_7x7mm_P0.5mm_EP3.5x3.5mm</footprint>
+      <libsource lib="ISSI" part="IS31FL3236_TQFP" description=""/>
+      <sheetpath names="/tymkrs_Cyphercon_2020_coyote_pg2/" tstamps="/5DA9DF84/"/>
+      <tstamp>5E7246F1</tstamp>
+    </comp>
+    <comp ref="D9">
+      <value>Red_rev</value>
+      <footprint>SunLED:XZ__K45WT-9</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="LED_Small_ALT" description="Light emitting diode, small symbol, filled shape"/>
+      <sheetpath names="/tymkrs_Cyphercon_2020_coyote_pg2/" tstamps="/5DA9DF84/"/>
+      <tstamp>5E790888</tstamp>
+    </comp>
+    <comp ref="D10">
+      <value>Pink_0603</value>
+      <footprint>LED_SMD:LED_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="LED_Small_ALT" description="Light emitting diode, small symbol, filled shape"/>
+      <sheetpath names="/tymkrs_Cyphercon_2020_coyote_pg2/" tstamps="/5DA9DF84/"/>
+      <tstamp>5E790BDA</tstamp>
+    </comp>
+    <comp ref="D11">
+      <value>Pink_0603</value>
+      <footprint>LED_SMD:LED_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="LED_Small_ALT" description="Light emitting diode, small symbol, filled shape"/>
+      <sheetpath names="/tymkrs_Cyphercon_2020_coyote_pg2/" tstamps="/5DA9DF84/"/>
+      <tstamp>5E792D06</tstamp>
+    </comp>
+    <comp ref="D13">
+      <value>Pink_0603</value>
+      <footprint>LED_SMD:LED_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="LED_Small_ALT" description="Light emitting diode, small symbol, filled shape"/>
+      <sheetpath names="/tymkrs_Cyphercon_2020_coyote_pg2/" tstamps="/5DA9DF84/"/>
+      <tstamp>5E79416C</tstamp>
+    </comp>
+    <comp ref="D14">
+      <value>Pink_0603</value>
+      <footprint>LED_SMD:LED_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="LED_Small_ALT" description="Light emitting diode, small symbol, filled shape"/>
+      <sheetpath names="/tymkrs_Cyphercon_2020_coyote_pg2/" tstamps="/5DA9DF84/"/>
+      <tstamp>5E79451C</tstamp>
+    </comp>
+    <comp ref="D15">
+      <value>Pink_0603</value>
+      <footprint>LED_SMD:LED_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="LED_Small_ALT" description="Light emitting diode, small symbol, filled shape"/>
+      <sheetpath names="/tymkrs_Cyphercon_2020_coyote_pg2/" tstamps="/5DA9DF84/"/>
+      <tstamp>5E79487D</tstamp>
+    </comp>
+    <comp ref="D16">
+      <value>Pink_0603</value>
+      <footprint>LED_SMD:LED_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="LED_Small_ALT" description="Light emitting diode, small symbol, filled shape"/>
+      <sheetpath names="/tymkrs_Cyphercon_2020_coyote_pg2/" tstamps="/5DA9DF84/"/>
+      <tstamp>5E794C20</tstamp>
+    </comp>
+    <comp ref="D18">
+      <value>Pink_0603</value>
+      <footprint>LED_SMD:LED_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="LED_Small_ALT" description="Light emitting diode, small symbol, filled shape"/>
+      <sheetpath names="/tymkrs_Cyphercon_2020_coyote_pg2/" tstamps="/5DA9DF84/"/>
+      <tstamp>5E795130</tstamp>
+    </comp>
+    <comp ref="D19">
+      <value>Pink_0603</value>
+      <footprint>LED_SMD:LED_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="LED_Small_ALT" description="Light emitting diode, small symbol, filled shape"/>
+      <sheetpath names="/tymkrs_Cyphercon_2020_coyote_pg2/" tstamps="/5DA9DF84/"/>
+      <tstamp>5E7954F9</tstamp>
+    </comp>
+    <comp ref="D20">
+      <value>Pink_0603</value>
+      <footprint>LED_SMD:LED_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="LED_Small_ALT" description="Light emitting diode, small symbol, filled shape"/>
+      <sheetpath names="/tymkrs_Cyphercon_2020_coyote_pg2/" tstamps="/5DA9DF84/"/>
+      <tstamp>5E79592F</tstamp>
+    </comp>
+    <comp ref="D21">
+      <value>Pink_0603</value>
+      <footprint>LED_SMD:LED_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="LED_Small_ALT" description="Light emitting diode, small symbol, filled shape"/>
+      <sheetpath names="/tymkrs_Cyphercon_2020_coyote_pg2/" tstamps="/5DA9DF84/"/>
+      <tstamp>5E795CF9</tstamp>
+    </comp>
+    <comp ref="D22">
+      <value>Pink_0603</value>
+      <footprint>LED_SMD:LED_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="LED_Small_ALT" description="Light emitting diode, small symbol, filled shape"/>
+      <sheetpath names="/tymkrs_Cyphercon_2020_coyote_pg2/" tstamps="/5DA9DF84/"/>
+      <tstamp>5E79794D</tstamp>
+    </comp>
+    <comp ref="D24">
+      <value>Pink_0603</value>
+      <footprint>LED_SMD:LED_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="LED_Small_ALT" description="Light emitting diode, small symbol, filled shape"/>
+      <sheetpath names="/tymkrs_Cyphercon_2020_coyote_pg2/" tstamps="/5DA9DF84/"/>
+      <tstamp>5E797957</tstamp>
+    </comp>
+    <comp ref="D25">
+      <value>Pink_0603</value>
+      <footprint>LED_SMD:LED_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="LED_Small_ALT" description="Light emitting diode, small symbol, filled shape"/>
+      <sheetpath names="/tymkrs_Cyphercon_2020_coyote_pg2/" tstamps="/5DA9DF84/"/>
+      <tstamp>5E797961</tstamp>
+    </comp>
+    <comp ref="D26">
+      <value>Pink_0603</value>
+      <footprint>LED_SMD:LED_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="LED_Small_ALT" description="Light emitting diode, small symbol, filled shape"/>
+      <sheetpath names="/tymkrs_Cyphercon_2020_coyote_pg2/" tstamps="/5DA9DF84/"/>
+      <tstamp>5E79796B</tstamp>
+    </comp>
+    <comp ref="D27">
+      <value>Pink_0603</value>
+      <footprint>LED_SMD:LED_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="LED_Small_ALT" description="Light emitting diode, small symbol, filled shape"/>
+      <sheetpath names="/tymkrs_Cyphercon_2020_coyote_pg2/" tstamps="/5DA9DF84/"/>
+      <tstamp>5E797975</tstamp>
+    </comp>
+    <comp ref="D29">
+      <value>Pink_0603</value>
+      <footprint>LED_SMD:LED_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="LED_Small_ALT" description="Light emitting diode, small symbol, filled shape"/>
+      <sheetpath names="/tymkrs_Cyphercon_2020_coyote_pg2/" tstamps="/5DA9DF84/"/>
+      <tstamp>5E79797F</tstamp>
+    </comp>
+    <comp ref="D30">
+      <value>Pink_0603</value>
+      <footprint>LED_SMD:LED_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="LED_Small_ALT" description="Light emitting diode, small symbol, filled shape"/>
+      <sheetpath names="/tymkrs_Cyphercon_2020_coyote_pg2/" tstamps="/5DA9DF84/"/>
+      <tstamp>5E797989</tstamp>
+    </comp>
+    <comp ref="D31">
+      <value>Pink_0603</value>
+      <footprint>LED_SMD:LED_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="LED_Small_ALT" description="Light emitting diode, small symbol, filled shape"/>
+      <sheetpath names="/tymkrs_Cyphercon_2020_coyote_pg2/" tstamps="/5DA9DF84/"/>
+      <tstamp>5E797993</tstamp>
+    </comp>
+    <comp ref="D32">
+      <value>Pink_0603</value>
+      <footprint>LED_SMD:LED_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="LED_Small_ALT" description="Light emitting diode, small symbol, filled shape"/>
+      <sheetpath names="/tymkrs_Cyphercon_2020_coyote_pg2/" tstamps="/5DA9DF84/"/>
+      <tstamp>5E79799D</tstamp>
+    </comp>
+    <comp ref="D34">
+      <value>Pink_0603</value>
+      <footprint>LED_SMD:LED_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="LED_Small_ALT" description="Light emitting diode, small symbol, filled shape"/>
+      <sheetpath names="/tymkrs_Cyphercon_2020_coyote_pg2/" tstamps="/5DA9DF84/"/>
+      <tstamp>5E7979A7</tstamp>
+    </comp>
+    <comp ref="D35">
+      <value>Pink_0603</value>
+      <footprint>LED_SMD:LED_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="LED_Small_ALT" description="Light emitting diode, small symbol, filled shape"/>
+      <sheetpath names="/tymkrs_Cyphercon_2020_coyote_pg2/" tstamps="/5DA9DF84/"/>
+      <tstamp>5E7ADFF6</tstamp>
+    </comp>
+    <comp ref="D36">
+      <value>Pink_0603</value>
+      <footprint>LED_SMD:LED_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="LED_Small_ALT" description="Light emitting diode, small symbol, filled shape"/>
+      <sheetpath names="/tymkrs_Cyphercon_2020_coyote_pg2/" tstamps="/5DA9DF84/"/>
+      <tstamp>5E7AE000</tstamp>
+    </comp>
+    <comp ref="D37">
+      <value>Pink_0603</value>
+      <footprint>LED_SMD:LED_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="LED_Small_ALT" description="Light emitting diode, small symbol, filled shape"/>
+      <sheetpath names="/tymkrs_Cyphercon_2020_coyote_pg2/" tstamps="/5DA9DF84/"/>
+      <tstamp>5E7AE00A</tstamp>
+    </comp>
+    <comp ref="D38">
+      <value>Pink_0603</value>
+      <footprint>LED_SMD:LED_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="LED_Small_ALT" description="Light emitting diode, small symbol, filled shape"/>
+      <sheetpath names="/tymkrs_Cyphercon_2020_coyote_pg2/" tstamps="/5DA9DF84/"/>
+      <tstamp>5E7AE014</tstamp>
+    </comp>
+    <comp ref="D40">
+      <value>Pink_0603</value>
+      <footprint>LED_SMD:LED_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="LED_Small_ALT" description="Light emitting diode, small symbol, filled shape"/>
+      <sheetpath names="/tymkrs_Cyphercon_2020_coyote_pg2/" tstamps="/5DA9DF84/"/>
+      <tstamp>5E7AE01E</tstamp>
+    </comp>
+    <comp ref="D41">
+      <value>Pink_0603</value>
+      <footprint>LED_SMD:LED_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="LED_Small_ALT" description="Light emitting diode, small symbol, filled shape"/>
+      <sheetpath names="/tymkrs_Cyphercon_2020_coyote_pg2/" tstamps="/5DA9DF84/"/>
+      <tstamp>5E7AE028</tstamp>
+    </comp>
+    <comp ref="D42">
+      <value>Pink_0603</value>
+      <footprint>LED_SMD:LED_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="LED_Small_ALT" description="Light emitting diode, small symbol, filled shape"/>
+      <sheetpath names="/tymkrs_Cyphercon_2020_coyote_pg2/" tstamps="/5DA9DF84/"/>
+      <tstamp>5E7AE032</tstamp>
+    </comp>
+    <comp ref="D43">
+      <value>Pink_0603</value>
+      <footprint>LED_SMD:LED_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="LED_Small_ALT" description="Light emitting diode, small symbol, filled shape"/>
+      <sheetpath names="/tymkrs_Cyphercon_2020_coyote_pg2/" tstamps="/5DA9DF84/"/>
+      <tstamp>5E7AE03C</tstamp>
+    </comp>
+    <comp ref="D45">
+      <value>Pink_0603</value>
+      <footprint>LED_SMD:LED_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="LED_Small_ALT" description="Light emitting diode, small symbol, filled shape"/>
+      <sheetpath names="/tymkrs_Cyphercon_2020_coyote_pg2/" tstamps="/5DA9DF84/"/>
+      <tstamp>5E7AE046</tstamp>
+    </comp>
+    <comp ref="D46">
+      <value>Pink_0603</value>
+      <footprint>LED_SMD:LED_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="LED_Small_ALT" description="Light emitting diode, small symbol, filled shape"/>
+      <sheetpath names="/tymkrs_Cyphercon_2020_coyote_pg2/" tstamps="/5DA9DF84/"/>
+      <tstamp>5E7AE050</tstamp>
+    </comp>
+    <comp ref="D47">
+      <value>Pink_0603</value>
+      <footprint>LED_SMD:LED_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="LED_Small_ALT" description="Light emitting diode, small symbol, filled shape"/>
+      <sheetpath names="/tymkrs_Cyphercon_2020_coyote_pg2/" tstamps="/5DA9DF84/"/>
+      <tstamp>5E7C716B</tstamp>
+    </comp>
+    <comp ref="D49">
+      <value>Pink_0603</value>
+      <footprint>LED_SMD:LED_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="LED_Small_ALT" description="Light emitting diode, small symbol, filled shape"/>
+      <sheetpath names="/tymkrs_Cyphercon_2020_coyote_pg2/" tstamps="/5DA9DF84/"/>
+      <tstamp>5E7C77D6</tstamp>
+    </comp>
+    <comp ref="D51">
+      <value>Pink_0603</value>
+      <footprint>LED_SMD:LED_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="LED_Small_ALT" description="Light emitting diode, small symbol, filled shape"/>
+      <sheetpath names="/tymkrs_Cyphercon_2020_coyote_pg2/" tstamps="/5DA9DF84/"/>
+      <tstamp>5E7C7C09</tstamp>
+    </comp>
+    <comp ref="D5">
+      <value>Amber</value>
+      <footprint>SunLED:XZ__K45WT-9</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="LED_Small_ALT" description="Light emitting diode, small symbol, filled shape"/>
+      <sheetpath names="/tymkrs_Cyphercon_2020_coyote_pg2/" tstamps="/5DA9DF84/"/>
+      <tstamp>5E0C279D</tstamp>
+    </comp>
+    <comp ref="D23">
+      <value>Amber</value>
+      <footprint>SunLED:XZ__K45WT-9</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="LED_Small_ALT" description="Light emitting diode, small symbol, filled shape"/>
+      <sheetpath names="/tymkrs_Cyphercon_2020_coyote_pg2/" tstamps="/5DA9DF84/"/>
+      <tstamp>5E1BADD9</tstamp>
+    </comp>
+    <comp ref="D39">
+      <value>Amber</value>
+      <footprint>SunLED:XZ__K45WT-9</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="LED_Small_ALT" description="Light emitting diode, small symbol, filled shape"/>
+      <sheetpath names="/tymkrs_Cyphercon_2020_coyote_pg2/" tstamps="/5DA9DF84/"/>
+      <tstamp>5E2DCC4F</tstamp>
+    </comp>
+    <comp ref="D44">
+      <value>Amber</value>
+      <footprint>SunLED:XZ__K45WT-9</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="LED_Small_ALT" description="Light emitting diode, small symbol, filled shape"/>
+      <sheetpath names="/tymkrs_Cyphercon_2020_coyote_pg2/" tstamps="/5DA9DF84/"/>
+      <tstamp>5E39D0BD</tstamp>
+    </comp>
+    <comp ref="D57">
+      <value>Amber</value>
+      <footprint>SunLED:XZ__K45WT-9</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="LED_Small_ALT" description="Light emitting diode, small symbol, filled shape"/>
+      <sheetpath names="/tymkrs_Cyphercon_2020_coyote_pg2/" tstamps="/5DA9DF84/"/>
+      <tstamp>5E6A41EA</tstamp>
+    </comp>
+    <comp ref="D58">
+      <value>Amber</value>
+      <footprint>SunLED:XZ__K45WT-9</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="LED_Small_ALT" description="Light emitting diode, small symbol, filled shape"/>
+      <sheetpath names="/tymkrs_Cyphercon_2020_coyote_pg2/" tstamps="/5DA9DF84/"/>
+      <tstamp>5E6E5572</tstamp>
+    </comp>
+    <comp ref="D59">
+      <value>Pink_0603</value>
+      <footprint>LED_SMD:LED_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="LED_Small_ALT" description="Light emitting diode, small symbol, filled shape"/>
+      <sheetpath names="/tymkrs_Cyphercon_2020_coyote_pg2/" tstamps="/5DA9DF84/"/>
+      <tstamp>5E6E5E09</tstamp>
+    </comp>
+    <comp ref="D60">
+      <value>Pink_0603</value>
+      <footprint>LED_SMD:LED_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="LED_Small_ALT" description="Light emitting diode, small symbol, filled shape"/>
+      <sheetpath names="/tymkrs_Cyphercon_2020_coyote_pg2/" tstamps="/5DA9DF84/"/>
+      <tstamp>5E6E6679</tstamp>
+    </comp>
+    <comp ref="D62">
+      <value>Pink_0603</value>
+      <footprint>LED_SMD:LED_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="LED_Small_ALT" description="Light emitting diode, small symbol, filled shape"/>
+      <sheetpath names="/tymkrs_Cyphercon_2020_coyote_pg2/" tstamps="/5DA9DF84/"/>
+      <tstamp>5E6E6DE3</tstamp>
+    </comp>
+    <comp ref="D63">
+      <value>Pink_0603</value>
+      <footprint>LED_SMD:LED_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="LED_Small_ALT" description="Light emitting diode, small symbol, filled shape"/>
+      <sheetpath names="/tymkrs_Cyphercon_2020_coyote_pg2/" tstamps="/5DA9DF84/"/>
+      <tstamp>5E6E7235</tstamp>
+    </comp>
+    <comp ref="D64">
+      <value>Pink_0603</value>
+      <footprint>LED_SMD:LED_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="LED_Small_ALT" description="Light emitting diode, small symbol, filled shape"/>
+      <sheetpath names="/tymkrs_Cyphercon_2020_coyote_pg2/" tstamps="/5DA9DF84/"/>
+      <tstamp>5E6E74B7</tstamp>
+    </comp>
+    <comp ref="D3">
+      <value>White IN-S63AT5UW</value>
+      <footprint>LED_SMD:LED_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="LED_Small_ALT" description="Light emitting diode, small symbol, filled shape"/>
+      <sheetpath names="/tymkrs_Cyphercon_2020_coyote_pg2/" tstamps="/5DA9DF84/"/>
+      <tstamp>62134C54</tstamp>
+    </comp>
+    <comp ref="D61">
+      <value>Pink_0603</value>
+      <footprint>LED_SMD:LED_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="LED_Small_ALT" description="Light emitting diode, small symbol, filled shape"/>
+      <sheetpath names="/tymkrs_Cyphercon_2020_coyote_pg2/" tstamps="/5DA9DF84/"/>
+      <tstamp>5E6E6A9B</tstamp>
+    </comp>
+    <comp ref="D8">
+      <value>Red_rev</value>
+      <footprint>SunLED:XZ__K45WT-9</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="LED_Small_ALT" description="Light emitting diode, small symbol, filled shape"/>
+      <sheetpath names="/tymkrs_Cyphercon_2020_coyote_pg2/" tstamps="/5DA9DF84/"/>
+      <tstamp>5E790396</tstamp>
+    </comp>
+    <comp ref="D6">
+      <value>Red_rev</value>
+      <footprint>SunLED:XZ__K45WT-9</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="LED_Small_ALT" description="Light emitting diode, small symbol, filled shape"/>
+      <sheetpath names="/tymkrs_Cyphercon_2020_coyote_pg2/" tstamps="/5DA9DF84/"/>
+      <tstamp>62134C5C</tstamp>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="Connector_Generic" part="Conn_01x05">
+      <description>Generic connector, single row, 01x05, script generated (kicad-library-utils/schlib/autogen/connector/)</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Connector*:*_1x??_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Conn_01x05</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Pin_1" type="passive"/>
+        <pin num="2" name="Pin_2" type="passive"/>
+        <pin num="3" name="Pin_3" type="passive"/>
+        <pin num="4" name="Pin_4" type="passive"/>
+        <pin num="5" name="Pin_5" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Connector_Generic" part="Conn_01x06">
+      <description>Generic connector, single row, 01x06, script generated (kicad-library-utils/schlib/autogen/connector/)</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Connector*:*_1x??_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Conn_01x06</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Pin_1" type="passive"/>
+        <pin num="2" name="Pin_2" type="passive"/>
+        <pin num="3" name="Pin_3" type="passive"/>
+        <pin num="4" name="Pin_4" type="passive"/>
+        <pin num="5" name="Pin_5" type="passive"/>
+        <pin num="6" name="Pin_6" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="Battery">
+      <description>Multiple-cell battery</description>
+      <docs>~</docs>
+      <fields>
+        <field name="Reference">BT</field>
+        <field name="Value">Battery</field>
+      </fields>
+      <pins>
+        <pin num="1" name="+" type="passive"/>
+        <pin num="2" name="-" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="C_Small">
+      <description>Unpolarized capacitor, small symbol</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>C_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">C_Small</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~" type="passive"/>
+        <pin num="2" name="~" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="LED_RABG">
+      <description>RGB LED, red/anode/blue/green</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>LED*</fp>
+        <fp>LED_SMD:*</fp>
+        <fp>LED_THT:*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">LED_RABG</field>
+      </fields>
+      <pins>
+        <pin num="1" name="RK" type="passive"/>
+        <pin num="2" name="A" type="passive"/>
+        <pin num="3" name="BK" type="passive"/>
+        <pin num="4" name="GK" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="LED_Small_ALT">
+      <description>Light emitting diode, small symbol, filled shape</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>LED*</fp>
+        <fp>LED_SMD:*</fp>
+        <fp>LED_THT:*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">LED_Small_ALT</field>
+      </fields>
+      <pins>
+        <pin num="1" name="K" type="passive"/>
+        <pin num="2" name="A" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="L_Small">
+      <description>Inductor, small symbol</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Choke_*</fp>
+        <fp>*Coil*</fp>
+        <fp>Inductor_*</fp>
+        <fp>L_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">L</field>
+        <field name="Value">L_Small</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~" type="passive"/>
+        <pin num="2" name="~" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="R_Small">
+      <description>Resistor, small symbol</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>R_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">R_Small</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~" type="passive"/>
+        <pin num="2" name="~" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Diode" part="B120-E3">
+      <aliases>
+        <alias>B130-E3</alias>
+        <alias>B140-E3</alias>
+        <alias>B150-E3</alias>
+        <alias>B160-E3</alias>
+        <alias>MBRA340</alias>
+      </aliases>
+      <description>20V 1A Schottky Barrier Rectifier Diode, SMA(DO-214AC)</description>
+      <docs>http://www.vishay.com/docs/88946/b120.pdf</docs>
+      <footprints>
+        <fp>D*SMA*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">B120-E3</field>
+        <field name="Footprint">Diode_SMD:D_SMA</field>
+      </fields>
+      <pins>
+        <pin num="1" name="K" type="passive"/>
+        <pin num="2" name="A" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="ISSI" part="IS31FL3236_TQFP">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">IS31FL3236_TQFP</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Out3" type="output"/>
+        <pin num="2" name="Out4" type="output"/>
+        <pin num="3" name="Out5" type="output"/>
+        <pin num="4" name="Gnd" type="power_in"/>
+        <pin num="5" name="Out6" type="output"/>
+        <pin num="6" name="Out7" type="output"/>
+        <pin num="7" name="Out8" type="output"/>
+        <pin num="8" name="Out9" type="output"/>
+        <pin num="9" name="Out10" type="output"/>
+        <pin num="10" name="Out11" type="output"/>
+        <pin num="11" name="Out12" type="output"/>
+        <pin num="12" name="Out13" type="output"/>
+        <pin num="13" name="Out14" type="output"/>
+        <pin num="14" name="Out15" type="output"/>
+        <pin num="15" name="Out16" type="output"/>
+        <pin num="16" name="Out17" type="output"/>
+        <pin num="17" name="Out18" type="output"/>
+        <pin num="18" name="Gnd" type="power_in"/>
+        <pin num="19" name="Gnd" type="power_in"/>
+        <pin num="20" name="Out19" type="output"/>
+        <pin num="21" name="Out20" type="output"/>
+        <pin num="22" name="Out21" type="output"/>
+        <pin num="23" name="Out22" type="output"/>
+        <pin num="24" name="Out23" type="output"/>
+        <pin num="25" name="Out24" type="output"/>
+        <pin num="26" name="Out25" type="output"/>
+        <pin num="27" name="Out26" type="output"/>
+        <pin num="28" name="Out27" type="output"/>
+        <pin num="29" name="Out28" type="output"/>
+        <pin num="30" name="Out29" type="output"/>
+        <pin num="31" name="Out30" type="output"/>
+        <pin num="32" name="Out31" type="output"/>
+        <pin num="33" name="Gnd" type="power_in"/>
+        <pin num="34" name="Out32" type="output"/>
+        <pin num="35" name="Out33" type="output"/>
+        <pin num="36" name="Out34" type="output"/>
+        <pin num="37" name="Out35" type="output"/>
+        <pin num="38" name="Out36" type="output"/>
+        <pin num="39" name="SDB#" type="input"/>
+        <pin num="40" name="AD" type="BiDi"/>
+        <pin num="41" name="Vcc" type="power_in"/>
+        <pin num="42" name="Gnd" type="power_in"/>
+        <pin num="43" name="Gnd" type="power_in"/>
+        <pin num="44" name="R_Ext" type="input"/>
+        <pin num="45" name="SDA" type="BiDi"/>
+        <pin num="46" name="SCL" type="BiDi"/>
+        <pin num="47" name="Out1" type="output"/>
+        <pin num="48" name="Out2" type="output"/>
+        <pin num="49" name="TP" type="input"/>
+      </pins>
+    </libpart>
+    <libpart lib="Interface_Optical" part="TSOP581xx">
+      <aliases>
+        <alias>TSOP583xx</alias>
+        <alias>TSOP585xx</alias>
+        <alias>TSOP382xx</alias>
+        <alias>TSOP384xx</alias>
+        <alias>TSOP582xx</alias>
+        <alias>TSOP584xx</alias>
+        <alias>TSOP38G36</alias>
+      </aliases>
+      <description>Photo Modules for PCM Remote Control Systems</description>
+      <docs>http://www.vishay.com/docs/82462/tsop581.pdf</docs>
+      <footprints>
+        <fp>Vishay*MINICAST*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">TSOP581xx</field>
+        <field name="Footprint">OptoDevice:Vishay_MINICAST-3Pin</field>
+      </fields>
+      <pins>
+        <pin num="1" name="OUT" type="output"/>
+        <pin num="2" name="GND" type="power_in"/>
+        <pin num="3" name="Vs" type="power_in"/>
+      </pins>
+    </libpart>
+    <libpart lib="MF_Switches" part="TACT_6MM">
+      <footprints>
+        <fp>*TACT6MM*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">SW</field>
+        <field name="Value">TACT_6MM</field>
+        <field name="Footprint">MF_Switches_TACT6MM</field>
+      </fields>
+      <pins>
+        <pin num="1" name="P$1" type="BiDi"/>
+        <pin num="2" name="P$2" type="BiDi"/>
+        <pin num="3" name="P$3" type="BiDi"/>
+        <pin num="4" name="P$4" type="BiDi"/>
+      </pins>
+    </libpart>
+    <libpart lib="Memory_EEPROM" part="25LCxxx">
+      <aliases>
+        <alias>BR25Sxxx</alias>
+        <alias>CAT250xxx</alias>
+        <alias>AT25xxx</alias>
+      </aliases>
+      <description>SPI Serial EEPROM, DIP-8/SOIC-8/TSSOP-8</description>
+      <docs>http://ww1.microchip.com/downloads/en/DeviceDoc/21832H.pdf</docs>
+      <footprints>
+        <fp>DIP*W7.62mm*</fp>
+        <fp>SOIC*3.9x4.9mm*</fp>
+        <fp>TSSOP*4.4x3mm*P0.65mm*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">25LCxxx</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~CS" type="input"/>
+        <pin num="2" name="MISO" type="3state"/>
+        <pin num="3" name="~WP" type="input"/>
+        <pin num="4" name="GND" type="power_in"/>
+        <pin num="5" name="MOSI" type="input"/>
+        <pin num="6" name="SCK" type="input"/>
+        <pin num="7" name="~HOLD" type="input"/>
+        <pin num="8" name="VCC" type="power_in"/>
+      </pins>
+    </libpart>
+    <libpart lib="Microchip_pjs" part="PIC16F15344">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">PIC16F15344</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Vdd" type="input"/>
+        <pin num="2" name="ANA5/RA5" type="input"/>
+        <pin num="3" name="ANA4/RA4" type="input"/>
+        <pin num="4" name="MCLR/RA3" type="input"/>
+        <pin num="5" name="ANC5/RC5" type="input"/>
+        <pin num="6" name="ANC4/RC4" type="input"/>
+        <pin num="7" name="ANC3/RC3" type="input"/>
+        <pin num="8" name="ANC6/RC6" type="input"/>
+        <pin num="9" name="ANC7/RC7" type="input"/>
+        <pin num="10" name="ANB7/RB7" type="input"/>
+        <pin num="11" name="ANB6/RB6" type="input"/>
+        <pin num="12" name="ANB5/RB5" type="input"/>
+        <pin num="13" name="ANB4/RB4" type="input"/>
+        <pin num="14" name="ANC2/RC2" type="input"/>
+        <pin num="15" name="ANC1/RC1" type="input"/>
+        <pin num="16" name="ANC0/RC0" type="input"/>
+        <pin num="17" name="ANA2/RA2" type="input"/>
+        <pin num="18" name="ICSC/ANA1/RA1" type="input"/>
+        <pin num="19" name="ICSD/ANA0/RA0" type="input"/>
+        <pin num="20" name="Vss" type="input"/>
+      </pins>
+    </libpart>
+    <libpart lib="TI" part="TPS61322x">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">TPS61322x</field>
+      </fields>
+      <pins>
+        <pin num="1" name="SW" type="input"/>
+        <pin num="2" name="GND" type="input"/>
+        <pin num="3" name="N/C" type="input"/>
+        <pin num="4" name="Vout" type="input"/>
+        <pin num="5" name="N/C" type="input"/>
+      </pins>
+    </libpart>
+    <libpart lib="metroid" part="Metroid">
+      <fields>
+        <field name="Reference">icon</field>
+        <field name="Value">Metroid</field>
+      </fields>
+    </libpart>
+    <libpart lib="oLED_pjs" part="0.42_oLED_display">
+      <fields>
+        <field name="Reference">oLED</field>
+        <field name="Value">0.42_oLED_display</field>
+      </fields>
+      <pins>
+        <pin num="1" name="C2P" type="passive"/>
+        <pin num="2" name="C2N" type="passive"/>
+        <pin num="3" name="C1P" type="passive"/>
+        <pin num="4" name="C1N" type="passive"/>
+        <pin num="5" name="Vbat" type="power_in"/>
+        <pin num="6" name="Vss" type="power_in"/>
+        <pin num="7" name="Vdd" type="power_in"/>
+        <pin num="8" name="BS1" type="input"/>
+        <pin num="9" name="CS" type="input"/>
+        <pin num="10" name="~RES" type="input"/>
+        <pin num="11" name="D/C" type="input"/>
+        <pin num="12" name="D0" type="input"/>
+        <pin num="13" name="D1" type="input"/>
+        <pin num="14" name="D2" type="input"/>
+        <pin num="15" name="VCOMH" type="power_in"/>
+        <pin num="16" name="Vcc" type="power_in"/>
+      </pins>
+    </libpart>
+  </libparts>
+  <libraries>
+    <library logical="Connector_Generic">
+      <uri>C:\Program Files\KiCad\share\kicad\library/Connector_Generic.lib</uri>
+    </library>
+    <library logical="Device">
+      <uri>C:\Program Files\KiCad\share\kicad\library/Device.lib</uri>
+    </library>
+    <library logical="Diode">
+      <uri>C:\Program Files\KiCad\share\kicad\library/Diode.lib</uri>
+    </library>
+    <library logical="ISSI">
+      <uri>D:/cam_offload_cache/kicad/library/ISSI.lib</uri>
+    </library>
+    <library logical="Interface_Optical">
+      <uri>C:\Program Files\KiCad\share\kicad\library/Interface_Optical.lib</uri>
+    </library>
+    <library logical="MF_Switches">
+      <uri>D:/cam_offload_cache/kicad/library/MF_Switches.lib</uri>
+    </library>
+    <library logical="Memory_EEPROM">
+      <uri>C:\Program Files\KiCad\share\kicad\library/Memory_EEPROM.lib</uri>
+    </library>
+    <library logical="Microchip_pjs">
+      <uri>D:/cam_offload_cache/kicad/library/Microchip_pjs.lib</uri>
+    </library>
+    <library logical="TI">
+      <uri>D:/cam_offload_cache/kicad/library/TI.lib</uri>
+    </library>
+    <library logical="metroid">
+      <uri>D:/cam_offload_cache/kicad/library/metroid.lib</uri>
+    </library>
+    <library logical="oLED_pjs">
+      <uri>D:/cam_offload_cache/kicad/library/oLED_pjs.lib</uri>
+    </library>
+  </libraries>
+  <nets>
+    <net code="1" name="GND">
+      <node ref="C6" pin="2"/>
+      <node ref="C8" pin="2"/>
+      <node ref="U3" pin="4"/>
+      <node ref="U5" pin="18"/>
+      <node ref="C7" pin="1"/>
+      <node ref="C9" pin="1"/>
+      <node ref="C5" pin="1"/>
+      <node ref="C13" pin="2"/>
+      <node ref="C14" pin="2"/>
+      <node ref="C12" pin="2"/>
+      <node ref="U1" pin="20"/>
+      <node ref="R6" pin="2"/>
+      <node ref="J1" pin="3"/>
+      <node ref="U5" pin="19"/>
+      <node ref="U4" pin="2"/>
+      <node ref="oLED1" pin="14"/>
+      <node ref="oLED1" pin="6"/>
+      <node ref="oLED1" pin="8"/>
+      <node ref="U6" pin="49"/>
+      <node ref="U6" pin="43"/>
+      <node ref="U6" pin="4"/>
+      <node ref="U6" pin="33"/>
+      <node ref="U6" pin="42"/>
+      <node ref="R11" pin="1"/>
+      <node ref="U6" pin="19"/>
+      <node ref="U6" pin="18"/>
+      <node ref="U5" pin="49"/>
+      <node ref="U5" pin="43"/>
+      <node ref="U5" pin="42"/>
+      <node ref="U5" pin="40"/>
+      <node ref="U5" pin="4"/>
+      <node ref="U5" pin="33"/>
+      <node ref="C17" pin="2"/>
+      <node ref="C16" pin="2"/>
+      <node ref="C15" pin="2"/>
+      <node ref="R10" pin="1"/>
+      <node ref="C18" pin="2"/>
+      <node ref="C3" pin="2"/>
+      <node ref="C2" pin="2"/>
+      <node ref="R4" pin="2"/>
+      <node ref="C4" pin="2"/>
+      <node ref="R5" pin="2"/>
+      <node ref="U2" pin="5"/>
+      <node ref="SW1" pin="3"/>
+      <node ref="BT1" pin="2"/>
+      <node ref="U2" pin="2"/>
+      <node ref="J2" pin="6"/>
+      <node ref="SW1" pin="4"/>
+    </net>
+    <net code="2" name="+3V3">
+      <node ref="D61" pin="2"/>
+      <node ref="D3" pin="2"/>
+      <node ref="D6" pin="2"/>
+      <node ref="D8" pin="2"/>
+      <node ref="D29" pin="2"/>
+      <node ref="D30" pin="2"/>
+      <node ref="D31" pin="2"/>
+      <node ref="D32" pin="2"/>
+      <node ref="D35" pin="2"/>
+      <node ref="D36" pin="2"/>
+      <node ref="D37" pin="2"/>
+      <node ref="D38" pin="2"/>
+      <node ref="D40" pin="2"/>
+      <node ref="D27" pin="2"/>
+      <node ref="D58" pin="2"/>
+      <node ref="D59" pin="2"/>
+      <node ref="D60" pin="2"/>
+      <node ref="D62" pin="2"/>
+      <node ref="D63" pin="2"/>
+      <node ref="D64" pin="2"/>
+      <node ref="D10" pin="2"/>
+      <node ref="D26" pin="2"/>
+      <node ref="D9" pin="2"/>
+      <node ref="D49" pin="2"/>
+      <node ref="D42" pin="2"/>
+      <node ref="D43" pin="2"/>
+      <node ref="D45" pin="2"/>
+      <node ref="D46" pin="2"/>
+      <node ref="D47" pin="2"/>
+      <node ref="D41" pin="2"/>
+      <node ref="D51" pin="2"/>
+      <node ref="D34" pin="2"/>
+      <node ref="D5" pin="2"/>
+      <node ref="D23" pin="2"/>
+      <node ref="D39" pin="2"/>
+      <node ref="D44" pin="2"/>
+      <node ref="D57" pin="2"/>
+      <node ref="U2" pin="4"/>
+      <node ref="J2" pin="1"/>
+      <node ref="U6" pin="39"/>
+      <node ref="U6" pin="40"/>
+      <node ref="U6" pin="41"/>
+      <node ref="U2" pin="3"/>
+      <node ref="C17" pin="1"/>
+      <node ref="D33" pin="2"/>
+      <node ref="D48" pin="2"/>
+      <node ref="U5" pin="41"/>
+      <node ref="U5" pin="39"/>
+      <node ref="C18" pin="1"/>
+      <node ref="C2" pin="1"/>
+      <node ref="D28" pin="2"/>
+      <node ref="D4" pin="2"/>
+      <node ref="C16" pin="1"/>
+      <node ref="R9" pin="2"/>
+      <node ref="R8" pin="2"/>
+      <node ref="C15" pin="1"/>
+      <node ref="C3" pin="1"/>
+      <node ref="D7" pin="2"/>
+      <node ref="D12" pin="2"/>
+      <node ref="D17" pin="2"/>
+      <node ref="D50" pin="2"/>
+      <node ref="D52" pin="2"/>
+      <node ref="D53" pin="2"/>
+      <node ref="D54" pin="2"/>
+      <node ref="D55" pin="2"/>
+      <node ref="D56" pin="2"/>
+      <node ref="C14" pin="1"/>
+      <node ref="J1" pin="2"/>
+      <node ref="C13" pin="1"/>
+      <node ref="oLED1" pin="7"/>
+      <node ref="oLED1" pin="5"/>
+      <node ref="C12" pin="1"/>
+      <node ref="D19" pin="2"/>
+      <node ref="D13" pin="2"/>
+      <node ref="D14" pin="2"/>
+      <node ref="D15" pin="2"/>
+      <node ref="U3" pin="8"/>
+      <node ref="U1" pin="1"/>
+      <node ref="U3" pin="7"/>
+      <node ref="U3" pin="3"/>
+      <node ref="R2" pin="1"/>
+      <node ref="D22" pin="2"/>
+      <node ref="C8" pin="1"/>
+      <node ref="D11" pin="2"/>
+      <node ref="D1" pin="1"/>
+      <node ref="D20" pin="2"/>
+      <node ref="R7" pin="2"/>
+      <node ref="C1" pin="1"/>
+      <node ref="D21" pin="2"/>
+      <node ref="R3" pin="1"/>
+      <node ref="D24" pin="2"/>
+      <node ref="D25" pin="2"/>
+      <node ref="C6" pin="1"/>
+      <node ref="D18" pin="2"/>
+      <node ref="D16" pin="2"/>
+      <node ref="U4" pin="3"/>
+    </net>
+    <net code="3" name="Sclk">
+      <node ref="U3" pin="6"/>
+      <node ref="oLED1" pin="12"/>
+      <node ref="J2" pin="5"/>
+      <node ref="U1" pin="14"/>
+    </net>
+    <net code="4" name="Net-(BT1-Pad1)">
+      <node ref="L1" pin="1"/>
+      <node ref="BT1" pin="1"/>
+      <node ref="C4" pin="1"/>
+    </net>
+    <net code="5" name="MOSI">
+      <node ref="J2" pin="4"/>
+      <node ref="U3" pin="5"/>
+      <node ref="oLED1" pin="13"/>
+      <node ref="U1" pin="15"/>
+    </net>
+    <net code="6" name="Net-(D1-Pad2)">
+      <node ref="R1" pin="2"/>
+      <node ref="D1" pin="2"/>
+      <node ref="L1" pin="2"/>
+      <node ref="U2" pin="1"/>
+    </net>
+    <net code="7" name="Net-(C1-Pad2)">
+      <node ref="R1" pin="1"/>
+      <node ref="C1" pin="2"/>
+    </net>
+    <net code="8" name="Net-(J1-Pad5)">
+      <node ref="J1" pin="5"/>
+      <node ref="U1" pin="18"/>
+    </net>
+    <net code="9" name="Net-(J1-Pad4)">
+      <node ref="J1" pin="4"/>
+      <node ref="U1" pin="19"/>
+    </net>
+    <net code="10" name="Net-(SW1-Pad1)">
+      <node ref="SW1" pin="1"/>
+    </net>
+    <net code="11" name="POST_CON">
+      <node ref="U1" pin="9"/>
+      <node ref="R3" pin="2"/>
+      <node ref="R5" pin="1"/>
+      <node ref="R4" pin="1"/>
+    </net>
+    <net code="12" name="oLED_CS">
+      <node ref="oLED1" pin="9"/>
+      <node ref="U1" pin="8"/>
+    </net>
+    <net code="13" name="oLED_Reset">
+      <node ref="R6" pin="1"/>
+      <node ref="U1" pin="7"/>
+      <node ref="oLED1" pin="10"/>
+    </net>
+    <net code="14" name="oLED_DC">
+      <node ref="U1" pin="6"/>
+      <node ref="oLED1" pin="11"/>
+    </net>
+    <net code="15" name="EEPROM_CS">
+      <node ref="J2" pin="2"/>
+      <node ref="U1" pin="5"/>
+      <node ref="U3" pin="1"/>
+    </net>
+    <net code="16" name="Net-(J1-Pad1)">
+      <node ref="R2" pin="2"/>
+      <node ref="SW1" pin="2"/>
+      <node ref="U1" pin="4"/>
+      <node ref="J1" pin="1"/>
+    </net>
+    <net code="17" name="Net-(C10-Pad2)">
+      <node ref="C10" pin="2"/>
+      <node ref="oLED1" pin="2"/>
+    </net>
+    <net code="18" name="Net-(C10-Pad1)">
+      <node ref="oLED1" pin="1"/>
+      <node ref="C10" pin="1"/>
+    </net>
+    <net code="19" name="Net-(U1-Pad3)">
+      <node ref="U1" pin="3"/>
+    </net>
+    <net code="20" name="IR_OUT">
+      <node ref="U1" pin="10"/>
+      <node ref="D2" pin="1"/>
+    </net>
+    <net code="21" name="IR_IN">
+      <node ref="U1" pin="11"/>
+      <node ref="U4" pin="1"/>
+    </net>
+    <net code="22" name="SDA">
+      <node ref="U6" pin="45"/>
+      <node ref="U1" pin="12"/>
+      <node ref="R8" pin="1"/>
+      <node ref="U5" pin="45"/>
+    </net>
+    <net code="23" name="SCL">
+      <node ref="U5" pin="46"/>
+      <node ref="U1" pin="13"/>
+      <node ref="R9" pin="1"/>
+      <node ref="U6" pin="46"/>
+    </net>
+    <net code="24" name="Net-(U1-Pad2)">
+      <node ref="U1" pin="2"/>
+    </net>
+    <net code="25" name="Net-(U1-Pad17)">
+      <node ref="U1" pin="17"/>
+    </net>
+    <net code="26" name="Net-(C11-Pad2)">
+      <node ref="C11" pin="2"/>
+      <node ref="oLED1" pin="4"/>
+    </net>
+    <net code="27" name="Net-(C11-Pad1)">
+      <node ref="C11" pin="1"/>
+      <node ref="oLED1" pin="3"/>
+    </net>
+    <net code="28" name="Net-(C5-Pad2)">
+      <node ref="C5" pin="2"/>
+      <node ref="oLED1" pin="15"/>
+    </net>
+    <net code="29" name="Net-(D2-Pad2)">
+      <node ref="D2" pin="2"/>
+      <node ref="R7" pin="1"/>
+    </net>
+    <net code="30" name="MISO">
+      <node ref="U1" pin="16"/>
+      <node ref="J2" pin="3"/>
+      <node ref="U3" pin="2"/>
+    </net>
+    <net code="31" name="Net-(C7-Pad2)">
+      <node ref="oLED1" pin="16"/>
+      <node ref="C7" pin="2"/>
+      <node ref="C9" pin="2"/>
+    </net>
+    <net code="32" name="Net-(D29-Pad1)">
+      <node ref="D29" pin="1"/>
+      <node ref="U6" pin="15"/>
+    </net>
+    <net code="33" name="Net-(D27-Pad1)">
+      <node ref="U6" pin="14"/>
+      <node ref="D27" pin="1"/>
+    </net>
+    <net code="34" name="Net-(D26-Pad1)">
+      <node ref="D26" pin="1"/>
+      <node ref="U6" pin="13"/>
+    </net>
+    <net code="35" name="Net-(D25-Pad1)">
+      <node ref="U6" pin="12"/>
+      <node ref="D25" pin="1"/>
+    </net>
+    <net code="36" name="Net-(D24-Pad1)">
+      <node ref="D24" pin="1"/>
+      <node ref="U6" pin="11"/>
+    </net>
+    <net code="37" name="Net-(D30-Pad1)">
+      <node ref="D30" pin="1"/>
+      <node ref="U6" pin="16"/>
+    </net>
+    <net code="38" name="Net-(D9-Pad1)">
+      <node ref="U6" pin="38"/>
+      <node ref="D9" pin="1"/>
+    </net>
+    <net code="39" name="Net-(D51-Pad1)">
+      <node ref="D51" pin="1"/>
+      <node ref="U6" pin="37"/>
+    </net>
+    <net code="40" name="Net-(D49-Pad1)">
+      <node ref="U6" pin="36"/>
+      <node ref="D49" pin="1"/>
+    </net>
+    <net code="41" name="Net-(D19-Pad1)">
+      <node ref="U6" pin="7"/>
+      <node ref="D19" pin="1"/>
+    </net>
+    <net code="42" name="Net-(D14-Pad1)">
+      <node ref="D14" pin="1"/>
+      <node ref="U6" pin="2"/>
+    </net>
+    <net code="43" name="Net-(D15-Pad1)">
+      <node ref="D15" pin="1"/>
+      <node ref="U6" pin="3"/>
+    </net>
+    <net code="44" name="Net-(D16-Pad1)">
+      <node ref="D16" pin="1"/>
+      <node ref="U6" pin="5"/>
+    </net>
+    <net code="45" name="Net-(D18-Pad1)">
+      <node ref="U6" pin="6"/>
+      <node ref="D18" pin="1"/>
+    </net>
+    <net code="46" name="Net-(D20-Pad1)">
+      <node ref="U6" pin="8"/>
+      <node ref="D20" pin="1"/>
+    </net>
+    <net code="47" name="Net-(D21-Pad1)">
+      <node ref="D21" pin="1"/>
+      <node ref="U6" pin="9"/>
+    </net>
+    <net code="48" name="Net-(D22-Pad1)">
+      <node ref="U6" pin="10"/>
+      <node ref="D22" pin="1"/>
+    </net>
+    <net code="49" name="Net-(D35-Pad1)">
+      <node ref="U6" pin="22"/>
+      <node ref="D35" pin="1"/>
+    </net>
+    <net code="50" name="Net-(D42-Pad1)">
+      <node ref="U6" pin="26"/>
+      <node ref="D42" pin="1"/>
+    </net>
+    <net code="51" name="Net-(D41-Pad1)">
+      <node ref="U6" pin="25"/>
+      <node ref="D41" pin="1"/>
+    </net>
+    <net code="52" name="Net-(D38-Pad1)">
+      <node ref="D38" pin="1"/>
+      <node ref="U6" pin="24"/>
+    </net>
+    <net code="53" name="Net-(D37-Pad1)">
+      <node ref="D37" pin="1"/>
+      <node ref="U6" pin="23"/>
+    </net>
+    <net code="54" name="Net-(D34-Pad1)">
+      <node ref="D34" pin="1"/>
+      <node ref="U6" pin="21"/>
+    </net>
+    <net code="55" name="Net-(D32-Pad1)">
+      <node ref="U6" pin="20"/>
+      <node ref="D32" pin="1"/>
+    </net>
+    <net code="56" name="Net-(D31-Pad1)">
+      <node ref="U6" pin="17"/>
+      <node ref="D31" pin="1"/>
+    </net>
+    <net code="57" name="Net-(D47-Pad1)">
+      <node ref="U6" pin="30"/>
+      <node ref="D47" pin="1"/>
+    </net>
+    <net code="58" name="Net-(D40-Pad1)">
+      <node ref="U6" pin="35"/>
+      <node ref="D40" pin="1"/>
+    </net>
+    <net code="59" name="Net-(D36-Pad1)">
+      <node ref="D36" pin="1"/>
+      <node ref="U6" pin="34"/>
+    </net>
+    <net code="60" name="Net-(D8-Pad1)">
+      <node ref="D8" pin="1"/>
+      <node ref="U6" pin="32"/>
+    </net>
+    <net code="61" name="Net-(D6-Pad1)">
+      <node ref="U6" pin="31"/>
+      <node ref="D6" pin="1"/>
+    </net>
+    <net code="62" name="Net-(D46-Pad1)">
+      <node ref="U6" pin="29"/>
+      <node ref="D46" pin="1"/>
+    </net>
+    <net code="63" name="Net-(D45-Pad1)">
+      <node ref="D45" pin="1"/>
+      <node ref="U6" pin="28"/>
+    </net>
+    <net code="64" name="Net-(D43-Pad1)">
+      <node ref="D43" pin="1"/>
+      <node ref="U6" pin="27"/>
+    </net>
+    <net code="65" name="Net-(R11-Pad2)">
+      <node ref="R11" pin="2"/>
+      <node ref="U6" pin="44"/>
+    </net>
+    <net code="66" name="Net-(D10-Pad1)">
+      <node ref="U6" pin="47"/>
+      <node ref="D10" pin="1"/>
+    </net>
+    <net code="67" name="Net-(D11-Pad1)">
+      <node ref="U6" pin="48"/>
+      <node ref="D11" pin="1"/>
+    </net>
+    <net code="68" name="Net-(D13-Pad1)">
+      <node ref="D13" pin="1"/>
+      <node ref="U6" pin="1"/>
+    </net>
+    <net code="69" name="Net-(D12-Pad4)">
+      <node ref="D12" pin="4"/>
+      <node ref="U5" pin="8"/>
+    </net>
+    <net code="70" name="Net-(D7-Pad4)">
+      <node ref="U5" pin="3"/>
+      <node ref="D7" pin="4"/>
+    </net>
+    <net code="71" name="Net-(D7-Pad3)">
+      <node ref="U5" pin="5"/>
+      <node ref="D7" pin="3"/>
+    </net>
+    <net code="72" name="Net-(D23-Pad1)">
+      <node ref="D23" pin="1"/>
+      <node ref="U5" pin="6"/>
+    </net>
+    <net code="73" name="Net-(D12-Pad1)">
+      <node ref="U5" pin="7"/>
+      <node ref="D12" pin="1"/>
+    </net>
+    <net code="74" name="Net-(D12-Pad3)">
+      <node ref="U5" pin="9"/>
+      <node ref="D12" pin="3"/>
+    </net>
+    <net code="75" name="Net-(D39-Pad1)">
+      <node ref="U5" pin="10"/>
+      <node ref="D39" pin="1"/>
+    </net>
+    <net code="76" name="Net-(D17-Pad1)">
+      <node ref="U5" pin="11"/>
+      <node ref="D17" pin="1"/>
+    </net>
+    <net code="77" name="Net-(D17-Pad4)">
+      <node ref="U5" pin="12"/>
+      <node ref="D17" pin="4"/>
+    </net>
+    <net code="78" name="Net-(D56-Pad1)">
+      <node ref="D56" pin="1"/>
+      <node ref="U5" pin="47"/>
+    </net>
+    <net code="79" name="Net-(D4-Pad1)">
+      <node ref="D4" pin="1"/>
+      <node ref="U5" pin="48"/>
+    </net>
+    <net code="80" name="Net-(D5-Pad1)">
+      <node ref="D5" pin="1"/>
+      <node ref="U5" pin="1"/>
+    </net>
+    <net code="81" name="Net-(D7-Pad1)">
+      <node ref="D7" pin="1"/>
+      <node ref="U5" pin="2"/>
+    </net>
+    <net code="82" name="Net-(D60-Pad1)">
+      <node ref="D60" pin="1"/>
+      <node ref="U5" pin="26"/>
+    </net>
+    <net code="83" name="Net-(D33-Pad4)">
+      <node ref="D33" pin="4"/>
+      <node ref="U5" pin="22"/>
+    </net>
+    <net code="84" name="Net-(D33-Pad3)">
+      <node ref="U5" pin="23"/>
+      <node ref="D33" pin="3"/>
+    </net>
+    <net code="85" name="Net-(D58-Pad1)">
+      <node ref="D58" pin="1"/>
+      <node ref="U5" pin="24"/>
+    </net>
+    <net code="86" name="Net-(D59-Pad1)">
+      <node ref="U5" pin="25"/>
+      <node ref="D59" pin="1"/>
+    </net>
+    <net code="87" name="Net-(D61-Pad1)">
+      <node ref="U5" pin="27"/>
+      <node ref="D61" pin="1"/>
+    </net>
+    <net code="88" name="Net-(D62-Pad1)">
+      <node ref="D62" pin="1"/>
+      <node ref="U5" pin="28"/>
+    </net>
+    <net code="89" name="Net-(D3-Pad1)">
+      <node ref="U5" pin="29"/>
+      <node ref="D3" pin="1"/>
+    </net>
+    <net code="90" name="Net-(D63-Pad1)">
+      <node ref="D63" pin="1"/>
+      <node ref="U5" pin="30"/>
+    </net>
+    <net code="91" name="Net-(D28-Pad4)">
+      <node ref="D28" pin="4"/>
+      <node ref="U5" pin="16"/>
+    </net>
+    <net code="92" name="Net-(D17-Pad3)">
+      <node ref="U5" pin="13"/>
+      <node ref="D17" pin="3"/>
+    </net>
+    <net code="93" name="Net-(D44-Pad1)">
+      <node ref="U5" pin="14"/>
+      <node ref="D44" pin="1"/>
+    </net>
+    <net code="94" name="Net-(D28-Pad1)">
+      <node ref="D28" pin="1"/>
+      <node ref="U5" pin="15"/>
+    </net>
+    <net code="95" name="Net-(D28-Pad3)">
+      <node ref="D28" pin="3"/>
+      <node ref="U5" pin="17"/>
+    </net>
+    <net code="96" name="Net-(D57-Pad1)">
+      <node ref="D57" pin="1"/>
+      <node ref="U5" pin="20"/>
+    </net>
+    <net code="97" name="Net-(D33-Pad1)">
+      <node ref="U5" pin="21"/>
+      <node ref="D33" pin="1"/>
+    </net>
+    <net code="98" name="Net-(R10-Pad2)">
+      <node ref="R10" pin="2"/>
+      <node ref="U5" pin="44"/>
+    </net>
+    <net code="99" name="Net-(D64-Pad1)">
+      <node ref="U5" pin="31"/>
+      <node ref="D64" pin="1"/>
+    </net>
+    <net code="100" name="Net-(D48-Pad1)">
+      <node ref="U5" pin="32"/>
+      <node ref="D48" pin="1"/>
+    </net>
+    <net code="101" name="Net-(D50-Pad1)">
+      <node ref="U5" pin="34"/>
+      <node ref="D50" pin="1"/>
+    </net>
+    <net code="102" name="Net-(D52-Pad1)">
+      <node ref="U5" pin="35"/>
+      <node ref="D52" pin="1"/>
+    </net>
+    <net code="103" name="Net-(D53-Pad1)">
+      <node ref="D53" pin="1"/>
+      <node ref="U5" pin="36"/>
+    </net>
+    <net code="104" name="Net-(D54-Pad1)">
+      <node ref="D54" pin="1"/>
+      <node ref="U5" pin="37"/>
+    </net>
+    <net code="105" name="Net-(D55-Pad1)">
+      <node ref="U5" pin="38"/>
+      <node ref="D55" pin="1"/>
+    </net>
+  </nets>
+</export>

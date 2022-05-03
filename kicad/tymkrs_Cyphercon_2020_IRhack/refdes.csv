@@ -1,0 +1,18 @@
+ref_des, part number, footprint
+C1, 10uF 1206, Capacitor_SMD:C_1206_3216Metric
+C2, 10uF 1206, Capacitor_SMD:C_1206_3216Metric
+C3, 0.1uF 0603, Capacitor_SMD:C_0603_1608Metric
+C4, 0.1uF 0603, Capacitor_SMD:C_0603_1608Metric
+D1, Red, LED_SMD:LED_0603_1608Metric
+D2, Green, LED_SMD:LED_0603_1608Metric
+D3, IR204, LED_THT:LED_D3.0mm_Horizontal_O1.27mm_Z2.0mm_Clear
+J1, PicKit, Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Vertical
+J2, IO, Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Horizontal
+R1, 10k, Resistor_SMD:R_0603_1608Metric
+R2, 2k, Resistor_SMD:R_0603_1608Metric
+R3, 2k, Resistor_SMD:R_0603_1608Metric
+R4, 27 0805, Resistor_SMD:R_0603_1608Metric
+R5, 100k, Resistor_SMD:R_0603_1608Metric
+U1, PIC16F15324, Package_SO:SOIC-14_3.9x8.7mm_P1.27mm
+U2, TSOP58438, Vishay:TSOP48
+icon1, Metroid, PJS-icons:metroid

@@ -1,0 +1,847 @@
+start set 0
+precon1
+sleep1
+sleepy1
+precon1
+sleepy2
+precon2
+precon1
+sleep1
+sleepy1
+precon1
+sleepy2
+precon2
+precon1
+sleep1
+sleepy1
+precon1
+end set
+
+start set 1
+precon1
+sleep1
+sleepy1
+precon1
+sleepy2
+precon2
+precon1
+sleep1
+sleepy1
+precon1
+sleepy2
+precon2
+precon1
+sleep1
+sleepy1
+precon1
+end set
+
+start set 2
+hyper1
+hyper1
+crazyeyes1
+hyper2
+hyper2
+crazyeyes2 
+hyper1
+hyper1
+crazyeyes3
+hyper2
+hyper2
+crazyeyes4
+hyper1
+crazyeyes3
+hyper2
+crazyeyes2
+end set
+
+start set 3
+hyper1
+hyper1
+sick1h
+crazyeyes1
+hyper2
+hyper2
+sick2h
+crazyeyes2 
+hyper1
+sick3h
+crazyeyes3
+hyper2
+sick4h
+sick1h
+crazyeyes2
+sick2h
+end set
+
+start set 4
+normal1
+normal2
+normal3
+normal4
+normal5
+normal3
+normal1
+normal5
+normal2
+normal4
+normal2
+normal3
+normal4
+normal5
+normal1
+normal3
+end set
+
+start set 5
+normal1
+sick1
+normal2
+sick2
+normal3
+sick3
+normal4
+sick4
+normal5
+sick4
+normal4
+sick3
+normal3
+sick2
+normal2
+sick1
+end set
+
+start set 6
+sleep1
+sleepy1
+sleepy2
+sleep1
+sleepy1
+sleepy2
+sleep1
+sleepy1
+sleep1
+sleepy1
+sleepy2
+sleep1
+sleepy1
+sleepy2
+sleep1
+sleepy1
+end set
+
+start set 7
+sleep1
+sick1
+sleepy2
+sick2
+sleepy1
+sick3
+sleep1
+sick4
+sleep1
+sick4
+sleepy2
+sick3
+sleepy1
+sick2
+sleep1
+sick1
+end set
+
+start set 8
+dead1
+dead2
+dead3
+dead3
+dead2
+dead1
+dead1
+dead2
+dead3
+dead3
+dead2
+dead1
+dead2
+dead3
+dead1
+dead2
+end set
+
+start set 9
+dead1
+dead2
+dead3
+dead3
+dead2
+dead1
+dead1
+dead2
+dead3
+dead3
+dead2
+dead1
+dead2
+dead3
+dead1
+dead2
+end set
+
+start set 10
+eyebeam1
+eyebeam1
+eyebeam2
+eyebeam2
+eyebeam3
+eyebeam3
+eyebeam1
+eyebeam1
+eyebeam2
+eyebeam2
+eyebeam3
+eyebeam3
+eyebeam2
+eyebeam2
+eyebeam3
+eyebeam3
+end set
+
+start set 11
+eyebeam1
+eyebeam1
+eyebeam2
+eyebeam2
+eyebeam3
+eyebeam3
+eyebeam1
+eyebeam1
+eyebeam2
+eyebeam2
+eyebeam3
+eyebeam3
+eyebeam2
+eyebeam2
+eyebeam3
+eyebeam3
+end set
+
+start set 12
+food
+food
+food
+food
+food
+food
+food
+food
+food
+food
+food
+food
+food
+food
+food
+food
+end set
+
+start set 13
+hbdh
+hbdh
+hbdh
+hbdh
+hbdh
+hbdh
+hbdh
+hbdh
+hbdh
+hbdh
+hbdh
+hbdh
+hbdh
+hbdh
+hbdh
+hbdh
+end set
+
+##################################################################################################
+
+
+
+start seq precon1
+./P_eyes/sleep1.png 2s
+./P_eyes/sleep7.png 1s
+./P_eyes/sleep2.png 2s
+./P_eyes/sleep10.png 1s
+./P_eyes/sleep3.png 2s
+./P_eyes/sleep9.png 1s
+./P_eyes/sleep4.png 2s
+./P_eyes/sleep8.png 1s
+./P_eyes/sleep11.png 2s
+./P_eyes/sleep12.png 1s
+end seq
+
+start seq sleep1
+./P_eyes/sleep13.png 1s
+./P_eyes/sleep14.png 1s
+./P_eyes/sleep15.png 1s
+./P_eyes/sleep16.png 1s
+./P_eyes/sleep17.png 1s
+./P_eyes/sleep18.png 1s
+./P_eyes/sleep13.png 1s
+./P_eyes/sleep14.png 1s
+./P_eyes/sleep15.png 1s
+./P_eyes/sleep16.png 1s
+./P_eyes/sleep17.png 1s
+./P_eyes/sleep18.png 1s
+end seq
+
+start seq sleepy1
+./P_eyes/sleep1.png 1s
+./P_eyes/sleep2.png 1s
+./P_eyes/sleep3.png 1s
+./P_eyes/halfblink1.png 1s
+./P_eyes/halfblink2.png 1s
+./P_eyes/halfblink4.png 1s
+./P_eyes/sleep4.png 1s
+./P_eyes/sleep5.png 1s
+./P_eyes/sleep6.png 1s
+end seq
+
+start seq sleepy2
+./P_eyes/sleep7.png 1s
+./P_eyes/sleep8.png 1s
+./P_eyes/halfblink5.png 1s
+./P_eyes/halfblink6.png 1s
+./P_eyes/halfblink7.png 1s
+./P_eyes/sleep9.png 1s
+./P_eyes/sleep10.png 1s
+./P_eyes/sleep11.png 1s
+./P_eyes/sleep12.png 1s
+end seq
+
+start seq precon2
+./P_eyes/precon1.png 1s
+./P_eyes/precon2.png 1s
+./P_eyes/precon3.png 1s
+./P_eyes/precon4.png 1s
+./P_eyes/precon5.png 1s
+./P_eyes/precon6.png 1s
+./P_eyes/precon7.png 1s
+./P_eyes/precon8.png 1s
+./P_eyes/precon1.png 1s
+./P_eyes/precon2.png 1s
+./P_eyes/precon3.png 1s
+./P_eyes/precon4.png 1s
+./P_eyes/precon5.png 1s
+./P_eyes/precon6.png 1s
+./P_eyes/precon7.png 1s
+./P_eyes/precon8.png 1s
+end seq
+
+###########
+
+start seq hyper1
+./P_eyes/hyper1.png 0.25s
+./P_eyes/hyper2.png 0.25s
+./P_eyes/hyper3.png 0.25s
+./P_eyes/hyper4.png 0.25s
+./P_eyes/hyper5.png 0.25s
+./P_eyes/hyper6.png 0.25s
+./P_eyes/hyper7.png 0.25s
+./P_eyes/hyper8.png 0.25s
+./P_eyes/hyper9.png 0.25s
+./P_eyes/hyper10.png 0.25s
+./P_eyes/hyper11.png 0.25s
+end seq 
+
+start seq hyper2
+./P_eyes/hyper11.png 0.25s
+./P_eyes/hyper10.png 0.25s
+./P_eyes/hyper9.png 0.25s
+./P_eyes/hyper8.png 0.25s
+./P_eyes/hyper7.png 0.25s
+./P_eyes/hyper6.png 0.25s
+./P_eyes/hyper5.png 0.25s
+./P_eyes/hyper6.png 0.25s
+./P_eyes/hyper5.png 0.25s
+./P_eyes/hyper4.png 0.25s
+./P_eyes/hyper3.png 0.25s
+./P_eyes/hyper2.png 0.25s
+./P_eyes/hyper1.png 0.25s
+end seq
+
+start seq crazyeyes1
+./P_eyes/hyper1.png 0.25s
+./P_eyes/normal7.png 0.25s
+./P_eyes/normal7.png 0.25s
+./P_eyes/hyper2.png 0.25s
+./P_eyes/normal8.png 0.25s
+./P_eyes/normal5.png 0.25s
+./P_eyes/hyper3.png 0.25s
+./P_eyes/normal6.png 0.25s
+./P_eyes/normal5.png 0.25s
+./P_eyes/hyper4.png 0.25s
+./P_eyes/normal5.png 0.25s
+./P_eyes/normal4.png 0.25s
+./P_eyes/hyper5.png 0.25s
+./P_eyes/normal4.png 0.25s
+./P_eyes/normal1.png 0.25s
+end seq
+
+start seq crazyeyes2
+./P_eyes/normal1.png 0.25s
+./P_eyes/normal4.png 0.25s
+./P_eyes/hyper5.png 0.25s
+./P_eyes/normal4.png 0.25s
+./P_eyes/normal5.png 0.25s
+./P_eyes/hyper4.png 0.25s
+./P_eyes/normal5.png 0.25s
+./P_eyes/normal6.png 0.25s
+./P_eyes/hyper3.png 0.25s
+./P_eyes/normal5.png 0.25s
+./P_eyes/normal8.png 0.25s
+./P_eyes/hyper2.png 0.25s
+./P_eyes/normal7.png 0.25s
+./P_eyes/normal7.png 0.25s
+./P_eyes/hyper1.png 0.25s
+end seq
+
+start seq crazyeyes3
+./P_eyes/hyper1.png 0.25s
+./P_eyes/normal7.png 0.25s
+./P_eyes/hyper2.png 0.25s
+./P_eyes/normal5.png 0.25s
+./P_eyes/hyper3.png 0.25s
+./P_eyes/normal5.png 0.25s
+./P_eyes/hyper4.png 0.25s
+./P_eyes/normal4.png 0.25s
+./P_eyes/hyper5.png 0.25s
+./P_eyes/normal1.png 0.25s
+end seq
+
+start seq crazyeyes4
+./P_eyes/normal1.png 0.25s
+./P_eyes/hyper5.png 0.25s
+./P_eyes/normal4.png 0.25s
+./P_eyes/hyper4.png 0.25s
+./P_eyes/normal5.png 0.25s
+./P_eyes/hyper3.png 0.25s
+./P_eyes/normal5.png 0.25s
+./P_eyes/hyper2.png 0.25s
+./P_eyes/normal7.png 0.25s
+./P_eyes/hyper1.png 0.25s
+end seq
+
+start seq sick1h
+./P_eyes/sick1.png 0.25s
+./P_eyes/sick19.png 0.25s
+./P_eyes/sick13.png 0.25s
+./P_eyes/sick7.png 0.25s
+./P_eyes/sick2.png 0.25s
+./P_eyes/sick20.png 0.25s
+./P_eyes/sick14.png 0.25s
+./P_eyes/sick8.png 0.25s
+./P_eyes/sick3.png 0.25s
+./P_eyes/sick21.png 0.25s
+./P_eyes/sick15.png 0.25s
+./P_eyes/sick9.png 0.25s
+./P_eyes/sick4.png 0.25s
+./P_eyes/sick22.png 0.25s
+./P_eyes/sick16.png 0.25s
+./P_eyes/sick10.png 0.25s
+./P_eyes/sick5.png 0.25s
+./P_eyes/sick23.png 0.25s
+./P_eyes/sick17.png 0.25s
+./P_eyes/sick11.png 0.25s
+./P_eyes/sick6.png 0.25s
+./P_eyes/sick24.png 0.25s
+./P_eyes/sick18.png 0.25s
+./P_eyes/sick12.png 0.25s
+./P_eyes/sick7.png 0.25s
+./P_eyes/sick20.png 0.25s
+./P_eyes/sick19.png 0.25s
+./P_eyes/sick7.png 0.25s
+end seq
+
+start seq sick2h
+./P_eyes/sick7.png 0.25s
+./P_eyes/sick19.png 0.25s
+./P_eyes/sick20.png 0.25s
+./P_eyes/sick7.png 0.25s
+./P_eyes/sick12.png 0.25s
+./P_eyes/sick18.png 0.25s
+./P_eyes/sick24.png 0.25s
+./P_eyes/sick6.png 0.25s
+./P_eyes/sick11.png 0.25s
+./P_eyes/sick17.png 0.25s
+./P_eyes/sick23.png 0.25s
+./P_eyes/sick5.png 0.25s
+./P_eyes/sick10.png 0.25s
+./P_eyes/sick16.png 0.25s
+./P_eyes/sick22.png 0.25s
+./P_eyes/sick4.png 0.25s
+./P_eyes/sick9.png 0.25s
+./P_eyes/sick15.png 0.25s
+./P_eyes/sick21.png 0.25s
+./P_eyes/sick3.png 0.25s
+./P_eyes/sick8.png 0.25s
+./P_eyes/sick14.png 0.25s
+./P_eyes/sick20.png 0.25s
+./P_eyes/sick2.png 0.25s
+./P_eyes/sick7.png 0.25s
+./P_eyes/sick13.png 0.25s
+./P_eyes/sick19.png 0.25s
+./P_eyes/sick1.png 0.25s
+end seq
+
+start seq sick3h
+./P_eyes/sick25.png 0.25s
+./P_eyes/sick7.png 0.25s
+./P_eyes/sick13.png 0.25s
+./P_eyes/sick19.png 0.25s
+./P_eyes/sick1.png 0.25s
+./P_eyes/sick26.png 0.25s
+./P_eyes/sick6.png 0.25s
+./P_eyes/sick24.png 0.25s
+./P_eyes/sick18.png 0.25s
+./P_eyes/sick12.png 0.25s
+./P_eyes/sick27.png 0.25s
+./P_eyes/sick8.png 0.25s
+./P_eyes/sick14.png 0.25s
+./P_eyes/sick20.png 0.25s
+./P_eyes/sick2.png 0.25s
+./P_eyes/sick31.png 0.25s
+./P_eyes/sick12.png 0.25s
+./P_eyes/sick18.png 0.25s
+./P_eyes/sick24.png 0.25s
+./P_eyes/sick6.png 0.25s
+./P_eyes/sick32.png 0.25s
+./P_eyes/sick2.png 0.25s
+./P_eyes/sick20.png 0.25s
+./P_eyes/sick14.png 0.25s
+./P_eyes/sick8.png 0.25s
+end seq
+
+start seq sick4h
+./P_eyes/sick28.png 0.25s
+./P_eyes/sick25.png 0.25s
+./P_eyes/sick29.png 0.25s
+./P_eyes/sick26.png 0.25s
+./P_eyes/sick8.png 0.25s
+./P_eyes/sick14.png 0.25s
+./P_eyes/sick20.png 0.25s
+./P_eyes/sick2.png 0.25s
+./P_eyes/sick30.png 0.25s
+./P_eyes/sick32.png 0.25s
+./P_eyes/sick31.png 0.25s
+./P_eyes/sick11.png 0.25s
+./P_eyes/sick17.png 0.25s
+./P_eyes/sick23.png 0.25s
+./P_eyes/sick5.png 0.25s
+end seq
+
+#####
+
+start seq normal1
+./P_eyes/normal6.png 1s
+./P_eyes/normal7.png 1s
+./P_eyes/happy1.png 1s
+./P_eyes/normal8.png 1s
+./P_eyes/normal9.png 1s
+./P_eyes/normal1.png 1s
+./P_eyes/happy2.png 1s
+./P_eyes/normal1.png 1s
+./P_eyes/happy4.png 1s
+./P_eyes/happy3.png 1s
+./P_eyes/happy5.png 1s
+./P_eyes/happy6.png 1s
+./P_eyes/normal2.png 1s
+./P_eyes/normal3.png 1s
+./P_eyes/normal4.png 1s
+./P_eyes/happy7.png 1s
+./P_eyes/normal5.png 1s
+./P_eyes/normal6.png 1s
+./P_eyes/normal7.png 1s
+./P_eyes/normal8.png 1s
+./P_eyes/happy6.png 1s
+end seq
+
+start seq normal2
+./P_eyes/normal1.png 1s
+./P_eyes/normal3.png 1s
+./P_eyes/happy7.png 1s
+./P_eyes/normal2.png 1s
+./P_eyes/normal4.png 1s
+./P_eyes/normal5.png 1s
+./P_eyes/happy6.png 1s
+./P_eyes/normal6.png 1s
+./P_eyes/normal7.png 1s
+./P_eyes/normal8.png 1s
+./P_eyes/happy5.png 1s
+./P_eyes/normal9.png 1s
+./P_eyes/normal1.png 1s
+./P_eyes/happy4.png 1s
+./P_eyes/happy3.png 1s
+./P_eyes/normal1.png 1s
+./P_eyes/happy2.png 1s
+./P_eyes/happy1.png 1s
+end seq
+
+start seq normal3
+./P_eyes/normal1.png 1s
+./P_eyes/halfblink1.png 1s
+./P_eyes/blink.png 1s
+./P_eyes/halfblink2.png 1s
+./P_eyes/normal2.png 1s
+./P_eyes/normal3.png 1s
+./P_eyes/normal4.png 1s
+./P_eyes/halfblink4.png 1s
+./P_eyes/blink.png 1s
+./P_eyes/halfblink5.png 1s
+./P_eyes/normal5.png 1s
+./P_eyes/normal6.png 1s
+./P_eyes/normal7.png 1s
+./P_eyes/halfblink7.png 1s
+./P_eyes/blink.png 1s
+./P_eyes/halfblink8.png 1s
+./P_eyes/normal8.png 1s
+./P_eyes/normal9.png 1s
+./P_eyes/normal1.png 1s
+./P_eyes/normal1.png 1s
+end seq
+
+start seq normal4
+./P_eyes/normal2.png 1s
+./P_eyes/halfblink8.png 0.5s
+./P_eyes/blink.png 0.5s
+./P_eyes/halfblink2.png 0.5s
+./P_eyes/normal3.png 1s
+./P_eyes/normal4.png 1s
+./P_eyes/normal5.png 1s
+./P_eyes/halfblink5.png 0.5s
+./P_eyes/blink.png 0.5s
+./P_eyes/halfblink6.png 0.5s
+./P_eyes/normal6.png 1s
+./P_eyes/normal7.png 1s
+./P_eyes/halfblink6.png 0.5s
+./P_eyes/blink.png 0.5s
+./P_eyes/halfblink8.png 0.5s
+./P_eyes/normal8.png 1s
+end seq
+
+start seq normal5
+./P_eyes/normal5.png 1s
+./P_eyes/normal6.png 1s
+./P_eyes/normal7.png 1s
+./P_eyes/halfblink7.png 0.5s
+./P_eyes/blink.png 0.5s
+./P_eyes/halfblink8.png 0.5s
+./P_eyes/normal8.png 1s
+./P_eyes/normal9.png 1s
+./P_eyes/normal1.png 1s
+./P_eyes/halfblink10.png 0.5s
+./P_eyes/blink.png 0.5s
+./P_eyes/halfblink1.png 0.5s
+./P_eyes/normal1.png 1s
+./P_eyes/normal2.png 1s
+./P_eyes/normal3.png 1s
+./P_eyes/halfblink3.png 0.5s
+./P_eyes/blink.png 0.5s
+./P_eyes/halfblink6.png 0.5s
+./P_eyes/normal6.png 1s
+end seq
+
+####
+
+start seq sick1
+./P_eyes/sick1.png 1s
+./P_eyes/sick19.png 1s
+./P_eyes/sick13.png 1s
+./P_eyes/sick7.png 1s
+./P_eyes/sick2.png 1s
+./P_eyes/sick20.png 1s
+./P_eyes/sick14.png 1s
+./P_eyes/sick8.png 1s
+./P_eyes/sick3.png 1s
+./P_eyes/sick21.png 1s
+./P_eyes/sick15.png 1s
+./P_eyes/sick9.png 1s
+./P_eyes/sick4.png 1s
+./P_eyes/sick22.png 1s
+./P_eyes/sick16.png 1s
+./P_eyes/sick10.png 1s
+./P_eyes/sick5.png 1s
+./P_eyes/sick23.png 1s
+./P_eyes/sick17.png 1s
+./P_eyes/sick11.png 1s
+./P_eyes/sick6.png 1s
+./P_eyes/sick24.png 1s
+./P_eyes/sick18.png 1s
+./P_eyes/sick12.png 1s
+./P_eyes/sick7.png 1s
+./P_eyes/sick20.png 1s
+./P_eyes/sick19.png 1s
+./P_eyes/sick7.png 1s
+end seq
+
+start seq sick2
+./P_eyes/sick7.png 1s
+./P_eyes/sick19.png 1s
+./P_eyes/sick20.png 1s
+./P_eyes/sick7.png 1s
+./P_eyes/sick12.png 1s
+./P_eyes/sick18.png 1s
+./P_eyes/sick24.png 1s
+./P_eyes/sick6.png 1s
+./P_eyes/sick11.png 1s
+./P_eyes/sick17.png 1s
+./P_eyes/sick23.png 1s
+./P_eyes/sick5.png 1s
+./P_eyes/sick10.png 1s
+./P_eyes/sick16.png 1s
+./P_eyes/sick22.png 1s
+./P_eyes/sick4.png 1s
+./P_eyes/sick9.png 1s
+./P_eyes/sick15.png 1s
+./P_eyes/sick21.png 1s
+./P_eyes/sick3.png 1s
+./P_eyes/sick8.png 1s
+./P_eyes/sick14.png 1s
+./P_eyes/sick20.png 1s
+./P_eyes/sick2.png 1s
+./P_eyes/sick7.png 1s
+./P_eyes/sick13.png 1s
+./P_eyes/sick19.png 1s
+./P_eyes/sick1.png 1s
+end seq
+
+start seq sick3
+./P_eyes/sick25.png 1s
+./P_eyes/sick7.png 1s
+./P_eyes/sick13.png 1s
+./P_eyes/sick19.png 1s
+./P_eyes/sick1.png 1s
+./P_eyes/sick26.png 1s
+./P_eyes/sick6.png 1s
+./P_eyes/sick24.png 1s
+./P_eyes/sick18.png 1s
+./P_eyes/sick12.png 1s
+./P_eyes/sick27.png 1s
+./P_eyes/sick8.png 1s
+./P_eyes/sick14.png 1s
+./P_eyes/sick20.png 1s
+./P_eyes/sick2.png 1s
+./P_eyes/sick31.png 1s
+./P_eyes/sick12.png 1s
+./P_eyes/sick18.png 1s
+./P_eyes/sick24.png 1s
+./P_eyes/sick6.png 1s
+./P_eyes/sick32.png 1s
+./P_eyes/sick2.png 1s
+./P_eyes/sick20.png 1s
+./P_eyes/sick14.png 1s
+./P_eyes/sick8.png 1s
+end seq
+
+start seq sick4
+./P_eyes/sick28.png 1s
+./P_eyes/sick25.png 1s
+./P_eyes/sick29.png 1s
+./P_eyes/sick26.png 1s
+./P_eyes/sick8.png 1s
+./P_eyes/sick14.png 1s
+./P_eyes/sick20.png 1s
+./P_eyes/sick2.png 1s
+./P_eyes/sick30.png 1s
+./P_eyes/sick32.png 1s
+./P_eyes/sick31.png 1s
+./P_eyes/sick11.png 1s
+./P_eyes/sick17.png 1s
+./P_eyes/sick23.png 1s
+./P_eyes/sick5.png 1s
+end seq
+
+####
+
+start seq dead1
+./P_eyes/dead1.png 2s
+./P_eyes/dead12.png 2s
+./P_eyes/dead1.png 2s
+./P_eyes/dead12.png 2s
+./P_eyes/dead2.png 2s
+./P_eyes/dead1.png 2s
+./P_eyes/dead2.png 2s
+end seq
+
+start seq dead2
+./P_eyes/dead2.png 2s
+./P_eyes/dead3.png 2s
+./P_eyes/dead4.png 2s
+./P_eyes/dead5.png 2s
+./P_eyes/dead6.png 2s
+end seq
+
+start seq dead3
+./P_eyes/dead13.png 2s
+./P_eyes/dead7.png 2s
+./P_eyes/dead8.png 2s
+./P_eyes/dead9.png 2s
+./P_eyes/dead10.png 2s
+./P_eyes/dead11.png 2s
+end seq
+
+####
+
+start seq eyebeam1
+./P_eyes/eyebeam1.png 0.25s
+./P_eyes/eyebeam2.png 0.25s
+./P_eyes/eyebeam3.png 0.25s
+./P_eyes/eyebeam4.png 0.25s
+./P_eyes/eyebeam5.png 0.25s
+./P_eyes/eyebeam6.png 0.25s
+./P_eyes/eyebeam7.png 0.25s
+./P_eyes/eyebeam8.png 0.25s
+./P_eyes/eyebeam9.png 0.25s
+end seq
+
+start seq eyebeam2
+./P_eyes/eyebeam11.png 1s
+./P_eyes/eyebeam12.png 1s
+./P_eyes/eyebeam13.png 1s
+./P_eyes/eyebeam14.png 1s
+end seq
+
+start seq eyebeam3
+./P_eyes/eyebeam14.png 1s
+./P_eyes/eyebeam15.png 1s
+./P_eyes/eyebeam16.png 1s
+end seq
+
+####
+
+start seq food
+./P_eyes/food1.png 1s
+./P_eyes/food2.png 1s
+./P_eyes/food3.png 1s
+./P_eyes/food4.png 1s
+./P_eyes/food5.png 1s
+./P_eyes/food6.png 1s
+./P_eyes/food7.png 1s
+./P_eyes/food8.png 1s
+./P_eyes/food9.png 1s
+./P_eyes/food10.png 1s
+./P_eyes/food11.png 1s
+./P_eyes/food12.png 1s
+end seq
+
+
+
+#########################################################################################################
+
+
+
+
+start seq hbdh
+./hbdh.png 5s
+end seq

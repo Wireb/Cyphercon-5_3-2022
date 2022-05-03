@@ -1,0 +1,165 @@
+start set 1
+sleep1
+sick1
+sleepy2
+sick2
+sleepy1
+sick3
+sleep1
+sick4
+sleep1
+sick4
+sleepy2
+sick3
+sleepy1
+sick2
+sleep1
+sick1
+
+Precon
+
+start seq sleep1
+./sleep13.png 1s
+./sleep14.png 1s
+./sleep14.png 1s
+./sleep16.png 1s
+./sleep17.png 1s
+./sleep18.png 1s
+./sleep13.png 1s
+./sleep14.png 1s
+./sleep14.png 1s
+./sleep16.png 1s
+./sleep17.png 1s
+./sleep18.png 1s
+end seq
+
+start seq sleepy1
+./sleep1.png 1s
+./sleep2.png 1s
+./sleep3.png 1s
+./halfblink1.png 1s
+./halfblink2.png 1s
+./halfblink4.png 1s
+./sleep4.png 1s
+./sleep5.png 1s
+./sleep6.png 1s
+end seq
+
+start seq sleepy2
+./sleep7.png 1s
+./sleep8.png 1s
+./halfblink5.png 1s
+./halfblink6.png 1s
+./halfblink7.png 1s
+./sleep9.png 1s
+./sleep10.png 1s
+./sleep11.png 1s
+./sleep12.png 1s
+end seq
+
+start seq sick1
+./sick1.png 1s
+./sick19.png 1s
+./sick13.png 1s
+./sick7.png 1s
+./sick2.png 1s
+./sick20.png 1s
+./sick14.png 1s
+./sick8.png 1s
+./sick3.png 1s
+./sick21.png 1s
+./sick15.png 1s
+./sick9.png 1s
+./sick4.png 1s
+./sick22.png 1s
+./sick16.png 1s
+./sick10.png 1s
+./sick5.png 1s
+./sick23.png 1s
+./sick17.png 1s
+./sick11.png 1s
+./sick6.png 1s
+./sick24.png 1s
+./sick18.png 1s
+./sick12.png 1s
+./sick7.png 1s
+./sick20.png 1s
+./sick19.png 1s
+./sick7.png 1s
+end seq
+
+start seq sick2
+./sick7.png 1s
+./sick19.png 1s
+./sick20.png 1s
+./sick7.png 1s
+./sick12.png 1s
+./sick18.png 1s
+./sick24.png 1s
+./sick6.png 1s
+./sick11.png 1s
+./sick17.png 1s
+./sick23.png 1s
+./sick5.png 1s
+./sick10.png 1s
+./sick16.png 1s
+./sick22.png 1s
+./sick4.png 1s
+./sick9.png 1s
+./sick15.png 1s
+./sick21.png 1s
+./sick3.png 1s
+./sick8.png 1s
+./sick14.png 1s
+./sick20.png 1s
+./sick2.png 1s
+./sick7.png 1s
+./sick13.png 1s
+./sick19.png 1s
+./sick1.png 1s
+end seq
+
+start seq sick3
+./sick25.png 1s
+./sick7.png 1s
+./sick13.png 1s
+./sick19.png 1s
+./sick1.png 1s
+./sick26.png 1s
+./sick6.png 1s
+./sick24.png 1s
+./sick18.png 1s
+./sick12.png 1s
+./sick27.png 1s
+./sick8.png 1s
+./sick14.png 1s
+./sick20.png 1s
+./sick2.png 1s
+./sick31.png 1s
+./sick12.png 1s
+./sick18.png 1s
+./sick24.png 1s
+./sick6.png 1s
+./sick32.png 1s
+./sick2.png 1s
+./sick20.png 1s
+./sick14.png 1s
+./sick8.png 1s
+end seq
+
+start seq sick4
+./sick28.png 1s
+./sick25.png 1s
+./sick29.png 1s
+./sick26.png 1s
+./sick8.png 1s
+./sick14.png 1s
+./sick20.png 1s
+./sick2.png 1s
+./sick30.png 1s
+./sick32.png 1s
+./sick31.png 1s
+./sick11 1s
+./sick17 1s
+./sick23 1s
+./sick5 1s

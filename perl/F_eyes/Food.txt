@@ -1,0 +1,77 @@
+start set 1
+food
+food
+normal1
+food
+food
+normal2
+food
+food
+normal1
+food
+food
+normal2
+food
+food
+normal2
+food
+
+start seq food
+./food1.png 1s
+./food2.png 1s
+./food3.png 1s
+./food4.png 1s
+./food5.png 1s
+./food6.png 1s
+./food7.png 1s
+./food8.png 1s
+./food9.png 1s
+./food10.png 1s
+./food11.png 1s
+./food12.png 1s
+end seq
+
+start seq normal1
+./normal6.png 1s
+./normal7.png 1s
+./happy1.png 1s
+./normal8.png 1s
+./normal9.png 1s
+./normal10.png 1s
+./happy2.png 1s
+./normal11.png 1s
+./happy4.png 1s
+./happy3.png 1s
+./happy5.png 1s
+./happy6.png 1s
+./normal12.png 1s
+./normal13.png 1s
+./normal14.png 1s
+./happy7.png 1s
+./normal15.png 1s
+./normal16.png 1s
+./normal17.png 1s
+./normal18.png 1s
+./happy6.png 1s
+end seq
+
+start seq normal2
+./normal1.png 1s
+./normal3.png 1s
+./happy7.png 1s
+./normal2.png 1s
+./normal4.png 1s
+./normal5.png 1s
+./happy6.png 1s
+./normal6.png 1s
+./normal7.png 1s
+./normal8.png 1s
+./happy5.png 1s
+./normal9.png 1s
+./normal10.png 1s
+./happy4.png 1s
+./happy3.png 1s
+./normal11.png 1s
+./happy2.png 1s
+./happy1.png 1s
+end seq

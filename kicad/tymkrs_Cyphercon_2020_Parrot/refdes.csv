@@ -1,0 +1,117 @@
+ref_des, part number, footprint
+BT1, Keystone 2462, PJS-pth-parts:Keystone_2462_2x_AA_no_holes
+C1, no_pop, Capacitor_SMD:C_0603_1608Metric
+C10, 1uF 16V, Capacitor_SMD:C_0805_2012Metric
+C11, 1uF 16V, Capacitor_SMD:C_0805_2012Metric
+C12, 10uF, Capacitor_SMD:C_1206_3216Metric
+C13, 0.1uF, Capacitor_SMD:C_0603_1608Metric
+C14, 0.1uF, Capacitor_SMD:C_0603_1608Metric
+C15, 10uF, Capacitor_SMD:C_1206_3216Metric
+C16, 0.1uF, Capacitor_SMD:C_0603_1608Metric
+C17, 10uF, Capacitor_SMD:C_1206_3216Metric
+C18, 0.1uF, Capacitor_SMD:C_0603_1608Metric
+C2, 22uF 10V, Capacitor_SMD:C_0603_1608Metric
+C3, 22uF 10V, Capacitor_SMD:C_0603_1608Metric
+C4, 4.7uF 16V 0805, Capacitor_SMD:C_0805_2012Metric
+C5, 2.2uF 16V 0805, Capacitor_SMD:C_0805_2012Metric
+C6, 4.7uF 16V 0805, Capacitor_SMD:C_0805_2012Metric
+C7, 4.7uF 16V 0805, Capacitor_SMD:C_0805_2012Metric
+C8, 0.1uF 6.3V X5R, Capacitor_SMD:C_0603_1608Metric
+C9, 0.1uF 16V X7R, Capacitor_SMD:C_0603_1608Metric
+D1, no-pop, Diode_SMD:D_SMA
+D10, Pink_0603, LED_SMD:LED_0603_1608Metric
+D11, Pink_0603, LED_SMD:LED_0603_1608Metric
+D12, LED_RABG, SunLED:XZMDKCBDDG45S-9
+D13, Pink_0603, LED_SMD:LED_0603_1608Metric
+D14, Pink_0603, LED_SMD:LED_0603_1608Metric
+D15, Pink_0603, LED_SMD:LED_0603_1608Metric
+D16, Pink_0603, LED_SMD:LED_0603_1608Metric
+D17, LED_RABG, SunLED:XZMDKCBDDG45S-9
+D18, Pink_0603, LED_SMD:LED_0603_1608Metric
+D19, Pink_0603, LED_SMD:LED_0603_1608Metric
+D2, IR26-21C (1206), LED_SMD:LED_1206_3216Metric
+D20, Pink_0603, LED_SMD:LED_0603_1608Metric
+D21, Pink_0603, LED_SMD:LED_0603_1608Metric
+D22, Pink_0603, LED_SMD:LED_0603_1608Metric
+D23, Amber, SunLED:XZ__K45WT-9
+D24, Pink_0603, LED_SMD:LED_0603_1608Metric
+D25, Pink_0603, LED_SMD:LED_0603_1608Metric
+D26, Pink_0603, LED_SMD:LED_0603_1608Metric
+D27, Pink_0603, LED_SMD:LED_0603_1608Metric
+D28, LED_RABG, SunLED:XZMDKCBDDG45S-9
+D29, Pink_0603, LED_SMD:LED_0603_1608Metric
+D3, White IN-S63AT5UW, LED_SMD:LED_0603_1608Metric
+D30, Pink_0603, LED_SMD:LED_0603_1608Metric
+D31, Pink_0603, LED_SMD:LED_0603_1608Metric
+D32, Pink_0603, LED_SMD:LED_0603_1608Metric
+D33, LED_RABG, SunLED:XZMDKCBDDG45S-9
+D34, Pink_0603, LED_SMD:LED_0603_1608Metric
+D35, Pink_0603, LED_SMD:LED_0603_1608Metric
+D36, Pink_0603, LED_SMD:LED_0603_1608Metric
+D37, Pink_0603, LED_SMD:LED_0603_1608Metric
+D38, Pink_0603, LED_SMD:LED_0603_1608Metric
+D39, Amber, SunLED:XZ__K45WT-9
+D4, Pink_0603, LED_SMD:LED_0603_1608Metric
+D40, Pink_0603, LED_SMD:LED_0603_1608Metric
+D41, Pink_0603, LED_SMD:LED_0603_1608Metric
+D42, Pink_0603, LED_SMD:LED_0603_1608Metric
+D43, Pink_0603, LED_SMD:LED_0603_1608Metric
+D44, Amber, SunLED:XZ__K45WT-9
+D45, Pink_0603, LED_SMD:LED_0603_1608Metric
+D46, Pink_0603, LED_SMD:LED_0603_1608Metric
+D47, Pink_0603, LED_SMD:LED_0603_1608Metric
+D48, Pink_0603, LED_SMD:LED_0603_1608Metric
+D49, Pink_0603, LED_SMD:LED_0603_1608Metric
+D5, Amber, SunLED:XZ__K45WT-9
+D50, Pink_0603, LED_SMD:LED_0603_1608Metric
+D51, Pink_0603, LED_SMD:LED_0603_1608Metric
+D52, Pink_0603, LED_SMD:LED_0603_1608Metric
+D53, Pink_0603, LED_SMD:LED_0603_1608Metric
+D54, Pink_0603, LED_SMD:LED_0603_1608Metric
+D55, Pink_0603, LED_SMD:LED_0603_1608Metric
+D56, Pink_0603, LED_SMD:LED_0603_1608Metric
+D57, Amber, SunLED:XZ__K45WT-9
+D58, Amber, SunLED:XZ__K45WT-9
+D59, Pink_0603, LED_SMD:LED_0603_1608Metric
+D6, Red_rev, SunLED:XZ__K45WT-9
+D60, Pink_0603, LED_SMD:LED_0603_1608Metric
+D61, Pink_0603, LED_SMD:LED_0603_1608Metric
+D62, Pink_0603, LED_SMD:LED_0603_1608Metric
+D63, Pink_0603, LED_SMD:LED_0603_1608Metric
+D64, Pink_0603, LED_SMD:LED_0603_1608Metric
+D7, LED_RABG, SunLED:XZMDKCBDDG45S-9
+D8, Red_rev, SunLED:XZ__K45WT-9
+D9, Red_rev, SunLED:XZ__K45WT-9
+J1, PicKit, Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Vertical
+J2, SPI, Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical
+L1, 2.2uH 1.6A 0805, Inductor_SMD:L_0805_2012Metric
+R1, no_pop, Resistor_SMD:R_0603_1608Metric
+R10, 24.9K, Resistor_SMD:R_0603_1608Metric
+R11, 24.9K, Resistor_SMD:R_0603_1608Metric
+R2, 100k, Resistor_SMD:R_0603_1608Metric
+R3, 100k, Resistor_SMD:R_0603_1608Metric
+R4, 1k, Resistor_SMD:R_0603_1608Metric
+R5, no_pop, Resistor_SMD:R_0603_1608Metric
+R6, 100k, Resistor_SMD:R_0603_1608Metric
+R7, 27 (0805), Resistor_SMD:R_0603_1608Metric
+R8, 10k, Resistor_SMD:R_0603_1608Metric
+R9, 10k, Resistor_SMD:R_0603_1608Metric
+SW1, TACT_6MM, PJS_smt_parts:PTS645_6mm_tact_sw
+U1, PIC16F15345, Package_SO:SOIC-20W_7.5x12.8mm_P1.27mm
+U2, TPS61322x, Package_TO_SOT_SMD:SOT-23-5
+U3, 25LCxxx, Package_SO:SOIC-8_5.275x5.275mm_P1.27mm
+U4, TSOP58438, Vishay:TSOP48
+U5, IS31FL3236_TQFP, Package_QFP:TQFP-48-1EP_7x7mm_P0.5mm_EP3.5x3.5mm
+U6, IS31FL3236_TQFP, Package_QFP:TQFP-48-1EP_7x7mm_P0.5mm_EP3.5x3.5mm
+icon1, Metroid, PJS-icons:metroid
+icon10, Silk, tymkrs:cypheron2020_parrot_silk
+icon11, Eye location, tymkrs:cypheron2020_parrot_eye
+icon2, Common Logo soldermask, tymkrs:cypheron2020_common_logo_soldermask
+icon3, Common LED guide, tymkrs:cypheron2020_common_logo_led_guide
+icon4, Common Logo keepout, tymkrs:cypheron2020_common_logo_copper_flood_keepout
+icon5, Common Logo copper, tymkrs:cypheron2020_common_logo_copper_add
+icon6, Cut lines, tymkrs:cypheron2020_parrot_cuts
+icon7, Icon keepout, tymkrs:cypheron2020_parrot_icons_copperkeepout
+icon8, Icon soldermask, tymkrs:cypheron2020_parrot_icons_soldermask
+icon9, LED guide, tymkrs:cypheron2020_parrot_led_guide
+oLED1, 0.42_oLED_display, PJS_smt_parts:oLED_0.42_rev

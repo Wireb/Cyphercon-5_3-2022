@@ -1,0 +1,3025 @@
+MPASM 5.86  TYMKRS_CYPHERCON_2020_IRBUTTON.A   4-24-2022  17:21:52         PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00001 ;#######################################################################################################
+                            ##################################################
+                      00002 ;Copyright (c) 2020 Peter Shabino
+                      00003 ;
+                      00004 ;Permission is hereby granted, free of charge, to any person obtaining a copy of this hardware, software
+                            , and associated documentation files 
+                      00005 ;(the "Product"), to deal in the Product without restriction, including without limitation the rights to
+                             use, copy, modify, merge, publish, 
+                      00006 ;distribute, sublicense, and/or sell copies of the Product, and to permit persons to whom the Product is
+                             furnished to do so, subject to the 
+                      00007 ;following conditions:
+                      00008 ;
+                      00009 ;The above copyright notice and this permission notice shall be included in all copies or substantial po
+                            rtions of the Product.
+                      00010 ;
+                      00011 ;THE PRODUCT IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LI
+                            MITED TO THE WARRANTIES OF 
+                      00012 ;MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+                             COPYRIGHT HOLDERS BE LIABLE 
+                      00013 ;FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+                             FROM, OUT OF OR IN CONNECTION 
+                      00014 ;WITH THE PRODUCT OR THE USE OR OTHER DEALINGS IN THE PRODUCT.
+                      00015 ;#######################################################################################################
+                            ##################################################
+                      00016 ; 11JAN2020 V0 PJS New 
+                      00017 ; 06May2022 V1 PJS Added support for bicolor led for outhouse
+                      00018 
+                      00019         
+                      00020 #define CODE_VER_STRING "Peter Shabino 06Mar2022 code for tymkrs Cyphercon 2020 IRbutton V1 www.wire2wir
+                            e.org!" ;Just in ROM !!! update vars below with true level!!
+  00000000            00021 ver             equ     0x00
+                      00022 
+                      00023 ; enable debug code 
+                      00024 ;#define debug
+                      00025                 
+                      00026 ; NOTES
+                      00027 ; SAF is high endurance flash (128 words) at the end of flash. Not usable as program space when enabled 
+                            in config words 
+                      00028 ; http://ww1.microchip.com/downloads/en/DeviceDoc/PIC16(L)F15354_55%20Data%20Sheet%2040001853C.pdf      
+                      00029 
+                      00030 ;****************************************************************************************
+                      00031 ; port list [SOIC8]
+                      00032 ; Vss(8)
+                      00033 ; Vdd(1)
+                      00034 ; RA0(7)        [ICSPDAT]       bicolor green led
+                      00035 ; RA1(6)        [ISPCLK]        bicolor red led
+                      00036 ; RA2(5)        
+                      00037 ; RA3(4)        [MCLR] button
+                      00038 ; RA4(3)        Red LED
+                      00039 ; RA5(2)        IR_OUT
+                      00040 ;****************************************************************************************
+                      00041 
+                      00042 
+MPASM 5.86  TYMKRS_CYPHERCON_2020_IRBUTTON.A   4-24-2022  17:21:52         PAGE  2
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00043 ; PIC16F15313 Configuration Bit Settings
+                      00044 #include "p16f15313.inc"
+                      00001         LIST
+                      00002 
+                      00003 ;==========================================================================
+                      00004 ; Build date : Oct 24 2019
+                      00005 ;  MPASM PIC16F15313 processor include
+                      00006 ; 
+                      00007 ;  (c) Copyright 1999-2019 Microchip Technology, All rights reserved
+                      00008 ;==========================================================================
+                      00009 
+                      03328         LIST
+                      00045 ; CONFIG1
+                      00046 ; __config 0xFF8C
+8007   3F8C           00047  __CONFIG _CONFIG1, _FEXTOSC_OFF & _RSTOSC_HFINT32 & _CLKOUTEN_OFF & _CSWEN_ON & _FCMEN_ON
+                      00048 ; CONFIG2
+                      00049 ; __config 0xF7DC
+8008   37DC           00050  __CONFIG _CONFIG2, _MCLRE_OFF & _PWRTE_ON & _LPBOREN_ON & _BOREN_ON & _BORV_LO & _ZCD_OFF & _PPS1WAY_OF
+                            F & _STVREN_ON
+                      00051 ; CONFIG3
+                      00052 ; __config 0xFF9F
+8009   3F9F           00053  __CONFIG _CONFIG3, _WDTCPS_WDTCPS_31 & _WDTE_OFF & _WDTCWS_WDTCWS_7 & _WDTCCS_SC
+                      00054 ; CONFIG4
+                      00055 ; __config 0xDFFF
+800A   1FFF           00056  __CONFIG _CONFIG4, _BBSIZE_BB512 & _BBEN_OFF & _SAFEN_OFF & _WRTAPP_OFF & _WRTB_OFF & _WRTC_OFF & _WRTS
+                            AF_OFF & _LVP_OFF
+                      00057 ; CONFIG5
+                      00058 ; __config 0xFFFE
+800B   3FFE           00059  __CONFIG _CONFIG5, _CP_ON
+                      00060  
+                      00061  
+                      00062  
+                      00063 ;------------------
+                      00064 ; constants
+                      00065 ;------------------     
+  00000015            00066 IR_PULSE_WIDTH  equ 0x15                ; pulse width set to 10% (0x69 = 50%, 0x35 = 25%, 0x15 = 10%, 0x
+                            0A = 5%)
+  00000005            00067 OUTHOUSE_DOOR_DELAY equ d'5'    ; delay before code is sent
+                      00068 ; Default USER ID to load (2 bytes)
+                      00069 UserID  code 0x8000
+8000   02C0           00070     dw 0x02C0
+                      00071 
+                      00072 #define button_delay_time  d'15'   ; default = 15       
+                      00073 #define status_byte 0x00 ; 0x00 = normal no con start, 0x01 = con start         
+                      00074 ;#define outhouse    
+                      00075     
+                      00076 ;------------------
+                      00077 ; vars (0x20 - 0x6f) bank 0
+                      00078 ;------------------
+  00000020            00079 temp                    equ     0x20
+  00000021            00080 badge_idL               equ     0x21
+  00000022            00081 badge_idH               equ     0x22
+  00000023            00082 ir_tx_seq               equ 0x23                
+MPASM 5.86  TYMKRS_CYPHERCON_2020_IRBUTTON.A   4-24-2022  17:21:52         PAGE  3
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+  00000024            00083 ir_chksum               equ 0x24                
+                      00084                                                 
+                      00085 ;------------------
+                      00086 ; vars (0xA0 - 0xef) bank 1
+                      00087 ;------------------
+                      00088 
+                      00089 ;------------------
+                      00090 ; vars (0x120 - 0x16f) bank 2
+                      00091 ;------------------
+                      00092                         
+                      00093 ;------------------
+                      00094 ; vars (0x1A0 - 0x1ef) bank 3
+                      00095 ;------------------
+                      00096 
+                      00097 ;------------------
+                      00098 ; vars (0x220 - 0x26f) bank 4
+                      00099 ;------------------
+                      00100 
+                      00101 ;------------------
+                      00102 ; vars (0x2A0 - 02xef) bank 5
+                      00103 ;------------------
+                      00104 
+                      00105 ;------------------
+                      00106 ; vars (0x320 - 0x32F) bank 6 
+                      00107 ;------------------
+                      00108                 
+                      00109 ;------------------
+                      00110 ; vars (0x70 - 0x7F) global regs
+                      00111 ;------------------
+  00000070            00112 gtemp                   equ     0x70
+  00000071            00113 delay_cnt               equ 0x71
+                      00114                 
+                      00115                 
+                      00116 ;put the following at address 0000h
+                      00117         org     0000h
+0000   2???           00118         goto    START                       ;vector to initialization sequence
+                      00119 
+                      00120 ;#######################################################################################################
+                            ####################
+                      00121 ; intrupt routine
+                      00122 ;#######################################################################################################
+                            ####################
+                      00123         ;put the following at address 0004h
+                      00124         org     0004h   
+                      00125         ; following regs are autosaved
+                      00126         ; W
+                      00127         ; STATUS (except TO and PD)
+                      00128         ; BSR
+                      00129         ; FSR
+                      00130         ; PCLATH
+                      00131 
+                      00132 
+                      00133         
+MPASM 5.86  TYMKRS_CYPHERCON_2020_IRBUTTON.A   4-24-2022  17:21:52         PAGE  4
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00134         ;******************************************************************
+                      00135         ; check if Interupt on change IRQ
+                      00136         ;******************************************************************
+                      00137         ;------------------
+0004   300E           00138         movlw   d'14'
+0005   0088           00139         movwf   BSR             
+                      00140         ;------------------     
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0006   1E0C           00141         btfss   PIR0, IOCIF
+0007   2???           00142         goto    IRQ_not_IOC
+                      00143         ;------------------
+0008   303E           00144         movlw   d'62'
+0009   0088           00145         movwf   BSR             
+                      00146         ;------------------     
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+000A   01BF           00147         clrf    IOCAF
+                      00148         ;------------------
+000B   300E           00149         movlw   d'14'
+000C   0088           00150         movwf   BSR             
+                      00151         ;------------------     
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+000D   120C           00152         bcf             PIR0, IOCIF
+000E                  00153 IRQ_not_IOC     
+                      00154         
+                      00155         
+                      00156         ;******************************************************************
+                      00157         ; check if TMR0 IRQ
+                      00158         ;******************************************************************
+                      00159         ;------------------
+000E   300E           00160         movlw   d'14'
+000F   0088           00161         movwf   BSR             
+                      00162         ;------------------     
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0010   1E8C           00163         btfss   PIR0, TMR0IF
+0011   2???           00164         goto    IRQ_not_TMR0
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0012   128C           00165         bcf             PIR0, TMR0IF
+                      00166 
+                      00167         ; if the delay_cnt is not 0 subtract 1
+0013   08F1           00168         movf    delay_cnt, F
+0014   1D03           00169         btfss   STATUS, Z
+0015   03F1           00170         decf    delay_cnt, F
+0016                  00171 IRQ_not_TMR0    
+                      00172 
+                      00173         
+                      00174         
+                      00175         ;******************************************************************
+                      00176         ; check if TX1 IRQ
+                      00177         ;******************************************************************
+                      00178         ;------------------
+0016   300E           00179         movlw   d'14'
+0017   0088           00180         movwf   BSR             
+                      00181         ;------------------     
+MPASM 5.86  TYMKRS_CYPHERCON_2020_IRBUTTON.A   4-24-2022  17:21:52         PAGE  5
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0018   1E19           00182         btfss   PIE3, TX1IE                     ; if the IRQ is not enabled ignore this check
+0019   2???           00183         goto    IRQ_not_TX1
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+001A   1E0F           00184         btfss   PIR3, TX1IF                     ; check if IRQ is currently set
+001B   2???           00185         goto    IRQ_not_TX1
+                      00186         ;------------------
+001C   0188           00187         clrf    BSR             
+                      00188         ;------------------     
+                      00189                 
+                      00190         ; check if more bytes to send (loop should start with this var set to 0x0C)
+001D   0BA3           00191         decfsz  ir_tx_seq, F
+001E   2???           00192         goto    IRQ_TX1_send
+                      00193 
+001F                  00194 IRQ_TX1_stop    
+                      00195         ; all bytes sent stop TX
+001F   01A3           00196         clrf    ir_tx_seq               ; make sure this reg is cleared before exiting.
+                      00197         ;------------------
+0020   300E           00198         movlw   d'14'
+0021   0088           00199         movwf   BSR             
+                      00200         ;------------------     
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0022   1219           00201         bcf     PIE3, TX1IE                     ; disable Uart2 transmit IRQ    
+0023   2???           00202         goto    IRQ_not_TX1
+                      00203         
+0024                  00204 IRQ_TX1_send    
+0024   0823           00205         movf    ir_tx_seq, W
+0025   3A0B           00206         xorlw   0x0B
+0026   1D03           00207         btfss   STATUS, Z
+0027   2???           00208         goto    IRQ_TX1_send_m
+                      00209         ;------------------
+0028   3002           00210         movlw   d'2'
+0029   0088           00211         movwf   BSR             
+                      00212         ;------------------
+002A   3053           00213         movlw   0x53                            ; S
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+002B   009A           00214         movwf   TX1REG
+                      00215         ;------------------
+002C   0188           00216         clrf    BSR             
+                      00217         ;------------------
+002D   2???           00218         goto    IRQ_not_TX1             
+002E                  00219 IRQ_TX1_send_m
+002E   0823           00220         movf    ir_tx_seq, W
+002F   3A0A           00221         xorlw   0x0A
+0030   1D03           00222         btfss   STATUS, Z
+0031   2???           00223         goto    IRQ_TX1_send_a
+                      00224         ;------------------
+0032   3002           00225         movlw   d'2'
+0033   0088           00226         movwf   BSR             
+                      00227         ;------------------
+0034   306D           00228         movlw   0x6D                            ; m
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0035   009A           00229         movwf   TX1REG
+MPASM 5.86  TYMKRS_CYPHERCON_2020_IRBUTTON.A   4-24-2022  17:21:52         PAGE  6
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00230         ;------------------
+0036   0188           00231         clrf    BSR             
+                      00232         ;------------------
+0037   2???           00233         goto    IRQ_not_TX1             
+0038                  00234 IRQ_TX1_send_a
+0038   0823           00235         movf    ir_tx_seq, W
+0039   3A09           00236         xorlw   0x09
+003A   1D03           00237         btfss   STATUS, Z
+003B   2???           00238         goto    IRQ_TX1_send_s
+                      00239         ;------------------
+003C   3002           00240         movlw   d'2'
+003D   0088           00241         movwf   BSR             
+                      00242         ;------------------
+003E   3061           00243         movlw   0x61                            ; a
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+003F   009A           00244         movwf   TX1REG
+                      00245         ;------------------
+0040   0188           00246         clrf    BSR             
+                      00247         ;------------------
+0041   2???           00248         goto    IRQ_not_TX1             
+                      00249 
+0042                  00250 IRQ_TX1_send_s
+0042   0823           00251         movf    ir_tx_seq, W
+0043   3A08           00252         xorlw   0x08
+0044   1D03           00253         btfss   STATUS, Z
+0045   2???           00254         goto    IRQ_TX1_send_h
+                      00255         ;------------------
+0046   3002           00256         movlw   d'2'
+0047   0088           00257         movwf   BSR             
+                      00258         ;------------------
+0048   3073           00259         movlw   0x73                            ; s
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0049   009A           00260         movwf   TX1REG
+                      00261         ;------------------
+004A   0188           00262         clrf    BSR             
+                      00263         ;------------------
+004B   2???           00264         goto    IRQ_not_TX1             
+                      00265 
+004C                  00266 IRQ_TX1_send_h
+004C   0823           00267         movf    ir_tx_seq, W
+004D   3A07           00268         xorlw   0x07
+004E   1D03           00269         btfss   STATUS, Z
+004F   2???           00270         goto    IRQ_TX1_send_q
+                      00271         ;------------------
+0050   3002           00272         movlw   d'2'
+0051   0088           00273         movwf   BSR             
+                      00274         ;------------------
+0052   3068           00275         movlw   0x68                            ; h
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0053   009A           00276         movwf   TX1REG
+                      00277         ;------------------
+0054   0188           00278         clrf    BSR             
+                      00279         ;------------------
+MPASM 5.86  TYMKRS_CYPHERCON_2020_IRBUTTON.A   4-24-2022  17:21:52         PAGE  7
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+0055   2???           00280         goto    IRQ_not_TX1             
+                      00281         
+0056                  00282 IRQ_TX1_send_q
+0056   0823           00283         movf    ir_tx_seq, W
+0057   3A06           00284         xorlw   0x06
+0058   1D03           00285         btfss   STATUS, Z
+0059   2???           00286         goto    IRQ_TX1_send_status
+                      00287         ;------------------
+005A   3002           00288         movlw   d'2'
+005B   0088           00289         movwf   BSR             
+                      00290         ;------------------
+005C   303F           00291         movlw   0x3f                            ; ?
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+005D   009A           00292         movwf   TX1REG
+                      00293         ;------------------
+005E   0188           00294         clrf    BSR             
+                      00295         ;------------------
+005F   2???           00296         goto    IRQ_not_TX1             
+                      00297         
+0060                  00298 IRQ_TX1_send_status
+0060   0823           00299         movf    ir_tx_seq, W
+0061   3A05           00300         xorlw   0x05
+0062   1D03           00301         btfss   STATUS, Z
+0063   2???           00302         goto    IRQ_TX1_send_type
+                      00303         ;------------------
+0064   3002           00304         movlw   d'2'
+0065   0088           00305         movwf   BSR             
+                      00306         ;------------------
+0066   3000           00307         movlw   status_byte                             ; status byte
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0067   009A           00308         movwf   TX1REG
+                      00309         ;------------------
+0068   0188           00310         clrf    BSR             
+                      00311         ;------------------
+0069   2???           00312         goto    IRQ_not_TX1             
+                      00313         
+006A                  00314 IRQ_TX1_send_type
+006A   0823           00315         movf    ir_tx_seq, W
+006B   3A04           00316         xorlw   0x04
+006C   1D03           00317         btfss   STATUS, Z
+006D   2???           00318         goto    IRQ_TX1_send_idH
+                      00319         ;------------------
+006E   3002           00320         movlw   d'2'
+006F   0088           00321         movwf   BSR             
+                      00322         ;------------------
+0070   3000           00323         movlw   0x00                            ; standart social ping
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0071   009A           00324         movwf   TX1REG
+                      00325         ;------------------
+0072   0188           00326         clrf    BSR             
+                      00327         ;------------------
+0073   2???           00328         goto    IRQ_not_TX1             
+                      00329         
+MPASM 5.86  TYMKRS_CYPHERCON_2020_IRBUTTON.A   4-24-2022  17:21:52         PAGE  8
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+0074                  00330 IRQ_TX1_send_idH        
+0074   0823           00331         movf    ir_tx_seq, W
+0075   3A03           00332         xorlw   0x03
+0076   1D03           00333         btfss   STATUS, Z
+0077   2???           00334         goto    IRQ_TX1_send_idL
+0078   0187           00335         clrf    FSR1H
+0079   3022           00336         movlw   badge_idH
+007A   0086           00337         movwf   FSR1L
+                      00338         ;------------------
+007B   3002           00339         movlw   d'2'
+007C   0088           00340         movwf   BSR             
+                      00341         ;------------------
+007D   0801           00342         movf    INDF1, W
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+007E   009A           00343         movwf   TX1REG
+                      00344         ;------------------
+007F   0188           00345         clrf    BSR             
+                      00346         ;------------------
+0080   2???           00347         goto    IRQ_not_TX1     
+                      00348         
+0081                  00349 IRQ_TX1_send_idL        
+0081   0823           00350         movf    ir_tx_seq, W
+0082   3A02           00351         xorlw   0x02
+0083   1D03           00352         btfss   STATUS, Z
+0084   2???           00353         goto    IRQ_TX1_send_chksum
+0085   0187           00354         clrf    FSR1H
+0086   3021           00355         movlw   badge_idL
+0087   0086           00356         movwf   FSR1L
+                      00357         ;------------------
+0088   3002           00358         movlw   d'2'
+0089   0088           00359         movwf   BSR             
+                      00360         ;------------------
+008A   0801           00361         movf    INDF1, W
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+008B   009A           00362         movwf   TX1REG
+                      00363         ;------------------
+008C   0188           00364         clrf    BSR             
+                      00365         ;------------------
+008D   2???           00366         goto    IRQ_not_TX1     
+                      00367         
+008E                  00368 IRQ_TX1_send_chksum
+008E   0823           00369         movf    ir_tx_seq, W
+008F   3A01           00370         xorlw   0x01
+0090   1D03           00371         btfss   STATUS, Z
+0091   2???           00372         goto    IRQ_TX1_stop            ; if the value is not 1,2,3,4,5,6 then something really bad happ
+                            ened and it should stop now
+0092   303B           00373         movlw   0x3B                            ; S,m,a,s,h,? chars
+0093   00A4           00374         movwf   ir_chksum
+0094   0822           00375         movf    badge_idH, W
+0095   07A4           00376         addwf   ir_chksum, F
+0096   0821           00377         movf    badge_idL, W
+0097   07A4           00378         addwf   ir_chksum, F
+0098   3000           00379         movlw   status_byte
+MPASM 5.86  TYMKRS_CYPHERCON_2020_IRBUTTON.A   4-24-2022  17:21:52         PAGE  9
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+0099   07A4           00380         addwf   ir_chksum, F
+009A   09A4           00381         comf    ir_chksum, F
+009B   0AA4           00382         incf    ir_chksum, F
+009C   0187           00383         clrf    FSR1H
+009D   3024           00384         movlw   ir_chksum
+009E   0086           00385         movwf   FSR1L
+                      00386         ;------------------
+009F   3002           00387         movlw   d'2'
+00A0   0088           00388         movwf   BSR             
+                      00389         ;------------------
+00A1   0801           00390         movf    INDF1, W
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+00A2   009A           00391         movwf   TX1REG
+                      00392         ;------------------
+00A3   0188           00393         clrf    BSR             
+                      00394         ;------------------
+00A4                  00395 IRQ_not_TX1     
+                      00396         
+00A4   0009           00397         retfie
+                      00398 ;#######################################################################################################
+                            ####################
+                      00399 ; end of IRQ code
+                      00400 ;#######################################################################################################
+                            ####################    
+                      00401         
+00A5                  00402 START
+                      00403         ; init crap
+                      00404         ;------------------
+00A5   0188           00405         clrf    BSR                                     ; bank 0
+                      00406         ;------------------
+00A6   018B           00407         clrf    INTCON                      ; disable interupts
+00A7   3020           00408         movlw   0x20                            ; set RA5 high to turn off IR LED, RA4 high to turn off 
+                            the red LED, Rest low
+00A8   0098           00409         movwf   LATA                        
+                      00410 
+00A9   3008           00411         movlw   0x08                    ; RA3 button is a input, rest outputs (keep unused lines from fl
+                            otating by driving low)
+00AA   0092           00412         movwf   TRISA                       ; 0 = output 
+                      00413 
+                      00414                 
+                      00415         ; clear vars first 80 bytes (control structures) 
+00AB   3020           00416         movlw   0x20                    ; start of bank 0 vars
+00AC   0084           00417         movwf   FSR0L
+00AD   0185           00418         clrf    FSR0H
+00AE   3050           00419         movlw   0x50                    ; clear all of bank other than globals
+00AF   00F0           00420         movwf   gtemp
+00B0                  00421 init_bank0_loop
+00B0   0180           00422         clrf    INDF0
+00B1   0A84           00423         incf    FSR0L, F
+00B2   0BF0           00424         decfsz  gtemp, F
+00B3   2???           00425         goto    init_bank0_loop
+                      00426         
+                      00427         
+MPASM 5.86  TYMKRS_CYPHERCON_2020_IRBUTTON.A   4-24-2022  17:21:52         PAGE 10
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00428         ;------------------
+00B4   3002           00429         movlw   d'2'
+00B5   0088           00430         movwf   BSR             
+                      00431         ;------------------
+                      00432         ; set up uart 1
+00B6   3020           00433         movlw   0x20
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+00B7   009E           00434         movwf   TX1STA                                  ; tx on, 8 bit tx, low baud 
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+00B8   019F           00435         clrf    BAUD1CON                                ; Pol normal, 8 bit baud, 
+00B9   30A6           00436         movlw   0xA6
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+00BA   009B           00437         movwf   SP1BRGL                                 ; baud rate for 3000 baud -0.2% off
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+00BB   019C           00438         clrf    SP1BRGH
+00BC   3090           00439         movlw   0x90
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+00BD   009D           00440         movwf   RC1STA                                  ; UART on, 8 bit rx, CREN on    
+                      00441         
+                      00442         ;------------------
+00BE   3005           00443         movlw   d'5'
+00BF   0088           00444         movwf   BSR             
+                      00445         ;------------------
+                      00446         ; set up timer 2 to roll over on a 38kHz period (37.9 something)
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+00C0   018C           00447         clrf    TMR2
+00C1   30D3           00448         movlw   0xD3                        ; period reg 
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+00C2   008D           00449         movwf   PR2
+00C3   3001           00450         movlw   0x01                        ; select Fosc/4 as the input clock
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+00C4   0090           00451         movwf   T2CLKCON
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+00C5   018F           00452         clrf    T2HLT                       ; mode 0 (free run standard) 
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+00C6   0191           00453         clrf    T2RST                       ; not used
+00C7   3080           00454         movlw   0x80                        ; timer 2 on, 1:1 pre, 1:1 post
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+00C8   008E           00455         movwf   T2CON
+                      00456 
+                      00457         ;------------------
+00C9   3006           00458         movlw   d'6'
+00CA   0088           00459         movwf   BSR             
+                      00460         ;------------------     
+                      00461         ; set up PWM engine
+00CB   3015           00462         movlw   IR_PULSE_WIDTH
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+00CC   009D           00463         movwf   PWM5DCH
+00CD   30C0           00464         movlw   0xC0
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+00CE   009C           00465         movwf   PWM5DCL
+00CF   3080           00466         movlw   0x80                        ; engine on, active high
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+MPASM 5.86  TYMKRS_CYPHERCON_2020_IRBUTTON.A   4-24-2022  17:21:52         PAGE 11
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+00D0   009E           00467         movwf   PWM5CON
+                      00468 
+                      00469         ;------------------
+00D1   300B           00470         movlw   d'11'
+00D2   0088           00471         movwf   BSR             
+                      00472         ;------------------     
+                      00473         ; Set up TMR0
+00D3   30F2           00474         movlw   0xF2                                    ; ~1s delay
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+00D4   009D           00475         movwf   TMR0H
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+00D5   019C           00476         clrf    TMR0L   
+00D6   3097           00477         movlw   0x97                                    ; LFINTOSC 31kHz, no sync, 1:128 prescaler
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+00D7   009F           00478         movwf   T0CON1
+00D8   3080           00479         movlw   0x80                                    ; timer on, 8 bit, 1:1 postscaler
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+00D9   009E           00480         movwf   T0CON0
+                      00481         
+                      00482         ;------------------
+00DA   300E           00483         movlw   d'14'
+00DB   0088           00484         movwf   BSR             
+                      00485         ;------------------     
+                      00486         ; set up interupts
+00DC   3020           00487         movlw   0x20                                    ; TMR0
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+00DD   0096           00488         movwf   PIE0
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+00DE   018C           00489         clrf    PIR0
+                      00490 ;       movlw   0x00
+                      00491 ;       iorlw   0x20                                    ; RC1IE (uart)
+                      00492 ;       iorlw   0x10                                    ; TX1IE (uart)
+                      00493 ;       movwf   PIE3
+                      00494 ;       clrf    PIR3
+                      00495         
+                      00496         ;------------------
+00DF   3010           00497         movlw   d'16'
+00E0   0088           00498         movwf   BSR             
+                      00499         ;------------------     
+                      00500         ; get the user ID data (badge ID) 
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+00E1   019B           00501         clrf    NVMADRH
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+00E2   019A           00502         clrf    NVMADRL
+00E3   3041           00503         movlw   0x41
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+00E4   009E           00504         movwf   NVMCON1                                 ; read the config space selected
+00E5   0000           00505         nop                                                             ; instruction requires 1 cycle t
+                            o complete. (may not be needed but just to be safe.)
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+00E6   081C           00506         movf    NVMDATL, W
+                      00507         ;------------------
+00E7   0188           00508         clrf    BSR             
+MPASM 5.86  TYMKRS_CYPHERCON_2020_IRBUTTON.A   4-24-2022  17:21:52         PAGE 12
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00509         ;------------------     
+00E8   00A1           00510         movwf   badge_idL
+                      00511         ;------------------
+00E9   3010           00512         movlw   d'16'
+00EA   0088           00513         movwf   BSR             
+                      00514         ;------------------     
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+00EB   081D           00515         movf    NVMDATH, W
+                      00516         ;------------------
+00EC   0188           00517         clrf    BSR             
+                      00518         ;------------------     
+00ED   00A2           00519         movwf   badge_idH
+                      00520                 
+                      00521         ;------------------
+00EE   303C           00522         movlw   d'60'
+00EF   0088           00523         movwf   BSR             
+                      00524         ;------------------
+                      00525         ; configure CLC for IRDA output 
+00F0   3013           00526         movlw   0x13
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+00F1   00A6           00527         movwf   CLC3SEL0                                ; data 1 PWM5
+00F2   301F           00528         movlw   0x1F
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+00F3   00A7           00529         movwf   CLC3SEL1                                ; data 2 TX1
+00F4   3013           00530         movlw   0x13
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+00F5   00A8           00531         movwf   CLC3SEL2                                ; data 3 PWM5
+00F6   3013           00532         movlw   0x13
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+00F7   00A9           00533         movwf   CLC3SEL3                                ; data 4 PWM5   
+00F8   3002           00534         movlw   0x02
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+00F9   00AA           00535         movwf   CLC3GLS0                                ; data 1 connected to input 1 normal
+00FA   3008           00536         movlw   0x08
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+00FB   00AB           00537         movwf   CLC3GLS1                                ; data 2 connected to input 2 normal
+00FC   3000           00538         movlw   0x00
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+00FD   00AC           00539         movwf   CLC3GLS2                                ; nothing connected to input 3
+00FE   3000           00540         movlw   0x00
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+00FF   00AD           00541         movwf   CLC3GLS3                                ; nothing connected to input 4
+0100   308E           00542         movlw   0x8E
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0101   00A5           00543         movwf   CLC3POL                                 ; inputs 1, 2 normal 3, 4 inverted, and output i
+                            nverted (direct driving a LED from V+ vs fet driven)
+0102   3082           00544         movlw   0x82                                    ; CLC enabled, no IRQs, 4 input 
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0103   00A4           00545         movwf   CLC3CON
+                      00546         
+                      00547         ;------------------
+0104   303D           00548         movlw   d'61'
+0105   0088           00549         movwf   BSR             
+MPASM 5.86  TYMKRS_CYPHERCON_2020_IRBUTTON.A   4-24-2022  17:21:52         PAGE 13
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00550         ;------------------
+                      00551         ; unlock bits
+0106   3055           00552         movlw   0x55
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0107   008F           00553         movwf   PPSLOCK
+0108   30AA           00554         movlw   0xAA
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0109   008F           00555         movwf   PPSLOCK
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+010A   100F           00556         bcf             PPSLOCK, PPSLOCKED
+                      00557         
+                      00558         ; input PPS signals
+                      00559         
+                      00560         ;------------------
+010B   303E           00561         movlw   d'62'
+010C   0088           00562         movwf   BSR             
+                      00563         ;------------------     
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+010D   01B8           00564         clrf    ANSELA                          ; 0 = digital, 1 = analog 
+                      00565         
+                      00566         ;movlw  0x01                            ; enable weak pull up on portA 0
+                      00567         ;movwf  WPUA                            
+                      00568 
+                      00569         ; output PPS signals
+010E   3003           00570         movlw   0x03                            ; CLC3OUT (IR TX)
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+010F   0095           00571         movwf   RA5PPS                          ; IR led
+                      00572         ;movlw  0x0F                            ; RX1/CK1
+                      00573         ;movwf  RA4PPS                          ; RED led
+                      00574         
+0110   3008           00575         movlw   0x08
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0111   00BD           00576         movwf   IOCAP
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0112   01BE           00577         clrf    IOCAN
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0113   01BF           00578         clrf    IOCAF
+                      00579                 
+                      00580         ;------------------
+0114   303D           00581         movlw   d'61'
+0115   0088           00582         movwf   BSR             
+                      00583         ;------------------     
+                      00584         ; lock bits
+0116   3055           00585         movlw   0x55
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0117   008F           00586         movwf   PPSLOCK
+0118   30AA           00587         movlw   0xAA
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0119   008F           00588         movwf   PPSLOCK
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+011A   140F           00589         bsf             PPSLOCK, PPSLOCKED      
+                      00590         
+                      00591 
+MPASM 5.86  TYMKRS_CYPHERCON_2020_IRBUTTON.A   4-24-2022  17:21:52         PAGE 14
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00592         ;------------------
+011B   0188           00593         clrf    BSR                                     ; bank 0
+                      00594         ;------------------
+011C   30C0           00595         movlw   0xC0
+011D   008B           00596         movwf   INTCON                      ; enable interrupts
+                      00597 
+                      00598 
+                      00599 #ifndef outhouse        
+                      00600         ; set delay on powerup (prevent short stroke by power reset)
+011E   2???           00601         goto    WAIT_BUTTON_UP
+                      00602 #endif
+                      00603         
+                      00604 ;-------------------------------------------------------------------------------------------------------
+                            -------------------------------------------     
+011F                  00605 MAINLOOP
+011F   1618           00606         bsf             LATA, 4
+                      00607         
+                      00608 #ifndef outhouse                
+                      00609         ;------------------
+0120   303E           00610         movlw   d'62'
+0121   0088           00611         movwf   BSR             
+                      00612         ;------------------     
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0122   01BE           00613         clrf    IOCAN
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0123   01BF           00614         clrf    IOCAF
+                      00615         
+                      00616         ;------------------
+0124   300E           00617         movlw   d'14'
+0125   0088           00618         movwf   BSR             
+                      00619         ;------------------     
+                      00620         ; disable IRQs that should not be checked during sleep
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0126   018C           00621         clrf    PIR0    
+0127   3010           00622         movlw   0x10
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0128   0096           00623         movwf   PIE0
+                      00624 
+                      00625         
+0129   0063           00626         sleep
+                      00627         
+                      00628         ; turn back on interupts
+012A   3020           00629         movlw   0x20                                    ; TMR0
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+012B   0096           00630         movwf   PIE0
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+012C   018C           00631         clrf    PIR0    
+                      00632         
+                      00633         ;------------------
+012D   0188           00634         clrf    BSR                                     ; bank 0
+                      00635         ;------------------     
+                      00636         
+                      00637 ;       btfsc   PORTA, 3
+MPASM 5.86  TYMKRS_CYPHERCON_2020_IRBUTTON.A   4-24-2022  17:21:52         PAGE 15
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00638 ;       goto    MAINLOOP        
+012E   1218           00639         bcf             LATA, 4
+                      00640         
+                      00641         
+                      00642         ;Set up transmit seq counter
+012F   300C           00643         movlw   0x0C
+0130   00A3           00644         movwf   ir_tx_seq
+                      00645         ; Start TX IRQ
+                      00646         ;------------------
+0131   300E           00647         movlw   d'14'
+0132   0088           00648         movwf   BSR             
+                      00649         ;------------------     
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0133   1619           00650         bsf     PIE3, TX1IE                             ; buffer empty disable Uart2 transmit IRQ       
+                                    
+                      00651         ;------------------
+0134   0188           00652         clrf    BSR                                     ; bank 0
+                      00653         ;------------------
+                      00654 
+0135                  00655 WAIT_TX_DONE
+0135   0823           00656         movf    ir_tx_seq, W
+0136   1D03           00657         btfss   STATUS, Z
+0137   2???           00658         goto    WAIT_TX_DONE
+                      00659 
+                      00660         ;Set up transmit seq counter
+0138   300C           00661         movlw   0x0C
+0139   00A3           00662         movwf   ir_tx_seq
+                      00663         ; Start TX IRQ
+                      00664         ;------------------
+013A   300E           00665         movlw   d'14'
+013B   0088           00666         movwf   BSR             
+                      00667         ;------------------     
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+013C   1619           00668         bsf     PIE3, TX1IE                             ; buffer empty disable Uart2 transmit IRQ       
+                                    
+                      00669         ;------------------
+013D   0188           00670         clrf    BSR                                     ; bank 0
+                      00671         ;------------------
+                      00672         
+                      00673         
+                      00674 
+013E                  00675 WAIT_BUTTON_UP  
+013E   1D8C           00676         btfss   PORTA, 3
+013F   2???           00677         goto    WAIT_BUTTON_UP
+                      00678         
+                      00679 
+0140   300F           00680         movlw   button_delay_time  ; d'15'
+0141   00F1           00681         movwf   delay_cnt
+0142                  00682 WAIT_ON_DELAY
+                      00683         ; if button is pressed during cooldown restart the timer
+0142   300F           00684         movlw   button_delay_time  ; d'15'
+0143   1D8C           00685         btfss   PORTA, 3
+0144   00F1           00686         movwf   delay_cnt
+MPASM 5.86  TYMKRS_CYPHERCON_2020_IRBUTTON.A   4-24-2022  17:21:52         PAGE 16
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00687         
+0145   0871           00688         movf    delay_cnt, W
+0146   1D03           00689         btfss   STATUS, Z
+0147   2???           00690         goto    WAIT_ON_DELAY
+                      00691         
+                      00692         
+                      00693 #else
+                      00694         bcf             LATA, 0 ; bi color green (high = on)
+                      00695         bcf             LATA, 1 ; bi color red (high = on)
+                      00696         
+                      00697         btfsc   PORTA, 3
+                      00698         goto    MAINLOOP        
+                      00699         bcf             LATA, 0 ; bi color green (high = on)
+                      00700         bsf             LATA, 1 ; bi color red (high = on)
+                      00701         bcf             LATA, 4 ; red led (low = on)
+                      00702         
+                      00703         movlw   OUTHOUSE_DOOR_DELAY
+                      00704         movwf   delay_cnt
+                      00705 WAIT_DOOR_DELAY
+                      00706         ; if button is released start over
+                      00707         btfsc   PORTA, 3        ; button
+                      00708         goto    MAINLOOP
+                      00709         
+                      00710         movf    delay_cnt, W
+                      00711         btfss   STATUS, Z
+                      00712         goto    WAIT_DOOR_DELAY
+                      00713 
+                      00714 
+                      00715         bsf             LATA, 0 ; bi color green (high = on)
+                      00716         bcf             LATA, 1 ; bi color red (high = on)
+                      00717         
+                      00718         
+                      00719         ;Set up transmit seq counter
+                      00720         movlw   0x0C
+                      00721         movwf   ir_tx_seq
+                      00722         ; Start TX IRQ
+                      00723         ;------------------
+                      00724         movlw   d'14'
+                      00725         movwf   BSR             
+                      00726         ;------------------     
+                      00727         bsf     PIE3, TX1IE                             ; buffer empty disable Uart2 transmit IRQ       
+                                    
+                      00728         ;------------------
+                      00729         clrf    BSR                                     ; bank 0
+                      00730         ;------------------
+                      00731 
+                      00732 WAIT_TX_DONE2
+                      00733         movf    ir_tx_seq, W
+                      00734         btfss   STATUS, Z
+                      00735         goto    WAIT_TX_DONE2
+                      00736 
+                      00737         ;Set up transmit seq counter
+                      00738         movlw   0x0C
+MPASM 5.86  TYMKRS_CYPHERCON_2020_IRBUTTON.A   4-24-2022  17:21:52         PAGE 17
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00739         movwf   ir_tx_seq
+                      00740         ; Start TX IRQ
+                      00741         ;------------------
+                      00742         movlw   d'14'
+                      00743         movwf   BSR             
+                      00744         ;------------------     
+                      00745         bsf     PIE3, TX1IE                             ; buffer empty disable Uart2 transmit IRQ       
+                                    
+                      00746         ;------------------
+                      00747         clrf    BSR                                     ; bank 0
+                      00748         ;------------------
+                      00749                 
+                      00750         bsf             LATA, 4
+                      00751         
+                      00752 WAIT_DOOR_DELAY2
+                      00753         ; if button is released start over
+                      00754         btfss   PORTA, 3
+                      00755         goto    WAIT_DOOR_DELAY2        
+                      00756         
+                      00757 #endif 
+                      00758         
+0148   2???           00759         goto    MAINLOOP        
+                      00760         
+                      00761         
+                      00762         
+                      00763         
+0149   0050 0065 0074 00764         de      CODE_VER_STRING
+       0065 0072 0020 
+       0053 0068 0061 
+       0062 0069 006E 
+       006F 0020 0030 
+       0036 004D 0061 
+       0072 0032 0030 
+       0032 0032 0020 
+       0063 006F 0064 
+       0065 0020 0066 
+       006F 0072 0020 
+       0074 0079 006D 
+       006B 0072 0073 
+       0020 0043 0079 
+       0070 0068 0065 
+       0072 0063 006F 
+       006E 002
+                      00765                         
+                      00766         ;### end of program ###
+3F8C 37DC 3F9F 1FFF 3F00767         end     
+       FE 
+MPASM 5.86  TYMKRS_CYPHERCON_2020_IRBUTTON.A   4-24-2022  17:21:52         PAGE 18
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+ABDEN                             00000000
+ABDOVF                            00000007
+ACKDT                             00000005
+ACKEN                             00000004
+ACKSTAT                           00000006
+ACKTIM                            00000007
+ADACT                             0000009F
+ADACT0                            00000000
+ADACT1                            00000001
+ADACT2                            00000002
+ADACT3                            00000003
+ADACT4                            00000004
+ADACTPPS                          00001EC3
+ADACTPPS0                         00000000
+ADACTPPS1                         00000001
+ADACTPPS2                         00000002
+ADACTPPS3                         00000003
+ADACTPPS4                         00000004
+ADACTPPS5                         00000005
+ADCMD                             00000005
+ADCON0                            0000009D
+ADCON1                            0000009E
+ADCS0                             00000004
+ADCS1                             00000005
+ADCS2                             00000006
+ADDEN                             00000003
+ADFM                              00000007
+ADFVR0                            00000000
+ADFVR1                            00000001
+ADIE                              00000000
+ADIF                              00000000
+ADMSK1                            00000001
+ADMSK2                            00000002
+ADMSK3                            00000003
+ADMSK4                            00000004
+ADMSK5                            00000005
+ADOEN                             00000002
+ADON                              00000000
+ADOR                              00000002
+ADPREF0                           00000000
+ADPREF1                           00000001
+ADRES                             0000009B
+ADRESH                            0000009C
+ADRESH0                           00000000
+ADRESH1                           00000001
+ADRESH2                           00000002
+ADRESH3                           00000003
+ADRESH4                           00000004
+ADRESH5                           00000005
+ADRESH6                           00000006
+ADRESH7                           00000007
+ADRESL                            0000009B
+ADRESL0                           00000000
+MPASM 5.86  TYMKRS_CYPHERCON_2020_IRBUTTON.A   4-24-2022  17:21:52         PAGE 19
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+ADRESL1                           00000001
+ADRESL2                           00000002
+ADRESL3                           00000003
+ADRESL4                           00000004
+ADRESL5                           00000005
+ADRESL6                           00000006
+ADRESL7                           00000007
+ADTIF                             00000001
+AHEN                              00000001
+ANSA0                             00000000
+ANSA1                             00000001
+ANSA2                             00000002
+ANSA4                             00000004
+ANSA5                             00000005
+ANSELA                            00001F38
+AS0E                              00000000
+AS1E                              00000001
+AS2E                              00000002
+AS3E                              00000003
+AS4E                              00000004
+BAUD1CON                          0000011F
+BAUDCON                           0000011F
+BAUDCON1                          0000011F
+BAUDCTL                           0000011F
+BAUDCTL1                          0000011F
+BCL1IE                            00000001
+BCL1IF                            00000001
+BF                                00000000
+BOEN                              00000004
+BORCON                            00000811
+BORRDY                            00000000
+BRG16                             00000003
+BRGH                              00000002
+BSR                               00000008
+BSR0                              00000000
+BSR1                              00000001
+BSR2                              00000002
+BSR3                              00000003
+BSR4                              00000004
+BSR5                              00000005
+BSR_SHAD                          00001FE6
+C                                 00000000
+C1EN                              00000007
+C1HYS                             00000001
+C1IE                              00000000
+C1IF                              00000000
+C1INTN                            00000000
+C1INTP                            00000001
+C1NCH0                            00000000
+C1NCH1                            00000001
+C1NCH2                            00000002
+C1OUT_CM1CON0                     00000006
+C1OUT_CMOUT                       00000000
+MPASM 5.86  TYMKRS_CYPHERCON_2020_IRBUTTON.A   4-24-2022  17:21:52         PAGE 20
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+C1OUT_CMSTAT                      00000000
+C1PCH0                            00000000
+C1PCH1                            00000001
+C1PCH2                            00000002
+C1POL                             00000004
+C1SYNC                            00000000
+C2OUT                             00000001
+CCP1CAP                           0000030F
+CCP1CON                           0000030E
+CCP1CTS0                          00000000
+CCP1CTS1                          00000001
+CCP1CTS2                          00000002
+CCP1EN                            00000007
+CCP1FMT                           00000004
+CCP1IE                            00000000
+CCP1IF                            00000000
+CCP1MD                            00000000
+CCP1MODE0                         00000000
+CCP1MODE1                         00000001
+CCP1MODE2                         00000002
+CCP1MODE3                         00000003
+CCP1OUT                           00000005
+CCP1PPS                           00001EA1
+CCP1PPS0                          00000000
+CCP1PPS1                          00000001
+CCP1PPS2                          00000002
+CCP1PPS3                          00000003
+CCP1PPS4                          00000004
+CCP1PPS5                          00000005
+CCP2CAP                           00000313
+CCP2CON                           00000312
+CCP2CTS0                          00000000
+CCP2CTS1                          00000001
+CCP2CTS2                          00000002
+CCP2EN                            00000007
+CCP2FMT                           00000004
+CCP2IE                            00000001
+CCP2IF                            00000001
+CCP2MD                            00000001
+CCP2MODE0                         00000000
+CCP2MODE1                         00000001
+CCP2MODE2                         00000002
+CCP2MODE3                         00000003
+CCP2OUT                           00000005
+CCP2PPS                           00001EA2
+CCP2PPS0                          00000000
+CCP2PPS1                          00000001
+CCP2PPS2                          00000002
+CCP2PPS3                          00000003
+CCP2PPS4                          00000004
+CCP2PPS5                          00000005
+CCPR1                             0000030C
+CCPR1H                            0000030D
+MPASM 5.86  TYMKRS_CYPHERCON_2020_IRBUTTON.A   4-24-2022  17:21:52         PAGE 21
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+CCPR1L                            0000030C
+CCPR2                             00000310
+CCPR2H                            00000311
+CCPR2L                            00000310
+CDAFVR0                           00000002
+CDAFVR1                           00000003
+CDIV0                             00000000
+CDIV1                             00000001
+CDIV2                             00000002
+CDIV3                             00000003
+CHS0                              00000002
+CHS1                              00000003
+CHS2                              00000004
+CHS3                              00000005
+CHS4                              00000006
+CHS5                              00000007
+CKE                               00000006
+CKP                               00000004
+CKPOL                             00000006
+CKPS0                             00000004
+CKPS1                             00000005
+CKPS2                             00000006
+CKSYNC                            00000005
+CLC1CON                           00001E10
+CLC1GLS0                          00001E16
+CLC1GLS1                          00001E17
+CLC1GLS2                          00001E18
+CLC1GLS3                          00001E19
+CLC1IE                            00000004
+CLC1IF                            00000004
+CLC1MD                            00000001
+CLC1POL                           00001E11
+CLC1SEL0                          00001E12
+CLC1SEL1                          00001E13
+CLC1SEL2                          00001E14
+CLC1SEL3                          00001E15
+CLC2CON                           00001E1A
+CLC2GLS0                          00001E20
+CLC2GLS1                          00001E21
+CLC2GLS2                          00001E22
+CLC2GLS3                          00001E23
+CLC2IE                            00000005
+CLC2IF                            00000005
+CLC2MD                            00000002
+CLC2POL                           00001E1B
+CLC2SEL0                          00001E1C
+CLC2SEL1                          00001E1D
+CLC2SEL2                          00001E1E
+CLC2SEL3                          00001E1F
+CLC3CON                           00001E24
+CLC3GLS0                          00001E2A
+CLC3GLS1                          00001E2B
+CLC3GLS2                          00001E2C
+MPASM 5.86  TYMKRS_CYPHERCON_2020_IRBUTTON.A   4-24-2022  17:21:52         PAGE 22
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+CLC3GLS3                          00001E2D
+CLC3IE                            00000006
+CLC3IF                            00000006
+CLC3MD                            00000003
+CLC3POL                           00001E25
+CLC3SEL0                          00001E26
+CLC3SEL1                          00001E27
+CLC3SEL2                          00001E28
+CLC3SEL3                          00001E29
+CLC4CON                           00001E2E
+CLC4GLS0                          00001E34
+CLC4GLS1                          00001E35
+CLC4GLS2                          00001E36
+CLC4GLS3                          00001E37
+CLC4IE                            00000007
+CLC4IF                            00000007
+CLC4MD                            00000004
+CLC4POL                           00001E2F
+CLC4SEL0                          00001E30
+CLC4SEL1                          00001E31
+CLC4SEL2                          00001E32
+CLC4SEL3                          00001E33
+CLCDATA                           00001E0F
+CLCIN0PPS                         00001EBB
+CLCIN0PPS0                        00000000
+CLCIN0PPS1                        00000001
+CLCIN0PPS2                        00000002
+CLCIN0PPS3                        00000003
+CLCIN0PPS4                        00000004
+CLCIN0PPS5                        00000005
+CLCIN1PPS                         00001EBC
+CLCIN1PPS0                        00000000
+CLCIN1PPS1                        00000001
+CLCIN1PPS2                        00000002
+CLCIN1PPS3                        00000003
+CLCIN1PPS4                        00000004
+CLCIN1PPS5                        00000005
+CLCIN2PPS                         00001EBD
+CLCIN2PPS0                        00000000
+CLCIN2PPS1                        00000001
+CLCIN2PPS2                        00000002
+CLCIN2PPS3                        00000003
+CLCIN2PPS4                        00000004
+CLCIN2PPS5                        00000005
+CLCIN3PPS                         00001EBE
+CLCIN3PPS0                        00000000
+CLCIN3PPS1                        00000001
+CLCIN3PPS2                        00000002
+CLCIN3PPS3                        00000003
+CLCIN3PPS4                        00000004
+CLCIN3PPS5                        00000005
+CLKRCLK                           00000896
+CLKRCLK0                          00000000
+MPASM 5.86  TYMKRS_CYPHERCON_2020_IRBUTTON.A   4-24-2022  17:21:52         PAGE 23
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+CLKRCLK1                          00000001
+CLKRCLK2                          00000002
+CLKRCLK3                          00000003
+CLKRCON                           00000895
+CLKRDC0                           00000003
+CLKRDC1                           00000004
+CLKRDIV0                          00000000
+CLKRDIV1                          00000001
+CLKRDIV2                          00000002
+CLKREN                            00000007
+CLKRMD                            00000001
+CM1CON0                           00000990
+CM1CON1                           00000991
+CM1NCH                            00000992
+CM1PCH                            00000993
+CMOUT                             0000098F
+CMP1MD                            00000001
+CMSTAT                            0000098F
+CODE_VER_STRING                   "Peter Shabino 06Mar2022 code for tymkrs Cyphercon 2020 IRbutton V1 www.wire2wire.org!"
+COSC0                             00000004
+COSC1                             00000005
+COSC2                             00000006
+CPUDOZE                           0000088C
+CREN                              00000004
+CS                                00000000
+CS0                               00000000
+CS1                               00000001
+CS2                               00000002
+CS3                               00000003
+CSRC                              00000007
+CSWHOLD                           00000007
+CSWIE                             00000006
+CSWIF                             00000006
+CTS0                              00000000
+CTS1                              00000001
+CTS2                              00000002
+CWG1AS0                           00000612
+CWG1AS1                           00000613
+CWG1CLKCON                        0000060C
+CWG1CON0                          00000610
+CWG1CON1                          00000611
+CWG1CS                            00000000
+CWG1DAT                           0000060D
+CWG1DAT0                          00000000
+CWG1DAT1                          00000001
+CWG1DAT2                          00000002
+CWG1DAT3                          00000003
+CWG1DBF                           0000060F
+CWG1DBF0                          00000000
+CWG1DBF1                          00000001
+CWG1DBF2                          00000002
+CWG1DBF3                          00000003
+CWG1DBF4                          00000004
+MPASM 5.86  TYMKRS_CYPHERCON_2020_IRBUTTON.A   4-24-2022  17:21:52         PAGE 24
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+CWG1DBF5                          00000005
+CWG1DBR                           0000060E
+CWG1DBR0                          00000000
+CWG1DBR1                          00000001
+CWG1DBR2                          00000002
+CWG1DBR3                          00000003
+CWG1DBR4                          00000004
+CWG1DBR5                          00000005
+CWG1EN                            00000007
+CWG1IE                            00000000
+CWG1IF                            00000000
+CWG1IN                            00000005
+CWG1LD                            00000006
+CWG1LSAC0                         00000002
+CWG1LSAC1                         00000003
+CWG1LSBD0                         00000004
+CWG1LSBD1                         00000005
+CWG1MD                            00000000
+CWG1MODE0                         00000000
+CWG1MODE1                         00000001
+CWG1MODE2                         00000002
+CWG1OVRA                          00000004
+CWG1OVRB                          00000005
+CWG1OVRC                          00000006
+CWG1OVRD                          00000007
+CWG1POLA                          00000000
+CWG1POLB                          00000001
+CWG1POLC                          00000002
+CWG1POLD                          00000003
+CWG1PPS                           00001EB1
+CWG1PPS0                          00000000
+CWG1PPS1                          00000001
+CWG1PPS2                          00000002
+CWG1PPS3                          00000003
+CWG1PPS4                          00000004
+CWG1PPS5                          00000005
+CWG1REN                           00000006
+CWG1SHUTDOWN                      00000007
+CWG1STR                           00000614
+CWG1STRA                          00000000
+CWG1STRB                          00000001
+CWG1STRC                          00000002
+CWG1STRD                          00000003
+D1N                               00000000
+D1S0                              00000000
+D1S1                              00000001
+D1S2                              00000002
+D1S3                              00000003
+D1S4                              00000004
+D1S5                              00000005
+D1T                               00000001
+D2N                               00000002
+D2S0                              00000000
+MPASM 5.86  TYMKRS_CYPHERCON_2020_IRBUTTON.A   4-24-2022  17:21:52         PAGE 25
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+D2S1                              00000001
+D2S2                              00000002
+D2S3                              00000003
+D2S4                              00000004
+D2S5                              00000005
+D2T                               00000003
+D3N                               00000004
+D3S0                              00000000
+D3S1                              00000001
+D3S2                              00000002
+D3S3                              00000003
+D3S4                              00000004
+D3S5                              00000005
+D3T                               00000005
+D4N                               00000006
+D4S0                              00000000
+D4S1                              00000001
+D4S2                              00000002
+D4S3                              00000003
+D4S4                              00000004
+D4S5                              00000005
+D4T                               00000007
+DAC1CON0                          0000090E
+DAC1CON1                          0000090F
+DAC1EN                            00000007
+DAC1MD                            00000006
+DAC1NSS                           00000000
+DAC1OE1                           00000005
+DAC1OE2                           00000004
+DAC1PSS0                          00000002
+DAC1PSS1                          00000003
+DAC1R0                            00000000
+DAC1R1                            00000001
+DAC1R2                            00000002
+DAC1R3                            00000003
+DAC1R4                            00000004
+DATA_ADDRESS                      00000005
+DBF0                              00000000
+DBF1                              00000001
+DBF2                              00000002
+DBF3                              00000003
+DBF4                              00000004
+DBF5                              00000005
+DBR0                              00000000
+DBR1                              00000001
+DBR2                              00000002
+DBR3                              00000003
+DBR4                              00000004
+DBR5                              00000005
+DC                                00000001
+DC0                               00000006
+DC1                               00000007
+DC2                               00000000
+MPASM 5.86  TYMKRS_CYPHERCON_2020_IRBUTTON.A   4-24-2022  17:21:52         PAGE 26
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+DC3                               00000001
+DC4                               00000002
+DC5                               00000003
+DC6                               00000004
+DC7                               00000005
+DC8                               00000006
+DC9                               00000007
+DDS1MD                            00000007
+DHEN                              00000000
+DOE                               00000004
+DOZE0                             00000000
+DOZE1                             00000001
+DOZE2                             00000002
+DOZEN                             00000006
+D_A                               00000005
+D_NOT_A                           00000005
+EN                                00000007
+EXTOEN                            00000007
+EXTOR                             00000007
+F                                 00000001
+FERR                              00000002
+FMT                               00000004
+FREE                              00000004
+FSR0                              00000004
+FSR0H                             00000005
+FSR0H_SHAD                        00001FE9
+FSR0L                             00000004
+FSR0L_SHAD                        00001FE8
+FSR0_SHAD                         00001FE8
+FSR1                              00000006
+FSR1H                             00000007
+FSR1H_SHAD                        00001FEB
+FSR1L                             00000006
+FSR1L_SHAD                        00001FEA
+FSR1_SHAD                         00001FEA
+FVRCON                            0000090C
+FVREN                             00000007
+FVRMD                             00000006
+FVRRDY                            00000006
+G1EN                              00000007
+G1POL                             00000000
+G2POL                             00000001
+G3POL                             00000002
+G4D1N                             00000000
+G4D1T                             00000001
+G4D2N                             00000002
+G4D2T                             00000003
+G4D3N                             00000004
+G4D3T                             00000005
+G4D4N                             00000006
+G4D4T                             00000007
+G4POL                             00000003
+GCEN                              00000007
+MPASM 5.86  TYMKRS_CYPHERCON_2020_IRBUTTON.A   4-24-2022  17:21:52         PAGE 27
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+GE                                00000007
+GGO_NOT_DONE                      00000003
+GIE                               00000007
+GOnDONE                           00000001
+GPOL                              00000006
+GSPM                              00000004
+GSS0                              00000000
+GSS1                              00000001
+GSS2                              00000002
+GSS3                              00000003
+GSS4                              00000004
+GTM                               00000005
+GVAL                              00000002
+HFFRQ0                            00000000
+HFFRQ1                            00000001
+HFFRQ2                            00000002
+HFOEN                             00000006
+HFOR                              00000006
+HFTUN0                            00000000
+HFTUN1                            00000001
+HFTUN2                            00000002
+HFTUN3                            00000003
+HFTUN4                            00000004
+HFTUN5                            00000005
+HYS                               00000001
+I2C_DAT                           00000005
+I2C_READ                          00000002
+I2C_START                         00000003
+I2C_STOP                          00000004
+IDLEN                             00000007
+IN                                00000005
+INDF0                             00000000
+INDF1                             00000001
+INLVLA                            00001F3C
+INLVLA0                           00000000
+INLVLA1                           00000001
+INLVLA2                           00000002
+INLVLA3                           00000003
+INLVLA4                           00000004
+INLVLA5                           00000005
+INTCON                            0000000B
+INTE                              00000000
+INTEDG                            00000000
+INTF                              00000000
+INTN_CLC1CON                      00000003
+INTN_CLC2CON                      00000003
+INTN_CLC3CON                      00000003
+INTN_CLC4CON                      00000003
+INTN_CM1CON1                      00000000
+INTPPS                            00001E90
+INTPPS0                           00000000
+INTPPS1                           00000001
+INTPPS2                           00000002
+MPASM 5.86  TYMKRS_CYPHERCON_2020_IRBUTTON.A   4-24-2022  17:21:52         PAGE 28
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+INTPPS3                           00000003
+INTPPS4                           00000004
+INTPPS5                           00000005
+INTP_CLC1CON                      00000004
+INTP_CLC2CON                      00000004
+INTP_CLC3CON                      00000004
+INTP_CLC4CON                      00000004
+INTP_CM1CON1                      00000001
+IOCAF                             00001F3F
+IOCAF0                            00000000
+IOCAF1                            00000001
+IOCAF2                            00000002
+IOCAF3                            00000003
+IOCAF4                            00000004
+IOCAF5                            00000005
+IOCAN                             00001F3E
+IOCAN0                            00000000
+IOCAN1                            00000001
+IOCAN2                            00000002
+IOCAN3                            00000003
+IOCAN4                            00000004
+IOCAN5                            00000005
+IOCAP                             00001F3D
+IOCAP0                            00000000
+IOCAP1                            00000001
+IOCAP2                            00000002
+IOCAP3                            00000003
+IOCAP4                            00000004
+IOCAP5                            00000005
+IOCIE                             00000004
+IOCIF                             00000004
+IOCMD                             00000000
+IRQ_TX1_send                      00000024
+IRQ_TX1_send_a                    00000038
+IRQ_TX1_send_chksum               0000008E
+IRQ_TX1_send_h                    0000004C
+IRQ_TX1_send_idH                  00000074
+IRQ_TX1_send_idL                  00000081
+IRQ_TX1_send_m                    0000002E
+IRQ_TX1_send_q                    00000056
+IRQ_TX1_send_s                    00000042
+IRQ_TX1_send_status               00000060
+IRQ_TX1_send_type                 0000006A
+IRQ_TX1_stop                      0000001F
+IRQ_not_IOC                       0000000E
+IRQ_not_TMR0                      00000016
+IRQ_not_TX1                       000000A4
+IR_PULSE_WIDTH                    00000015
+LATA                              00000018
+LATA0                             00000000
+LATA1                             00000001
+LATA2                             00000002
+LATA4                             00000004
+MPASM 5.86  TYMKRS_CYPHERCON_2020_IRBUTTON.A   4-24-2022  17:21:52         PAGE 29
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+LATA5                             00000005
+LC1D1S0                           00000000
+LC1D1S1                           00000001
+LC1D1S2                           00000002
+LC1D1S3                           00000003
+LC1D1S4                           00000004
+LC1D1S5                           00000005
+LC1D2S0                           00000000
+LC1D2S1                           00000001
+LC1D2S2                           00000002
+LC1D2S3                           00000003
+LC1D2S4                           00000004
+LC1D2S5                           00000005
+LC1D3S0                           00000000
+LC1D3S1                           00000001
+LC1D3S2                           00000002
+LC1D3S3                           00000003
+LC1D3S4                           00000004
+LC1D3S5                           00000005
+LC1D4S0                           00000000
+LC1D4S1                           00000001
+LC1D4S2                           00000002
+LC1D4S3                           00000003
+LC1D4S4                           00000004
+LC1D4S5                           00000005
+LC1EN                             00000007
+LC1G1D1N                          00000000
+LC1G1D1T                          00000001
+LC1G1D2N                          00000002
+LC1G1D2T                          00000003
+LC1G1D3N                          00000004
+LC1G1D3T                          00000005
+LC1G1D4N                          00000006
+LC1G1D4T                          00000007
+LC1G1POL                          00000000
+LC1G2D1N                          00000000
+LC1G2D1T                          00000001
+LC1G2D2N                          00000002
+LC1G2D2T                          00000003
+LC1G2D3N                          00000004
+LC1G2D3T                          00000005
+LC1G2D4N                          00000006
+LC1G2D4T                          00000007
+LC1G2POL                          00000001
+LC1G3D1N                          00000000
+LC1G3D1T                          00000001
+LC1G3D2N                          00000002
+LC1G3D2T                          00000003
+LC1G3D3N                          00000004
+LC1G3D3T                          00000005
+LC1G3D4N                          00000006
+LC1G3D4T                          00000007
+LC1G3POL                          00000002
+MPASM 5.86  TYMKRS_CYPHERCON_2020_IRBUTTON.A   4-24-2022  17:21:52         PAGE 30
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+LC1G4D1N                          00000000
+LC1G4D1T                          00000001
+LC1G4D2N                          00000002
+LC1G4D2T                          00000003
+LC1G4D3N                          00000004
+LC1G4D3T                          00000005
+LC1G4D4N                          00000006
+LC1G4D4T                          00000007
+LC1G4POL                          00000003
+LC1INTN                           00000003
+LC1INTP                           00000004
+LC1MODE0                          00000000
+LC1MODE1                          00000001
+LC1MODE2                          00000002
+LC1OUT                            00000005
+LC1POL                            00000007
+LC2D1S0                           00000000
+LC2D1S1                           00000001
+LC2D1S2                           00000002
+LC2D1S3                           00000003
+LC2D1S4                           00000004
+LC2D1S5                           00000005
+LC2D2S0                           00000000
+LC2D2S1                           00000001
+LC2D2S2                           00000002
+LC2D2S3                           00000003
+LC2D2S4                           00000004
+LC2D2S5                           00000005
+LC2D3S0                           00000000
+LC2D3S1                           00000001
+LC2D3S2                           00000002
+LC2D3S3                           00000003
+LC2D3S4                           00000004
+LC2D3S5                           00000005
+LC2D4S0                           00000000
+LC2D4S1                           00000001
+LC2D4S2                           00000002
+LC2D4S3                           00000003
+LC2D4S4                           00000004
+LC2D4S5                           00000005
+LC2EN                             00000007
+LC2G1D1N                          00000000
+LC2G1D1T                          00000001
+LC2G1D2N                          00000002
+LC2G1D2T                          00000003
+LC2G1D3N                          00000004
+LC2G1D3T                          00000005
+LC2G1D4N                          00000006
+LC2G1D4T                          00000007
+LC2G1POL                          00000000
+LC2G2D1N                          00000000
+LC2G2D1T                          00000001
+LC2G2D2N                          00000002
+MPASM 5.86  TYMKRS_CYPHERCON_2020_IRBUTTON.A   4-24-2022  17:21:52         PAGE 31
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+LC2G2D2T                          00000003
+LC2G2D3N                          00000004
+LC2G2D3T                          00000005
+LC2G2D4N                          00000006
+LC2G2D4T                          00000007
+LC2G2POL                          00000001
+LC2G3D1N                          00000000
+LC2G3D1T                          00000001
+LC2G3D2N                          00000002
+LC2G3D2T                          00000003
+LC2G3D3N                          00000004
+LC2G3D3T                          00000005
+LC2G3D4N                          00000006
+LC2G3D4T                          00000007
+LC2G3POL                          00000002
+LC2G4D1N                          00000000
+LC2G4D1T                          00000001
+LC2G4D2N                          00000002
+LC2G4D2T                          00000003
+LC2G4D3N                          00000004
+LC2G4D3T                          00000005
+LC2G4D4N                          00000006
+LC2G4D4T                          00000007
+LC2G4POL                          00000003
+LC2INTN                           00000003
+LC2INTP                           00000004
+LC2MODE0                          00000000
+LC2MODE1                          00000001
+LC2MODE2                          00000002
+LC2OUT                            00000005
+LC2POL                            00000007
+LC3D1S0                           00000000
+LC3D1S1                           00000001
+LC3D1S2                           00000002
+LC3D1S3                           00000003
+LC3D1S4                           00000004
+LC3D1S5                           00000005
+LC3D2S0                           00000000
+LC3D2S1                           00000001
+LC3D2S2                           00000002
+LC3D2S3                           00000003
+LC3D2S4                           00000004
+LC3D2S5                           00000005
+LC3D3S0                           00000000
+LC3D3S1                           00000001
+LC3D3S2                           00000002
+LC3D3S3                           00000003
+LC3D3S4                           00000004
+LC3D3S5                           00000005
+LC3D4S0                           00000000
+LC3D4S1                           00000001
+LC3D4S2                           00000002
+LC3D4S3                           00000003
+MPASM 5.86  TYMKRS_CYPHERCON_2020_IRBUTTON.A   4-24-2022  17:21:52         PAGE 32
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+LC3D4S4                           00000004
+LC3D4S5                           00000005
+LC3EN                             00000007
+LC3G1D1N                          00000000
+LC3G1D1T                          00000001
+LC3G1D2N                          00000002
+LC3G1D2T                          00000003
+LC3G1D3N                          00000004
+LC3G1D3T                          00000005
+LC3G1D4N                          00000006
+LC3G1D4T                          00000007
+LC3G1POL                          00000000
+LC3G2D1N                          00000000
+LC3G2D1T                          00000001
+LC3G2D2N                          00000002
+LC3G2D2T                          00000003
+LC3G2D3N                          00000004
+LC3G2D3T                          00000005
+LC3G2D4N                          00000006
+LC3G2D4T                          00000007
+LC3G2POL                          00000001
+LC3G3D1N                          00000000
+LC3G3D1T                          00000001
+LC3G3D2N                          00000002
+LC3G3D2T                          00000003
+LC3G3D3N                          00000004
+LC3G3D3T                          00000005
+LC3G3D4N                          00000006
+LC3G3D4T                          00000007
+LC3G3POL                          00000002
+LC3G4D1N                          00000000
+LC3G4D1T                          00000001
+LC3G4D2N                          00000002
+LC3G4D2T                          00000003
+LC3G4D3N                          00000004
+LC3G4D3T                          00000005
+LC3G4D4N                          00000006
+LC3G4D4T                          00000007
+LC3G4POL                          00000003
+LC3INTN                           00000003
+LC3INTP                           00000004
+LC3MODE0                          00000000
+LC3MODE1                          00000001
+LC3MODE2                          00000002
+LC3OUT                            00000005
+LC3POL                            00000007
+LC4D1S0                           00000000
+LC4D1S1                           00000001
+LC4D1S2                           00000002
+LC4D1S3                           00000003
+LC4D1S4                           00000004
+LC4D1S5                           00000005
+LC4D2S0                           00000000
+MPASM 5.86  TYMKRS_CYPHERCON_2020_IRBUTTON.A   4-24-2022  17:21:52         PAGE 33
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+LC4D2S1                           00000001
+LC4D2S2                           00000002
+LC4D2S3                           00000003
+LC4D2S4                           00000004
+LC4D2S5                           00000005
+LC4D3S0                           00000000
+LC4D3S1                           00000001
+LC4D3S2                           00000002
+LC4D3S3                           00000003
+LC4D3S4                           00000004
+LC4D3S5                           00000005
+LC4D4S0                           00000000
+LC4D4S1                           00000001
+LC4D4S2                           00000002
+LC4D4S3                           00000003
+LC4D4S4                           00000004
+LC4D4S5                           00000005
+LC4EN                             00000007
+LC4G1D1N                          00000000
+LC4G1D1T                          00000001
+LC4G1D2N                          00000002
+LC4G1D2T                          00000003
+LC4G1D3N                          00000004
+LC4G1D3T                          00000005
+LC4G1D4N                          00000006
+LC4G1D4T                          00000007
+LC4G1POL                          00000000
+LC4G2D1N                          00000000
+LC4G2D1T                          00000001
+LC4G2D2N                          00000002
+LC4G2D2T                          00000003
+LC4G2D3N                          00000004
+LC4G2D3T                          00000005
+LC4G2D4N                          00000006
+LC4G2D4T                          00000007
+LC4G2POL                          00000001
+LC4G3D1N                          00000000
+LC4G3D1T                          00000001
+LC4G3D2N                          00000002
+LC4G3D2T                          00000003
+LC4G3D3N                          00000004
+LC4G3D3T                          00000005
+LC4G3D4N                          00000006
+LC4G3D4T                          00000007
+LC4G3POL                          00000002
+LC4G4D1N                          00000000
+LC4G4D1T                          00000001
+LC4G4D2N                          00000002
+LC4G4D2T                          00000003
+LC4G4D3N                          00000004
+LC4G4D3T                          00000005
+LC4G4D4N                          00000006
+LC4G4D4T                          00000007
+MPASM 5.86  TYMKRS_CYPHERCON_2020_IRBUTTON.A   4-24-2022  17:21:52         PAGE 34
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+LC4G4POL                          00000003
+LC4INTN                           00000003
+LC4INTP                           00000004
+LC4MODE0                          00000000
+LC4MODE1                          00000001
+LC4MODE2                          00000002
+LC4OUT                            00000005
+LC4POL                            00000007
+LD                                00000006
+LFOEN                             00000004
+LFOR                              00000004
+LSAC0                             00000002
+LSAC1                             00000003
+LSBD0                             00000004
+LSBD1                             00000005
+LWLO                              00000005
+MAINLOOP                          0000011F
+MC1OUT                            00000000
+MC2OUT                            00000001
+MFOEN                             00000005
+MFOR                              00000005
+MLC1OUT                           00000000
+MLC2OUT                           00000001
+MLC3OUT                           00000002
+MLC4OUT                           00000003
+MODE0                             00000000
+MODE1                             00000001
+MODE2                             00000002
+MODE3                             00000003
+MODE4                             00000004
+MSK0                              00000000
+MSK1                              00000001
+MSK2                              00000002
+MSK3                              00000003
+MSK4                              00000004
+MSK5                              00000005
+MSK6                              00000006
+MSK7                              00000007
+MSSP1MD                           00000004
+N1CKS0                            00000000
+N1CKS1                            00000001
+N1CKS2                            00000002
+N1CKS3                            00000003
+N1EN                              00000007
+N1OUT                             00000005
+N1PFM                             00000000
+N1POL                             00000004
+N1PWS0                            00000005
+N1PWS1                            00000006
+N1PWS2                            00000007
+NCH0                              00000000
+NCH1                              00000001
+NCH2                              00000002
+MPASM 5.86  TYMKRS_CYPHERCON_2020_IRBUTTON.A   4-24-2022  17:21:52         PAGE 35
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+NCO1ACC                           0000058C
+NCO1ACC0                          00000000
+NCO1ACC1                          00000001
+NCO1ACC10                         00000002
+NCO1ACC11                         00000003
+NCO1ACC12                         00000004
+NCO1ACC13                         00000005
+NCO1ACC14                         00000006
+NCO1ACC15                         00000007
+NCO1ACC16                         00000000
+NCO1ACC17                         00000001
+NCO1ACC18                         00000002
+NCO1ACC19                         00000003
+NCO1ACC2                          00000002
+NCO1ACC3                          00000003
+NCO1ACC4                          00000004
+NCO1ACC5                          00000005
+NCO1ACC6                          00000006
+NCO1ACC7                          00000007
+NCO1ACC8                          00000000
+NCO1ACC9                          00000001
+NCO1ACCH                          0000058D
+NCO1ACCL                          0000058C
+NCO1ACCU                          0000058E
+NCO1CLK                           00000593
+NCO1CON                           00000592
+NCO1IE                            00000004
+NCO1IF                            00000004
+NCO1INC                           0000058F
+NCO1INC0                          00000000
+NCO1INC1                          00000001
+NCO1INC10                         00000002
+NCO1INC11                         00000003
+NCO1INC12                         00000004
+NCO1INC13                         00000005
+NCO1INC14                         00000006
+NCO1INC15                         00000007
+NCO1INC16                         00000000
+NCO1INC17                         00000001
+NCO1INC18                         00000002
+NCO1INC19                         00000003
+NCO1INC2                          00000002
+NCO1INC3                          00000003
+NCO1INC4                          00000004
+NCO1INC5                          00000005
+NCO1INC6                          00000006
+NCO1INC7                          00000007
+NCO1INC8                          00000000
+NCO1INC9                          00000001
+NCO1INCH                          00000590
+NCO1INCL                          0000058F
+NCO1INCU                          00000591
+NCOIE                             00000004
+MPASM 5.86  TYMKRS_CYPHERCON_2020_IRBUTTON.A   4-24-2022  17:21:52         PAGE 36
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+NCOIF                             00000004
+NCOMD                             00000007
+NDIV0                             00000000
+NDIV1                             00000001
+NDIV2                             00000002
+NDIV3                             00000003
+NOSC0                             00000004
+NOSC1                             00000005
+NOSC2                             00000006
+NOSCR                             00000003
+NOT_A                             00000005
+NOT_ADDRESS                       00000005
+NOT_BOR                           00000000
+NOT_MEMV                          00000001
+NOT_PD                            00000003
+NOT_POR                           00000001
+NOT_RI                            00000002
+NOT_RMCLR                         00000003
+NOT_RWDT                          00000004
+NOT_SYNC                          00000002
+NOT_T1SYNC                        00000002
+NOT_TO                            00000004
+NOT_W                             00000002
+NOT_WDTWV                         00000005
+NOT_WRITE                         00000002
+NSS                               00000000
+NVMADR                            0000081A
+NVMADRH                           0000081B
+NVMADRH0                          00000000
+NVMADRH1                          00000001
+NVMADRH2                          00000002
+NVMADRH3                          00000003
+NVMADRH4                          00000004
+NVMADRH5                          00000005
+NVMADRH6                          00000006
+NVMADRL                           0000081A
+NVMADRL0                          00000000
+NVMADRL1                          00000001
+NVMADRL2                          00000002
+NVMADRL3                          00000003
+NVMADRL4                          00000004
+NVMADRL5                          00000005
+NVMADRL6                          00000006
+NVMADRL7                          00000007
+NVMCON1                           0000081E
+NVMCON2                           0000081F
+NVMDAT                            0000081C
+NVMDATH                           0000081D
+NVMDATH0                          00000000
+NVMDATH1                          00000001
+NVMDATH2                          00000002
+NVMDATH3                          00000003
+NVMDATH4                          00000004
+MPASM 5.86  TYMKRS_CYPHERCON_2020_IRBUTTON.A   4-24-2022  17:21:52         PAGE 37
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+NVMDATH5                          00000005
+NVMDATL                           0000081C
+NVMDATL0                          00000000
+NVMDATL1                          00000001
+NVMDATL2                          00000002
+NVMDATL3                          00000003
+NVMDATL4                          00000004
+NVMDATL5                          00000005
+NVMDATL6                          00000006
+NVMDATL7                          00000007
+NVMIE                             00000005
+NVMIF                             00000005
+NVMMD                             00000002
+NVMREGS                           00000006
+ODCA0                             00000000
+ODCA1                             00000001
+ODCA2                             00000002
+ODCA4                             00000004
+ODCA5                             00000005
+ODCONA                            00001F3A
+OE1                               00000005
+OE2                               00000004
+OERR                              00000001
+ON_T1CON                          00000000
+ON_T2CON                          00000007
+ORDY                              00000004
+OSCCON1                           0000088D
+OSCCON2                           0000088E
+OSCCON3                           0000088F
+OSCEN                             00000891
+OSCFRQ                            00000893
+OSCSTAT                           00000890
+OSCTUNE                           00000892
+OSFIE                             00000007
+OSFIF                             00000007
+OUTHOUSE_DOOR_DELAY               00000005
+OUTPS0                            00000000
+OUTPS1                            00000001
+OUTPS2                            00000002
+OUTPS3                            00000003
+OUT_CCP1CON                       00000005
+OUT_CCP2CON                       00000005
+OUT_CLC1CON                       00000005
+OUT_CLC2CON                       00000005
+OUT_CLC3CON                       00000005
+OUT_CLC4CON                       00000005
+OUT_CM1CON0                       00000006
+OUT_PWM3CON                       00000005
+OUT_PWM4CON                       00000005
+OUT_PWM5CON                       00000005
+OUT_PWM6CON                       00000005
+OVRA                              00000004
+OVRB                              00000005
+MPASM 5.86  TYMKRS_CYPHERCON_2020_IRBUTTON.A   4-24-2022  17:21:52         PAGE 38
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+OVRC                              00000006
+OVRD                              00000007
+P                                 00000004
+PCH0                              00000000
+PCH1                              00000001
+PCH2                              00000002
+PCIE                              00000006
+PCL                               00000002
+PCLATH                            0000000A
+PCLATH_SHAD                       00001FE7
+PCON0                             00000813
+PCON1                             00000814
+PEIE                              00000006
+PEN                               00000002
+PIE0                              00000716
+PIE1                              00000717
+PIE2                              00000718
+PIE3                              00000719
+PIE4                              0000071A
+PIE5                              0000071B
+PIE6                              0000071C
+PIE7                              0000071D
+PIR0                              0000070C
+PIR1                              0000070D
+PIR2                              0000070E
+PIR3                              0000070F
+PIR4                              00000710
+PIR5                              00000711
+PIR6                              00000712
+PIR7                              00000713
+PLLR                              00000000
+PMD0                              00000796
+PMD1                              00000797
+PMD2                              00000798
+PMD3                              00000799
+PMD4                              0000079A
+PMD5                              0000079B
+POLA                              00000000
+POLB                              00000001
+POLC                              00000002
+POLD                              00000003
+POL_CLC1POL                       00000007
+POL_CLC2POL                       00000007
+POL_CLC3POL                       00000007
+POL_CLC4POL                       00000007
+POL_CM1CON0                       00000004
+POL_PWM3CON                       00000004
+POL_PWM4CON                       00000004
+POL_PWM5CON                       00000004
+POL_PWM6CON                       00000004
+PORTA                             0000000C
+PPSLOCK                           00001E8F
+PPSLOCKED                         00000000
+MPASM 5.86  TYMKRS_CYPHERCON_2020_IRBUTTON.A   4-24-2022  17:21:52         PAGE 39
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+PR0                               0000059D
+PR1                               0000020F
+PR2                               0000028D
+PSCNT0                            00000000
+PSCNT1                            00000001
+PSCNT10                           00000002
+PSCNT11                           00000003
+PSCNT12                           00000004
+PSCNT13                           00000005
+PSCNT14                           00000006
+PSCNT15                           00000007
+PSCNT16                           00000000
+PSCNT17                           00000001
+PSCNT2                            00000002
+PSCNT3                            00000003
+PSCNT4                            00000004
+PSCNT5                            00000005
+PSCNT6                            00000006
+PSCNT7                            00000007
+PSCNT8                            00000000
+PSCNT9                            00000001
+PSS0                              00000002
+PSS1                              00000003
+PSYNC                             00000007
+PWM3CON                           00000316
+PWM3DC                            00000314
+PWM3DC0                           00000006
+PWM3DC1                           00000007
+PWM3DC2                           00000000
+PWM3DC3                           00000001
+PWM3DC4                           00000002
+PWM3DC5                           00000003
+PWM3DC6                           00000004
+PWM3DC7                           00000005
+PWM3DC8                           00000006
+PWM3DC9                           00000007
+PWM3DCH                           00000315
+PWM3DCL                           00000314
+PWM3EN                            00000007
+PWM3MD                            00000002
+PWM3OUT                           00000005
+PWM3POL                           00000004
+PWM4CON                           0000031A
+PWM4DC                            00000318
+PWM4DC0                           00000006
+PWM4DC1                           00000007
+PWM4DC2                           00000000
+PWM4DC3                           00000001
+PWM4DC4                           00000002
+PWM4DC5                           00000003
+PWM4DC6                           00000004
+PWM4DC7                           00000005
+PWM4DC8                           00000006
+MPASM 5.86  TYMKRS_CYPHERCON_2020_IRBUTTON.A   4-24-2022  17:21:52         PAGE 40
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+PWM4DC9                           00000007
+PWM4DCH                           00000319
+PWM4DCL                           00000318
+PWM4EN                            00000007
+PWM4MD                            00000003
+PWM4OUT                           00000005
+PWM4POL                           00000004
+PWM5CON                           0000031E
+PWM5DC                            0000031C
+PWM5DC0                           00000006
+PWM5DC1                           00000007
+PWM5DC2                           00000000
+PWM5DC3                           00000001
+PWM5DC4                           00000002
+PWM5DC5                           00000003
+PWM5DC6                           00000004
+PWM5DC7                           00000005
+PWM5DC8                           00000006
+PWM5DC9                           00000007
+PWM5DCH                           0000031D
+PWM5DCL                           0000031C
+PWM5EN                            00000007
+PWM5MD                            00000004
+PWM5OUT                           00000005
+PWM5POL                           00000004
+PWM6CON                           0000038E
+PWM6DC                            0000038C
+PWM6DC0                           00000006
+PWM6DC1                           00000007
+PWM6DC2                           00000000
+PWM6DC3                           00000001
+PWM6DC4                           00000002
+PWM6DC5                           00000003
+PWM6DC6                           00000004
+PWM6DC7                           00000005
+PWM6DC8                           00000006
+PWM6DC9                           00000007
+PWM6DCH                           0000038D
+PWM6DCL                           0000038C
+PWM6EN                            00000007
+PWM6MD                            00000005
+PWM6OUT                           00000005
+PWM6POL                           00000004
+PWMPW0                            00000006
+PWMPW1                            00000007
+PWMPW2                            00000000
+PWMPW3                            00000001
+PWMPW4                            00000002
+PWMPW5                            00000003
+PWMPW6                            00000004
+PWMPW7                            00000005
+PWMPW8                            00000006
+PWMPW9                            00000007
+MPASM 5.86  TYMKRS_CYPHERCON_2020_IRBUTTON.A   4-24-2022  17:21:52         PAGE 41
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+RA0                               00000000
+RA0PPS                            00001F10
+RA0PPS0                           00000000
+RA0PPS1                           00000001
+RA0PPS2                           00000002
+RA0PPS3                           00000003
+RA0PPS4                           00000004
+RA1                               00000001
+RA1PPS                            00001F11
+RA1PPS0                           00000000
+RA1PPS1                           00000001
+RA1PPS2                           00000002
+RA1PPS3                           00000003
+RA1PPS4                           00000004
+RA2                               00000002
+RA2PPS                            00001F12
+RA2PPS0                           00000000
+RA2PPS1                           00000001
+RA2PPS2                           00000002
+RA2PPS3                           00000003
+RA2PPS4                           00000004
+RA3                               00000003
+RA3PPS                            00001F13
+RA3PPS0                           00000000
+RA3PPS1                           00000001
+RA3PPS2                           00000002
+RA3PPS3                           00000003
+RA3PPS4                           00000004
+RA4                               00000004
+RA4PPS                            00001F14
+RA4PPS0                           00000000
+RA4PPS1                           00000001
+RA4PPS2                           00000002
+RA4PPS3                           00000003
+RA4PPS4                           00000004
+RA5                               00000005
+RA5PPS                            00001F15
+RA5PPS0                           00000000
+RA5PPS1                           00000001
+RA5PPS2                           00000002
+RA5PPS3                           00000003
+RA5PPS4                           00000004
+RC1IE                             00000005
+RC1IF                             00000005
+RC1REG                            00000119
+RC1STA                            0000011D
+RCEN                              00000003
+RCIDL                             00000006
+RCREG                             00000119
+RCREG1                            00000119
+RCSTA                             0000011D
+RCSTA1                            0000011D
+RD                                00000000
+MPASM 5.86  TYMKRS_CYPHERCON_2020_IRBUTTON.A   4-24-2022  17:21:52         PAGE 42
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+RD16                              00000001
+READ_WRITE                        00000002
+REN                               00000006
+ROI                               00000005
+RSEL0                             00000000
+RSEL1                             00000001
+RSEL2                             00000002
+RSEL3                             00000003
+RSEN                              00000001
+RX1DTPPS                          00001ECB
+RX1DTPPS0                         00000000
+RX1DTPPS1                         00000001
+RX1DTPPS2                         00000002
+RX1DTPPS3                         00000003
+RX1DTPPS4                         00000004
+RX1DTPPS5                         00000005
+RX9                               00000006
+RX9D                              00000000
+R_NOT_W                           00000002
+R_W                               00000002
+S                                 00000003
+SBCDE                             00000002
+SBOREN                            00000007
+SCIE                              00000005
+SCKP                              00000004
+SDAHT                             00000003
+SEN                               00000000
+SENDB                             00000003
+SHUTDOWN                          00000007
+SLRA0                             00000000
+SLRA1                             00000001
+SLRA2                             00000002
+SLRA4                             00000004
+SLRA5                             00000005
+SLRCONA                           00001F3B
+SMP                               00000007
+SP1BRG                            0000011B
+SP1BRGH                           0000011C
+SP1BRGL                           0000011B
+SPBRG                             0000011B
+SPBRG1                            0000011B
+SPBRGH                            0000011C
+SPBRGH1                           0000011C
+SPBRGL                            0000011B
+SPEN                              00000007
+SREN                              00000005
+SSP1ADD                           0000018D
+SSP1BUF                           0000018C
+SSP1CLKPPS                        00001EC5
+SSP1CLKPPS0                       00000000
+SSP1CLKPPS1                       00000001
+SSP1CLKPPS2                       00000002
+SSP1CLKPPS3                       00000003
+MPASM 5.86  TYMKRS_CYPHERCON_2020_IRBUTTON.A   4-24-2022  17:21:52         PAGE 43
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+SSP1CLKPPS4                       00000004
+SSP1CLKPPS5                       00000005
+SSP1CON1                          00000190
+SSP1CON2                          00000191
+SSP1CON3                          00000192
+SSP1DATPPS                        00001EC6
+SSP1DATPPS0                       00000000
+SSP1DATPPS1                       00000001
+SSP1DATPPS2                       00000002
+SSP1DATPPS3                       00000003
+SSP1DATPPS4                       00000004
+SSP1DATPPS5                       00000005
+SSP1IE                            00000000
+SSP1IF                            00000000
+SSP1MSK                           0000018E
+SSP1SSPPS                         00001EC7
+SSP1SSPPS0                        00000000
+SSP1SSPPS1                        00000001
+SSP1SSPPS2                        00000002
+SSP1SSPPS3                        00000003
+SSP1SSPPS4                        00000004
+SSP1SSPPS5                        00000005
+SSP1STAT                          0000018F
+SSPEN                             00000005
+SSPM0                             00000000
+SSPM1                             00000001
+SSPM2                             00000002
+SSPM3                             00000003
+SSPOV                             00000006
+START                             000000A5
+STATE                             00000002
+STATUS                            00000003
+STATUS_SHAD                       00001FE4
+STATUS_SHAD0                      00000000
+STATUS_SHAD1                      00000001
+STATUS_SHAD2                      00000002
+STKOVF                            00000007
+STKPTR                            00001FED
+STKPTR0                           00000000
+STKPTR1                           00000001
+STKPTR2                           00000002
+STKPTR3                           00000003
+STKPTR4                           00000004
+STKUNF                            00000006
+STRA                              00000000
+STRB                              00000001
+STRC                              00000002
+STRD                              00000003
+SWDTEN                            00000000
+SYNC_CM1CON0                      00000000
+SYNC_TX1STA                       00000004
+SYNC_TXSTA                        00000004
+SYNC_TXSTA1                       00000004
+MPASM 5.86  TYMKRS_CYPHERCON_2020_IRBUTTON.A   4-24-2022  17:21:52         PAGE 44
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+SYSCMD                            00000007
+T016BIT                           00000004
+T0ASYNC                           00000004
+T0CKIPPS                          00001E91
+T0CKIPPS0                         00000000
+T0CKIPPS1                         00000001
+T0CKIPPS2                         00000002
+T0CKIPPS3                         00000003
+T0CKIPPS4                         00000004
+T0CKIPPS5                         00000005
+T0CKPS0                           00000000
+T0CKPS1                           00000001
+T0CKPS2                           00000002
+T0CKPS3                           00000003
+T0CON0                            0000059E
+T0CON1                            0000059F
+T0CS0                             00000005
+T0CS1                             00000006
+T0CS2                             00000007
+T0EN                              00000007
+T0OUT                             00000005
+T0OUTPS0                          00000000
+T0OUTPS1                          00000001
+T0OUTPS2                          00000002
+T0OUTPS3                          00000003
+T0PR0                             00000000
+T0PR1                             00000001
+T0PR2                             00000002
+T0PR3                             00000003
+T0PR4                             00000004
+T0PR5                             00000005
+T0PR6                             00000006
+T0PR7                             00000007
+T0PS0                             00000000
+T0PS1                             00000001
+T0PS2                             00000002
+T0PS3                             00000003
+T1CKIPPS                          00001E92
+T1CKIPPS0                         00000000
+T1CKIPPS1                         00000001
+T1CKIPPS2                         00000002
+T1CKIPPS3                         00000003
+T1CKIPPS4                         00000004
+T1CKIPPS5                         00000005
+T1CKPS0                           00000004
+T1CKPS1                           00000005
+T1CLK                             00000211
+T1CON                             0000020E
+T1CS0                             00000000
+T1CS1                             00000001
+T1CS2                             00000002
+T1CS3                             00000003
+T1GATE                            00000210
+MPASM 5.86  TYMKRS_CYPHERCON_2020_IRBUTTON.A   4-24-2022  17:21:52         PAGE 45
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+T1GCON                            0000020F
+T1GE                              00000007
+T1GGO                             00000003
+T1GGO_NOT_DONE                    00000003
+T1GPOL                            00000006
+T1GPPS                            00001E93
+T1GPPS0                           00000000
+T1GPPS1                           00000001
+T1GPPS2                           00000002
+T1GPPS3                           00000003
+T1GPPS4                           00000004
+T1GPPS5                           00000005
+T1GSPM                            00000004
+T1GSS0                            00000000
+T1GSS1                            00000001
+T1GSS2                            00000002
+T1GSS3                            00000003
+T1GSS4                            00000004
+T1GTM                             00000005
+T1GVAL                            00000002
+T1RD16                            00000001
+T2CKPOL                           00000006
+T2CKPS0                           00000004
+T2CKPS1                           00000005
+T2CKPS2                           00000006
+T2CKSYNC                          00000005
+T2CLKCON                          00000290
+T2CON                             0000028E
+T2CS0                             00000000
+T2CS1                             00000001
+T2CS2                             00000002
+T2CS3                             00000003
+T2HLT                             0000028F
+T2INPPS                           00001E9C
+T2INPPS0                          00000000
+T2INPPS1                          00000001
+T2INPPS2                          00000002
+T2INPPS3                          00000003
+T2INPPS4                          00000004
+T2INPPS5                          00000005
+T2MODE0                           00000000
+T2MODE1                           00000001
+T2MODE2                           00000002
+T2MODE3                           00000003
+T2MODE4                           00000004
+T2ON                              00000007
+T2OUTPS0                          00000000
+T2OUTPS1                          00000001
+T2OUTPS2                          00000002
+T2OUTPS3                          00000003
+T2PR                              0000028D
+T2PSYNC                           00000007
+T2RSEL0                           00000000
+MPASM 5.86  TYMKRS_CYPHERCON_2020_IRBUTTON.A   4-24-2022  17:21:52         PAGE 46
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+T2RSEL1                           00000001
+T2RSEL2                           00000002
+T2RSEL3                           00000003
+T2RST                             00000291
+T2TMR                             0000028C
+TMR0                              0000059C
+TMR0H                             0000059D
+TMR0H0                            00000000
+TMR0H1                            00000001
+TMR0H2                            00000002
+TMR0H3                            00000003
+TMR0H4                            00000004
+TMR0H5                            00000005
+TMR0H6                            00000006
+TMR0H7                            00000007
+TMR0IE                            00000005
+TMR0IF                            00000005
+TMR0L                             0000059C
+TMR0L0                            00000000
+TMR0L1                            00000001
+TMR0L2                            00000002
+TMR0L3                            00000003
+TMR0L4                            00000004
+TMR0L5                            00000005
+TMR0L6                            00000006
+TMR0L7                            00000007
+TMR0MD                            00000000
+TMR1                              0000020C
+TMR10                             00000000
+TMR11                             00000001
+TMR110                            00000002
+TMR111                            00000003
+TMR112                            00000004
+TMR113                            00000005
+TMR114                            00000006
+TMR115                            00000007
+TMR12                             00000002
+TMR13                             00000003
+TMR14                             00000004
+TMR15                             00000005
+TMR16                             00000006
+TMR17                             00000007
+TMR18                             00000000
+TMR19                             00000001
+TMR1CLK                           00000211
+TMR1GATE                          00000210
+TMR1GIE                           00000000
+TMR1GIF                           00000000
+TMR1H                             0000020D
+TMR1H0                            00000000
+TMR1H1                            00000001
+TMR1H2                            00000002
+TMR1H3                            00000003
+MPASM 5.86  TYMKRS_CYPHERCON_2020_IRBUTTON.A   4-24-2022  17:21:52         PAGE 47
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+TMR1H4                            00000004
+TMR1H5                            00000005
+TMR1H6                            00000006
+TMR1H7                            00000007
+TMR1IE                            00000000
+TMR1IF                            00000000
+TMR1L                             0000020C
+TMR1L0                            00000000
+TMR1L1                            00000001
+TMR1L2                            00000002
+TMR1L3                            00000003
+TMR1L4                            00000004
+TMR1L5                            00000005
+TMR1L6                            00000006
+TMR1L7                            00000007
+TMR1MD                            00000001
+TMR1ON                            00000000
+TMR2                              0000028C
+TMR2IE                            00000001
+TMR2IF                            00000001
+TMR2MD                            00000002
+TMR2ON                            00000007
+TOSH                              00001FEF
+TOSH0                             00000000
+TOSH1                             00000001
+TOSH2                             00000002
+TOSH3                             00000003
+TOSH4                             00000004
+TOSH5                             00000005
+TOSH6                             00000006
+TOSH7                             00000007
+TOSL                              00001FEE
+TOSL0                             00000000
+TOSL1                             00000001
+TOSL2                             00000002
+TOSL3                             00000003
+TOSL4                             00000004
+TOSL5                             00000005
+TOSL6                             00000006
+TOSL7                             00000007
+TRISA                             00000012
+TRISA0                            00000000
+TRISA1                            00000001
+TRISA2                            00000002
+TRISA4                            00000004
+TRISA5                            00000005
+TRMT                              00000001
+TSEN                              00000005
+TSRNG                             00000004
+TX1CKPPS                          00001ECC
+TX1CKPPS0                         00000000
+TX1CKPPS1                         00000001
+TX1CKPPS2                         00000002
+MPASM 5.86  TYMKRS_CYPHERCON_2020_IRBUTTON.A   4-24-2022  17:21:52         PAGE 48
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+TX1CKPPS3                         00000003
+TX1CKPPS4                         00000004
+TX1CKPPS5                         00000005
+TX1IE                             00000004
+TX1IF                             00000004
+TX1REG                            0000011A
+TX1STA                            0000011E
+TX9                               00000006
+TX9D                              00000000
+TXEN                              00000005
+TXREG                             0000011A
+TXREG1                            0000011A
+TXSTA                             0000011E
+TXSTA1                            0000011E
+UA                                00000001
+UART1MD                           00000006
+VREGCON                           00000812
+VREGPM                            00000001
+W                                 00000000
+WAIT_BUTTON_UP                    0000013E
+WAIT_ON_DELAY                     00000142
+WAIT_TX_DONE                      00000135
+WCOL                              00000007
+WDTCON0                           0000080C
+WDTCON1                           0000080D
+WDTCS0                            00000004
+WDTCS1                            00000005
+WDTCS2                            00000006
+WDTPS0                            00000001
+WDTPS1                            00000002
+WDTPS2                            00000003
+WDTPS3                            00000004
+WDTPS4                            00000005
+WDTPSCNT0                         00000000
+WDTPSCNT1                         00000001
+WDTPSCNT10                        00000002
+WDTPSCNT11                        00000003
+WDTPSCNT12                        00000004
+WDTPSCNT13                        00000005
+WDTPSCNT14                        00000006
+WDTPSCNT15                        00000007
+WDTPSCNT16                        00000000
+WDTPSCNT17                        00000001
+WDTPSCNT2                         00000002
+WDTPSCNT3                         00000003
+WDTPSCNT4                         00000004
+WDTPSCNT5                         00000005
+WDTPSCNT6                         00000006
+WDTPSCNT7                         00000007
+WDTPSCNT8                         00000000
+WDTPSCNT9                         00000001
+WDTPSH                            0000080F
+WDTPSL                            0000080E
+MPASM 5.86  TYMKRS_CYPHERCON_2020_IRBUTTON.A   4-24-2022  17:21:52         PAGE 49
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+WDTSEN                            00000000
+WDTSTATE                          00000002
+WDTTMR                            00000810
+WDTTMR0                           00000003
+WDTTMR1                           00000004
+WDTTMR2                           00000005
+WDTTMR3                           00000006
+WDTWINDOW0                        00000000
+WDTWINDOW1                        00000001
+WDTWINDOW2                        00000002
+WINDOW0                           00000000
+WINDOW1                           00000001
+WINDOW2                           00000002
+WPUA                              00001F39
+WPUA0                             00000000
+WPUA1                             00000001
+WPUA2                             00000002
+WPUA3                             00000003
+WPUA4                             00000004
+WPUA5                             00000005
+WR                                00000001
+WREG                              00000009
+WREG_SHAD                         00001FE5
+WREN                              00000002
+WRERR                             00000003
+WUE                               00000001
+Z                                 00000002
+ZCDCON                            0000091F
+ZCDIE                             00000006
+ZCDIF                             00000006
+ZCDINTN                           00000000
+ZCDINTP                           00000001
+ZCDMD                             00000000
+ZCDOUT                            00000005
+ZCDPOL                            00000004
+ZCDSEN                            00000007
+_BBEN_OFF                         00003FFF
+_BBEN_ON                          00003FF7
+_BBSIZE_BB16K                     00003FFA
+_BBSIZE_BB1K                      00003FFE
+_BBSIZE_BB2K                      00003FFD
+_BBSIZE_BB32K                     00003FF9
+_BBSIZE_BB4K                      00003FFC
+_BBSIZE_BB512                     00003FFF
+_BBSIZE_BB64K                     00003FF8
+_BBSIZE_BB8K                      00003FFB
+_BOREN_NSLEEP                     00003FBF
+_BOREN_OFF                        00003F3F
+_BOREN_ON                         00003FFF
+_BOREN_SBOREN                     00003F7F
+_BORV_HI                          00003DFF
+_BORV_LO                          00003FFF
+_CLKOUTEN_OFF                     00003FFF
+MPASM 5.86  TYMKRS_CYPHERCON_2020_IRBUTTON.A   4-24-2022  17:21:52         PAGE 50
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+_CLKOUTEN_ON                      00003EFF
+_CONFIG1                          00008007
+_CONFIG2                          00008008
+_CONFIG3                          00008009
+_CONFIG4                          0000800A
+_CONFIG5                          0000800B
+_CP_OFF                           00003FFF
+_CP_ON                            00003FFE
+_CSWEN_OFF                        000037FF
+_CSWEN_ON                         00003FFF
+_DEVID1                           00008006
+_FCMEN_OFF                        00001FFF
+_FCMEN_ON                         00003FFF
+_FEXTOSC_ECH                      00003FFF
+_FEXTOSC_ECL                      00003FFD
+_FEXTOSC_ECM                      00003FFE
+_FEXTOSC_HS                       00003FFA
+_FEXTOSC_LP                       00003FF8
+_FEXTOSC_OFF                      00003FFC
+_FEXTOSC_Reserved                 00003FFB
+_FEXTOSC_XT                       00003FF9
+_IDLOC0                           00008000
+_IDLOC1                           00008001
+_IDLOC2                           00008002
+_IDLOC3                           00008003
+_LPBOREN_OFF                      00003FFF
+_LPBOREN_ON                       00003FDF
+_LVP_OFF                          00001FFF
+_LVP_ON                           00003FFF
+_MCLRE_OFF                        00003FFE
+_MCLRE_ON                         00003FFF
+_PPS1WAY_OFF                      000037FF
+_PPS1WAY_ON                       00003FFF
+_PWRTE_OFF                        00003FFF
+_PWRTE_ON                         00003FFD
+_RSTOSC_EXT1X                     00003FFF
+_RSTOSC_EXT4X                     00003FAF
+_RSTOSC_HFINT1                    00003FEF
+_RSTOSC_HFINT32                   00003F8F
+_RSTOSC_HFINTPLL                  00003F9F
+_RSTOSC_LFINT                     00003FDF
+_RSTOSC_Reserved                  00003FBF
+_SAFEN_OFF                        00003FFF
+_SAFEN_ON                         00003FEF
+_STVREN_OFF                       00002FFF
+_STVREN_ON                        00003FFF
+_WDTCCS_HFINTOSC                  00000FFF
+_WDTCCS_LFINTOSC                  000007FF
+_WDTCCS_Reserved                  000017FF
+_WDTCCS_SC                        00003FFF
+_WDTCPS_WDTCPS_0                  00003FE0
+_WDTCPS_WDTCPS_1                  00003FE1
+_WDTCPS_WDTCPS_10                 00003FEA
+MPASM 5.86  TYMKRS_CYPHERCON_2020_IRBUTTON.A   4-24-2022  17:21:52         PAGE 51
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+_WDTCPS_WDTCPS_11                 00003FEB
+_WDTCPS_WDTCPS_12                 00003FEC
+_WDTCPS_WDTCPS_13                 00003FED
+_WDTCPS_WDTCPS_14                 00003FEE
+_WDTCPS_WDTCPS_15                 00003FEF
+_WDTCPS_WDTCPS_16                 00003FF0
+_WDTCPS_WDTCPS_17                 00003FF1
+_WDTCPS_WDTCPS_18                 00003FF2
+_WDTCPS_WDTCPS_19                 00003FF3
+_WDTCPS_WDTCPS_2                  00003FE2
+_WDTCPS_WDTCPS_20                 00003FF4
+_WDTCPS_WDTCPS_21                 00003FF5
+_WDTCPS_WDTCPS_22                 00003FF6
+_WDTCPS_WDTCPS_23                 00003FF7
+_WDTCPS_WDTCPS_24                 00003FF8
+_WDTCPS_WDTCPS_25                 00003FF9
+_WDTCPS_WDTCPS_26                 00003FFA
+_WDTCPS_WDTCPS_27                 00003FFB
+_WDTCPS_WDTCPS_28                 00003FFC
+_WDTCPS_WDTCPS_29                 00003FFD
+_WDTCPS_WDTCPS_3                  00003FE3
+_WDTCPS_WDTCPS_30                 00003FFE
+_WDTCPS_WDTCPS_31                 00003FFF
+_WDTCPS_WDTCPS_4                  00003FE4
+_WDTCPS_WDTCPS_5                  00003FE5
+_WDTCPS_WDTCPS_6                  00003FE6
+_WDTCPS_WDTCPS_7                  00003FE7
+_WDTCPS_WDTCPS_8                  00003FE8
+_WDTCPS_WDTCPS_9                  00003FE9
+_WDTCWS_WDTCWS_0                  000038FF
+_WDTCWS_WDTCWS_1                  000039FF
+_WDTCWS_WDTCWS_2                  00003AFF
+_WDTCWS_WDTCWS_3                  00003BFF
+_WDTCWS_WDTCWS_4                  00003CFF
+_WDTCWS_WDTCWS_5                  00003DFF
+_WDTCWS_WDTCWS_6                  00003EFF
+_WDTCWS_WDTCWS_7                  00003FFF
+_WDTE_NSLEEP                      00003FDF
+_WDTE_OFF                         00003F9F
+_WDTE_ON                          00003FFF
+_WDTE_SWDTEN                      00003FBF
+_WRTAPP_OFF                       00003FFF
+_WRTAPP_ON                        00003F7F
+_WRTB_OFF                         00003FFF
+_WRTB_ON                          00003EFF
+_WRTC_OFF                         00003FFF
+_WRTC_ON                          00003DFF
+_WRTSAF_OFF                       00003FFF
+_WRTSAF_ON                        000037FF
+_ZCD_OFF                          00003FFF
+_ZCD_ON                           00003BFF
+__16F15313                        00000001
+badge_idH                         00000022
+MPASM 5.86  TYMKRS_CYPHERCON_2020_IRBUTTON.A   4-24-2022  17:21:52         PAGE 52
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+badge_idL                         00000021
+button_delay_time                 d'15'
+delay_cnt                         00000071
+gtemp                             00000070
+init_bank0_loop                   000000B0
+ir_chksum                         00000024
+ir_tx_seq                         00000023
+status_byte                       0x00
+temp                              00000020
+ver                               00000000
+
+Errors   :     0
+Warnings :     0 reported,     0 suppressed
+Messages :    73 reported,     0 suppressed
+
+

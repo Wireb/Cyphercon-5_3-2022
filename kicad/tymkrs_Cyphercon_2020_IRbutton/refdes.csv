@@ -1,0 +1,14 @@
+ref_des, part number, footprint
+BT1, BAT-HLD-001, PJS_smt_parts:BAT-HLD-001
+C1, 10uF 1206, Capacitor_SMD:C_1206_3216Metric
+C2, 0.1uF 0603, Capacitor_SMD:C_0603_1608Metric
+D1, Red, LED_SMD:LED_0603_1608Metric
+D2, IR204, LED_THT:LED_D3.0mm_Horizontal_O1.27mm_Z2.0mm_Clear
+H1, MountingHole, MountingHole:MountingHole_2.7mm_M2.5
+J1, PicKit, Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Vertical
+R1, 100k, Resistor_SMD:R_0603_1608Metric
+R2, 2k, Resistor_SMD:R_0603_1608Metric
+R3, 27 0805, Resistor_SMD:R_0603_1608Metric
+SW1, TACT_6MM, PJS_smt_parts:PTS645_6mm_tact_sw
+U1, PIC16F15313, Package_SO:SOIC-8_3.9x4.9mm_P1.27mm
+icon1, Metroid, PJS-icons:metroid

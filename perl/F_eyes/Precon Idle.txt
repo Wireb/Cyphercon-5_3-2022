@@ -1,0 +1,90 @@
+start set 1
+precon1
+sleep1
+sleepy1
+precon1
+sleepy2
+precon2
+precon1
+sleep1
+sleepy1
+precon1
+sleepy2
+precon2
+precon1
+sleep1
+sleepy1
+precon1
+
+Precon
+
+start seq precon1
+./F_eyes/sleep1.png 2s
+./F_eyes/sleep7.png 1s
+./F_eyes/sleep2.png 2s
+./F_eyes/sleep10.png 1s
+./F_eyes/sleep3.png 2s
+./F_eyes/sleep9.png 1s
+./F_eyes/sleep4.png 2s
+./F_eyes/sleep8.png 1s
+./F_eyes/sleep11.png 2s
+./F_eyes/sleep12.png 1s
+end seq
+
+start seq sleep1
+./F_eyes/sleep13.png 1s
+./F_eyes/sleep14.png 1s
+./F_eyes/sleep14.png 1s
+./F_eyes/sleep16.png 1s
+./F_eyes/sleep17.png 1s
+./F_eyes/sleep18.png 1s
+./F_eyes/sleep13.png 1s
+./F_eyes/sleep14.png 1s
+./F_eyes/sleep14.png 1s
+./F_eyes/sleep16.png 1s
+./F_eyes/sleep17.png 1s
+./F_eyes/sleep18.png 1s
+end seq
+
+start seq sleepy1
+./F_eyes/sleep1.png 1s
+./F_eyes/sleep2.png 1s
+./F_eyes/sleep3.png 1s
+./F_eyes/halfblink1.png 1s
+./F_eyes/halfblink2.png 1s
+./F_eyes/halfblink4.png 1s
+./F_eyes/sleep4.png 1s
+./F_eyes/sleep5.png 1s
+./F_eyes/sleep6.png 1s
+end seq
+
+start seq sleepy2
+./F_eyes/sleep7.png 1s
+./F_eyes/sleep8.png 1s
+./F_eyes/halfblink5.png 1s
+./F_eyes/halfblink6.png 1s
+./F_eyes/halfblink7.png 1s
+./F_eyes/sleep9.png 1s
+./F_eyes/sleep10.png 1s
+./F_eyes/sleep11.png 1s
+./F_eyes/sleep12.png 1s
+end seq
+
+start seq precon2
+./F_eyes/precon1 1s
+./F_eyes/precon2 1s
+./F_eyes/precon3 1s
+./F_eyes/precon4 1s
+./F_eyes/precon5 1s
+./F_eyes/precon6 1s
+./F_eyes/precon7 1s
+./F_eyes/precon8 1s
+./F_eyes/precon1 1s
+./F_eyes/precon2 1s
+./F_eyes/precon3 1s
+./F_eyes/precon4 1s
+./F_eyes/precon5 1s
+./F_eyes/precon6 1s
+./F_eyes/precon7 1s
+./F_eyes/precon8 1s
+end seq

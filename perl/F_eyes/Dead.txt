@@ -1,0 +1,44 @@
+start set 1
+dead1
+dead2
+dead3
+dead3
+dead2
+dead1
+dead1
+dead2
+dead3
+dead3
+dead2
+dead1
+dead2
+dead3
+dead1
+dead2
+
+start seq dead1
+./F_eyes/dead1.png 2s
+./F_eyes/dead12.png 2s
+./F_eyes/dead1.png 2s
+./F_eyes/dead12.png 2s
+./F_eyes/dead2.png 2s
+./F_eyes/dead1.png 2s
+./F_eyes/dead2.png 2s
+end seq
+
+start seq dead2
+./F_eyes/dead2.png 2s
+./F_eyes/dead3.png 2s
+./F_eyes/dead4.png 2s
+./F_eyes/dead5.png 2s
+./F_eyes/dead6.png 2s
+end seq
+
+start seq dead3
+./F_eyes/dead13.png 2s
+./F_eyes/dead7.png 2s
+./F_eyes/dead8.png 2s
+./F_eyes/dead9.png 2s
+./F_eyes/dead10.png 2s
+./F_eyes/dead11.png 2s
+end seq

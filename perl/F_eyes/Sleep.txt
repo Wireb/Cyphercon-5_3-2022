@@ -1,0 +1,60 @@
+start set 1
+sleep1
+sleepy1
+sleepy2
+sleep1
+sleepy1
+sleepy2
+sleep1
+sleepy1
+sleep1
+sleepy1
+sleepy2
+sleep1
+sleepy1
+sleepy2
+sleep1
+sleepy1
+
+Precon
+
+start seq sleep1
+./sleep13.png 1s
+./sleep14.png 1s
+./sleep14.png 1s
+./sleep16.png 1s
+./sleep17.png 1s
+./sleep18.png 1s
+./sleep13.png 1s
+./sleep14.png 1s
+./sleep14.png 1s
+./sleep16.png 1s
+./sleep17.png 1s
+./sleep18.png 1s
+end seq
+
+start seq sleepy1
+./sleep1.png 1s
+./sleep2.png 1s
+./sleep3.png 1s
+./halfblink1.png 1s
+./halfblink2.png 1s
+./halfblink4.png 1s
+./sleep4.png 1s
+./sleep5.png 1s
+./sleep6.png 1s
+end seq
+
+start seq sleepy2
+./sleep7.png 1s
+./sleep8.png 1s
+./halfblink5.png 1s
+./halfblink6.png 1s
+./halfblink7.png 1s
+./sleep9.png 1s
+./sleep10.png 1s
+./sleep11.png 1s
+./sleep12.png 1s
+end seq
+
+

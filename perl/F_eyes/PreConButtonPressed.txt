@@ -1,0 +1,121 @@
+start set 1
+preconb1
+preconb2
+preconb3
+preconb4
+preconb1
+preconb2
+preconb3
+preconb4
+normal1.png
+normal2.png
+normal2.png
+normal1.png
+normal1.png
+normal2.png
+normal1.png
+normal2.png
+
+start seq preconb1
+./F_eyes/happy1.png 1s
+./F_eyes/happy2.png 1s
+./F_eyes/happy3.png 1s
+./F_eyes/happy4.png 1s
+./F_eyes/happy5.png 1s
+./F_eyes/happy6.png 1s
+./F_eyes/happy7.png 1s
+./F_eyes/happy1.png 1s
+end seq
+
+start seq preconb2
+./F_eyes/halfblink1.png 1s
+./F_eyes/halfblink2.png 1s
+./F_eyes/halfblink3.png 1s
+./F_eyes/halfblink4.png 1s
+./F_eyes/normal5.png 1s
+./F_eyes/normal6.png 1s
+./F_eyes/normal7.png 1s
+./F_eyes/normal8.png 1s
+./F_eyes/happy6.png 1s
+./F_eyes/normal9.png 1s
+./F_eyes/happy3.png 1s
+./F_eyes/happy4.png 1s
+./F_eyes/happy5.png 1s
+end seq
+
+start seq preconb3
+./F_eyes/halfblink5.png 1s
+./F_eyes/halfblink6.png 1s
+./F_eyes/halfblink7.png 1s
+./F_eyes/halfblink8.png 1s
+./F_eyes/normal1.png 1s
+./F_eyes/normal2.png 1s
+./F_eyes/normal3.png 1s
+./F_eyes/normal4.png 1s
+./F_eyes/happy1.png 1s
+./F_eyes/normal5.png 1s
+./F_eyes/happy1.png 1s
+./F_eyes/happy2.png 1s
+./F_eyes/happy3.png 1s
+end seq
+
+start seq preconb4
+./F_eyes/halfblink9.png 1s
+./F_eyes/halfblink10.png 1s
+./F_eyes/halfblink1.png 1s
+./F_eyes/halfblink2.png 1s
+./F_eyes/normal9.png 1s
+./F_eyes/normal10.png 1s
+./F_eyes/normal11.png 1s
+./F_eyes/normal1.png 1s
+./F_eyes/happy4.png 1s
+./F_eyes/normal1.png 1s
+./F_eyes/happy5.png 1s
+./F_eyes/happy6.png 1s
+./F_eyes/happy7.png 1s
+end seq
+
+start seq normal1
+./F_eyes/normal6.png 1s
+./F_eyes/normal7.png 1s
+./F_eyes/happy1.png 1s
+./F_eyes/normal8.png 1s
+./F_eyes/normal9.png 1s
+./F_eyes/normal10.png 1s
+./F_eyes/happy2.png 1s
+./F_eyes/normal11.png 1s
+./F_eyes/happy4.png 1s
+./F_eyes/happy3.png 1s
+./F_eyes/happy5.png 1s
+./F_eyes/happy6.png 1s
+./F_eyes/normal12.png 1s
+./F_eyes/normal13.png 1s
+./F_eyes/normal14.png 1s
+./F_eyes/happy7.png 1s
+./F_eyes/normal15.png 1s
+./F_eyes/normal16.png 1s
+./F_eyes/normal17.png 1s
+./F_eyes/normal18.png 1s
+./F_eyes/happy6.png 1s
+end seq
+
+start seq normal2
+./F_eyes/normal1.png 1s
+./F_eyes/normal3.png 1s
+./F_eyes/happy7.png 1s
+./F_eyes/normal2.png 1s
+./F_eyes/normal4.png 1s
+./F_eyes/normal5.png 1s
+./F_eyes/happy6.png 1s
+./F_eyes/normal6.png 1s
+./F_eyes/normal7.png 1s
+./F_eyes/normal8.png 1s
+./F_eyes/happy5.png 1s
+./F_eyes/normal9.png 1s
+./F_eyes/normal10.png 1s
+./F_eyes/happy4.png 1s
+./F_eyes/happy3.png 1s
+./F_eyes/normal11.png 1s
+./F_eyes/happy2.png 1s
+./F_eyes/happy1.png 1s
+end seq

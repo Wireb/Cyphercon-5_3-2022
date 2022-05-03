@@ -1,0 +1,68 @@
+MPLINK 5.09, LINKER
+Linker Map File - Created Sun Apr 24 18:34:25 2022
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x000002
+                   .cinit    romdata   0x000001    program   0x000004
+                   .org_1       code   0x000004    program   0x000214
+.config_8007_BUILD/DEFAULT/PRODUCTION/TYMKRS_       code   0x008007    program   0x000002
+.config_8008_BUILD/DEFAULT/PRODUCTION/TYMKRS_       code   0x008008    program   0x000002
+.config_8009_BUILD/DEFAULT/PRODUCTION/TYMKRS_       code   0x008009    program   0x000002
+.config_800A_BUILD/DEFAULT/PRODUCTION/TYMKRS_       code   0x00800a    program   0x000002
+.config_800B_BUILD/DEFAULT/PRODUCTION/TYMKRS_       code   0x00800b    program   0x000002
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x000002      
+                            0x000004    0x00010d      
+                            0x008007    0x00800b      
+            274 out of 4106 program addresses used, program memory utilization is 6%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+               LED_IS_OFF   0x000085    program     static D:\cam_offload_cache\mplab\Tymkrs_Cyphercon2020_IRblaster\Tymkrs_Cyphercon2020_IRblaster.X\Tymkrs_Cyphercon2020_IRblaster.asm
+             LED_NO_BLINK   0x000086    program     static D:\cam_offload_cache\mplab\Tymkrs_Cyphercon2020_IRblaster\Tymkrs_Cyphercon2020_IRblaster.X\Tymkrs_Cyphercon2020_IRblaster.asm
+                 MAINLOOP   0x000073    program     static D:\cam_offload_cache\mplab\Tymkrs_Cyphercon2020_IRblaster\Tymkrs_Cyphercon2020_IRblaster.X\Tymkrs_Cyphercon2020_IRblaster.asm
+               MOTOR_DOWN   0x000075    program     static D:\cam_offload_cache\mplab\Tymkrs_Cyphercon2020_IRblaster\Tymkrs_Cyphercon2020_IRblaster.X\Tymkrs_Cyphercon2020_IRblaster.asm
+                MOTOR_END   0x00007b    program     static D:\cam_offload_cache\mplab\Tymkrs_Cyphercon2020_IRblaster\Tymkrs_Cyphercon2020_IRblaster.X\Tymkrs_Cyphercon2020_IRblaster.asm
+                 MOTOR_UP   0x000078    program     static D:\cam_offload_cache\mplab\Tymkrs_Cyphercon2020_IRblaster\Tymkrs_Cyphercon2020_IRblaster.X\Tymkrs_Cyphercon2020_IRblaster.asm
+                    START   0x000005    program     static D:\cam_offload_cache\mplab\Tymkrs_Cyphercon2020_IRblaster\Tymkrs_Cyphercon2020_IRblaster.X\Tymkrs_Cyphercon2020_IRblaster.asm
+            TRANSMIT_CODE   0x000089    program     static D:\cam_offload_cache\mplab\Tymkrs_Cyphercon2020_IRblaster\Tymkrs_Cyphercon2020_IRblaster.X\Tymkrs_Cyphercon2020_IRblaster.asm
+            TX2_buff_full   0x0000a7    program     static D:\cam_offload_cache\mplab\Tymkrs_Cyphercon2020_IRblaster\Tymkrs_Cyphercon2020_IRblaster.X\Tymkrs_Cyphercon2020_IRblaster.asm
+                   _delay   0x0000ab    program     static D:\cam_offload_cache\mplab\Tymkrs_Cyphercon2020_IRblaster\Tymkrs_Cyphercon2020_IRblaster.X\Tymkrs_Cyphercon2020_IRblaster.asm
+                  _delay0   0x0000af    program     static D:\cam_offload_cache\mplab\Tymkrs_Cyphercon2020_IRblaster\Tymkrs_Cyphercon2020_IRblaster.X\Tymkrs_Cyphercon2020_IRblaster.asm
+                  _delay1   0x0000b3    program     static D:\cam_offload_cache\mplab\Tymkrs_Cyphercon2020_IRblaster\Tymkrs_Cyphercon2020_IRblaster.X\Tymkrs_Cyphercon2020_IRblaster.asm
+             _delay1_loop   0x0000b5    program     static D:\cam_offload_cache\mplab\Tymkrs_Cyphercon2020_IRblaster\Tymkrs_Cyphercon2020_IRblaster.X\Tymkrs_Cyphercon2020_IRblaster.asm
+                 _send_ir   0x0000a4    program     static D:\cam_offload_cache\mplab\Tymkrs_Cyphercon2020_IRblaster\Tymkrs_Cyphercon2020_IRblaster.X\Tymkrs_Cyphercon2020_IRblaster.asm
+          init_bank0_loop   0x000014    program     static D:\cam_offload_cache\mplab\Tymkrs_Cyphercon2020_IRblaster\Tymkrs_Cyphercon2020_IRblaster.X\Tymkrs_Cyphercon2020_IRblaster.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                    START   0x000005    program     static D:\cam_offload_cache\mplab\Tymkrs_Cyphercon2020_IRblaster\Tymkrs_Cyphercon2020_IRblaster.X\Tymkrs_Cyphercon2020_IRblaster.asm
+          init_bank0_loop   0x000014    program     static D:\cam_offload_cache\mplab\Tymkrs_Cyphercon2020_IRblaster\Tymkrs_Cyphercon2020_IRblaster.X\Tymkrs_Cyphercon2020_IRblaster.asm
+                 MAINLOOP   0x000073    program     static D:\cam_offload_cache\mplab\Tymkrs_Cyphercon2020_IRblaster\Tymkrs_Cyphercon2020_IRblaster.X\Tymkrs_Cyphercon2020_IRblaster.asm
+               MOTOR_DOWN   0x000075    program     static D:\cam_offload_cache\mplab\Tymkrs_Cyphercon2020_IRblaster\Tymkrs_Cyphercon2020_IRblaster.X\Tymkrs_Cyphercon2020_IRblaster.asm
+                 MOTOR_UP   0x000078    program     static D:\cam_offload_cache\mplab\Tymkrs_Cyphercon2020_IRblaster\Tymkrs_Cyphercon2020_IRblaster.X\Tymkrs_Cyphercon2020_IRblaster.asm
+                MOTOR_END   0x00007b    program     static D:\cam_offload_cache\mplab\Tymkrs_Cyphercon2020_IRblaster\Tymkrs_Cyphercon2020_IRblaster.X\Tymkrs_Cyphercon2020_IRblaster.asm
+               LED_IS_OFF   0x000085    program     static D:\cam_offload_cache\mplab\Tymkrs_Cyphercon2020_IRblaster\Tymkrs_Cyphercon2020_IRblaster.X\Tymkrs_Cyphercon2020_IRblaster.asm
+             LED_NO_BLINK   0x000086    program     static D:\cam_offload_cache\mplab\Tymkrs_Cyphercon2020_IRblaster\Tymkrs_Cyphercon2020_IRblaster.X\Tymkrs_Cyphercon2020_IRblaster.asm
+            TRANSMIT_CODE   0x000089    program     static D:\cam_offload_cache\mplab\Tymkrs_Cyphercon2020_IRblaster\Tymkrs_Cyphercon2020_IRblaster.X\Tymkrs_Cyphercon2020_IRblaster.asm
+                 _send_ir   0x0000a4    program     static D:\cam_offload_cache\mplab\Tymkrs_Cyphercon2020_IRblaster\Tymkrs_Cyphercon2020_IRblaster.X\Tymkrs_Cyphercon2020_IRblaster.asm
+            TX2_buff_full   0x0000a7    program     static D:\cam_offload_cache\mplab\Tymkrs_Cyphercon2020_IRblaster\Tymkrs_Cyphercon2020_IRblaster.X\Tymkrs_Cyphercon2020_IRblaster.asm
+                   _delay   0x0000ab    program     static D:\cam_offload_cache\mplab\Tymkrs_Cyphercon2020_IRblaster\Tymkrs_Cyphercon2020_IRblaster.X\Tymkrs_Cyphercon2020_IRblaster.asm
+                  _delay0   0x0000af    program     static D:\cam_offload_cache\mplab\Tymkrs_Cyphercon2020_IRblaster\Tymkrs_Cyphercon2020_IRblaster.X\Tymkrs_Cyphercon2020_IRblaster.asm
+                  _delay1   0x0000b3    program     static D:\cam_offload_cache\mplab\Tymkrs_Cyphercon2020_IRblaster\Tymkrs_Cyphercon2020_IRblaster.X\Tymkrs_Cyphercon2020_IRblaster.asm
+             _delay1_loop   0x0000b5    program     static D:\cam_offload_cache\mplab\Tymkrs_Cyphercon2020_IRblaster\Tymkrs_Cyphercon2020_IRblaster.X\Tymkrs_Cyphercon2020_IRblaster.asm
+
+

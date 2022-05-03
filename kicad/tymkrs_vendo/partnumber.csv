@@ -1,0 +1,16 @@
+Q, part number, footprint, ref_des
+1, 0.1uF, Capacitor_SMD:C_0603_1608Metric, C6
+1, 100k, Resistor_SMD:R_0603_1608Metric, R1
+1, 10uf, Capacitor_SMD:C_1206_3216Metric, C7
+3, 1k, Resistor_SMD:R_0603_1608Metric, R3 R2 R5
+5, 1uF, Capacitor_SMD:C_0805_2012Metric, C2 C3 C4 C5 C1
+1, 27 Ohn, Resistor_SMD:R_0805_2012Metric, R4
+1, AE10921-ND, PJS-pth-parts:ASSMANN_dsub-9F_RA_AE10921-ND, J3
+1, Badge_Drawer, Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Vertical, J4
+1, MAX232IDR, Package_SO:SOIC-16_3.9x9.9mm_P1.27mm, U2
+1, Metroid, PJS-icons:metroid, icon1
+1, PIC16F15355, Package_SO:SOIC-28W_7.5x18.7mm_P1.27mm, U1
+1, PLC, Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical, J5
+1, PicKit, Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Vertical, J1
+1, Red, LED_SMD:LED_0603_1608Metric, D1
+1, Vendo Processor Socket, Package_DIP:DIP-40_W15.24mm_Socket_LongPads, J2

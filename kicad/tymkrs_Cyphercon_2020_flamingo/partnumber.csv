@@ -1,0 +1,45 @@
+Q, part number, footprint, ref_des
+1, 0.1uF 16V X7R, Capacitor_SMD:C_0603_1608Metric, C9
+1, 0.1uF 6.3V X5R, Capacitor_SMD:C_0603_1608Metric, C8
+4, 0.1uF, Capacitor_SMD:C_0603_1608Metric, C13 C14 C16 C18
+1, 0.42_oLED_display, PJS_smt_parts:oLED_0.42_rev, oLED1
+3, 100k, Resistor_SMD:R_0603_1608Metric, R2 R6 R3
+2, 10k, Resistor_SMD:R_0603_1608Metric, R9 R8
+3, 10uF, Capacitor_SMD:C_1206_3216Metric, C12 C15 C17
+1, 1k, Resistor_SMD:R_0603_1608Metric, R4
+2, 1uF 16V, Capacitor_SMD:C_0805_2012Metric, C11 C10
+1, 2.2uF 16V 0805, Capacitor_SMD:C_0805_2012Metric, C5
+1, 2.2uH 1.6A 0805, Inductor_SMD:L_0805_2012Metric, L1
+2, 22uF 10V, Capacitor_SMD:C_0603_1608Metric, C3 C2
+2, 24.9K, Resistor_SMD:R_0603_1608Metric, R10 R11
+1, 25LCxxx, Package_SO:SOIC-8_5.275x5.275mm_P1.27mm, U3
+1, 27 (0805), Resistor_SMD:R_0603_1608Metric, R7
+3, 4.7uF 16V 0805, Capacitor_SMD:C_0805_2012Metric, C6 C7 C4
+6, Amber, SunLED:XZ__K45WT-9, D5 D23 D39 D44 D57 D58
+1, Common LED guide, tymkrs:cypheron2020_common_logo_led_guide, icon3
+1, Common Logo copper, tymkrs:cypheron2020_common_logo_copper_add, icon5
+1, Common Logo keepout, tymkrs:cypheron2020_common_logo_copper_flood_keepout, icon4
+1, Common Logo soldermask, tymkrs:cypheron2020_common_logo_soldermask, icon2
+1, Cut lines, tymkrs:cypheron2020_flamingo_cuts, icon6
+1, Eye location, tymkrs:cypheron2020_flamingo_eye, icon11
+1, IR26-21C (1206), LED_SMD:LED_1206_3216Metric, D2
+2, IS31FL3236_TQFP, Package_QFP:TQFP-48-1EP_7x7mm_P0.5mm_EP3.5x3.5mm, U5 U6
+1, Icon keepout, tymkrs:cypheron2020_flamingo_icons_copperkeepout, icon7
+1, Icon soldermask, tymkrs:cypheron2020_flamingo_icons_soldermask, icon8
+1, Keystone 2462, PJS-pth-parts:Keystone_2462_2x_AA_no_holes, BT1
+1, LED guide, tymkrs:cypheron2020_flamingo_led_guide, icon9
+5, LED_RABG, SunLED:XZMDKCBDDG45S-9, D7 D12 D17 D28 D33
+1, Metroid, PJS-icons:metroid, icon1
+1, PIC16F15345, Package_SO:SOIC-20W_7.5x12.8mm_P1.27mm, U1
+1, PicKit, Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Vertical, J1
+47, Pink_0603, LED_SMD:LED_0603_1608Metric, D4 D48 D50 D52 D53 D54 D55 D56 D10 D11 D13 D14 D15 D16 D18 D19 D20 D21 D22 D24 D25 D26 D27 D29 D30 D31 D32 D34 D35 D36 D37 D38 D40 D41 D42 D43 D45 D46 D47 D49 D51 D59 D60 D62 D63 D64 D61
+3, Red_rev, SunLED:XZ__K45WT-9, D9 D8 D6
+1, SPI, Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical, J2
+1, Silk, tymkrs:cypheron2020_flamingo_silk, icon10
+1, TACT_6MM, PJS_smt_parts:PTS645_6mm_tact_sw, SW1
+1, TPS61322x, Package_TO_SOT_SMD:SOT-23-5, U2
+1, TSOP58438, Vishay:TSOP48, U4
+1, White IN-S63AT5UW, LED_SMD:LED_0603_1608Metric, D3
+0, no-pop, Diode_SMD:D_SMA, D1
+0, no_pop, Capacitor_SMD:C_0603_1608Metric, C1
+0, no_pop, Resistor_SMD:R_0603_1608Metric, R1 R5
